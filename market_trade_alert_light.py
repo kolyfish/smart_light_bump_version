@@ -24,7 +24,7 @@ def get_local_ip():
 class SmartStockLight:
     def __init__(self, root):
         self.root = root
-        self.root.title("SmartStockLight Server")
+        self.root.title("SmartStockLight Server (BUMP VERSION 🔵)")
         self.root.geometry("400x500")
 
         # Initialize Components
@@ -32,6 +32,7 @@ class SmartStockLight:
         self.tapo = TapoController()
         
         # Start Threads
+        # 使用集成中央控制功能的 StockMonitor
         self.monitor = StockMonitor(self.shared_config, self.tapo)
         self.monitor.start()
         

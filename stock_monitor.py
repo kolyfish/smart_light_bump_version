@@ -4,6 +4,7 @@ import yfinance as yf
 import subprocess
 from datetime import datetime
 from market_data_agent import MarketDataAgent
+from mission_listener import MissionListener
 
 class StockMonitor(threading.Thread):
     def __init__(self, shared_config, tapo_controller):
@@ -33,6 +34,7 @@ class StockMonitor(threading.Thread):
         self.alarm_thread = None   # 警報播報執行緒
         self.mock_current_price = None  # 用於自動化測試模擬數據
         self.data_agent = MarketDataAgent() # 新增：行情監控代理
+        self.mission_listener = MissionListener() # 監聽中央指令
         
         # 初始化 TTS 元件
         try:
@@ -204,6 +206,26 @@ class StockMonitor(threading.Thread):
         while self.running:
             try:
                 config = self.shared_config.get_config()
+                
+                # --- 中央控制優先檢查 (Bump Version Feature) ---
+                if self.mission_listener.is_mission_active():
+                    if not getattr(self, 'in_mission_mode', False):
+                        self.add_log("🔵 接獲總部指令：執行秘密任務！(全體藍燈)")
+                        self.speak("接獲中央指令，任務開始。全體藍燈待命。")
+                        self.in_mission_mode = True
+                        
+                    self.device_off = False # 強制喚醒
+                    self.tapo.turn_on_blue()
+                    time.sleep(2) 
+                    continue
+                else:
+                    # 離開任務模式時的處理
+                    if getattr(self, 'in_mission_mode', False):
+                        self.add_log("任務結束，恢復正常監控。")
+                        self.speak("任務解除，恢復監控。")
+                        self.in_mission_mode = False
+                        self.tapo.turn_on_yellow() # 恢復待機色
+
                 symbol = config['symbol']
                 target = config['target_price']
                 stop_loss = config.get('stop_loss_price', 0.0)

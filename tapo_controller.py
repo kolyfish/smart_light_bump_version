@@ -199,6 +199,17 @@ class TapoController:
         else:
             print("TapoController: 裝置忙線中，跳過紫色指令")
 
+    def turn_on_blue(self):
+        """秘密任務警報：轉為藍色。"""
+        if self._lock.acquire(blocking=False):
+            try:
+                self.is_sleeping = False # 警報強制喚醒
+                asyncio.run(self._set_color_hs(240, 100))
+            finally:
+                self._lock.release()
+        else:
+            print("TapoController: 裝置忙線中，跳過藍色指令")
+
     def run_test_sequence(self):
         """執行完整測試序列。"""
         # 測試序列較長，我們願意等待鎖釋放
