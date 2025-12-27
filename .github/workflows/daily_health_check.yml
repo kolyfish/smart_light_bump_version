@@ -1,0 +1,34 @@
+name: Daily Health Check
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天台北時間早上 8:00 (UTC 0:00)
+  workflow_dispatch:      # 允許手動觸發測試
+
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          # 跳過 pip 升級，直接安裝依賴，避免觸發 azure 套件解析錯誤
+          pip install -r requirements.txt
+          pip install playwright pytest-playwright requests pytest-mock
+          playwright install chromium
+
+      - name: Run E2E Health Check
+        env:
+          SIMULATION_MODE: "true"
+        run: |
+          source venv/bin/activate
+          # 啟動 app.py 並在背景執行，測試完成後由腳本殺掉
+          python tests/run_e2e_ci.py

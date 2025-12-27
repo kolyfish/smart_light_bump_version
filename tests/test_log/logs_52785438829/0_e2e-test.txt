@@ -1,0 +1,500 @@
+﻿2025-12-22T00:16:25.0894709Z Current runner version: '2.330.0'
+2025-12-22T00:16:25.0917064Z ##[group]Runner Image Provisioner
+2025-12-22T00:16:25.0917900Z Hosted Compute Agent
+2025-12-22T00:16:25.0918482Z Version: 20251211.462
+2025-12-22T00:16:25.0919039Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-22T00:16:25.0919754Z Build Date: 2025-12-11T16:28:49Z
+2025-12-22T00:16:25.0920414Z Worker ID: {f202ab72-0b8d-4b63-a033-53dcbccee895}
+2025-12-22T00:16:25.0921069Z ##[endgroup]
+2025-12-22T00:16:25.0921632Z ##[group]Operating System
+2025-12-22T00:16:25.0922172Z Ubuntu
+2025-12-22T00:16:25.0922623Z 24.04.3
+2025-12-22T00:16:25.0923017Z LTS
+2025-12-22T00:16:25.0923835Z ##[endgroup]
+2025-12-22T00:16:25.0924330Z ##[group]Runner Image
+2025-12-22T00:16:25.0924854Z Image: ubuntu-24.04
+2025-12-22T00:16:25.0925427Z Version: 20251215.174.1
+2025-12-22T00:16:25.0926394Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-22T00:16:25.0927972Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-22T00:16:25.0928934Z ##[endgroup]
+2025-12-22T00:16:25.0930033Z ##[group]GITHUB_TOKEN Permissions
+2025-12-22T00:16:25.0932304Z Contents: read
+2025-12-22T00:16:25.0932809Z Metadata: read
+2025-12-22T00:16:25.0933542Z Packages: read
+2025-12-22T00:16:25.0934011Z ##[endgroup]
+2025-12-22T00:16:25.0936297Z Secret source: Actions
+2025-12-22T00:16:25.0937201Z Prepare workflow directory
+2025-12-22T00:16:25.1266128Z Prepare all required actions
+2025-12-22T00:16:25.1303621Z Getting action download info
+2025-12-22T00:16:25.4919148Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-22T00:16:25.5877054Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-12-22T00:16:25.7960846Z Complete job name: e2e-test
+2025-12-22T00:16:25.8618074Z ##[group]Run actions/checkout@v4
+2025-12-22T00:16:25.8618875Z with:
+2025-12-22T00:16:25.8619284Z   repository: kolyfish/Smart_Stock_Light
+2025-12-22T00:16:25.8619962Z   token: ***
+2025-12-22T00:16:25.8620334Z   ssh-strict: true
+2025-12-22T00:16:25.8620715Z   ssh-user: git
+2025-12-22T00:16:25.8621101Z   persist-credentials: true
+2025-12-22T00:16:25.8621530Z   clean: true
+2025-12-22T00:16:25.8621912Z   sparse-checkout-cone-mode: true
+2025-12-22T00:16:25.8622375Z   fetch-depth: 1
+2025-12-22T00:16:25.8622747Z   fetch-tags: false
+2025-12-22T00:16:25.8623139Z   show-progress: true
+2025-12-22T00:16:25.8623689Z   lfs: false
+2025-12-22T00:16:25.8624043Z   submodules: false
+2025-12-22T00:16:25.8624430Z   set-safe-directory: true
+2025-12-22T00:16:25.8625097Z ##[endgroup]
+2025-12-22T00:16:25.9682687Z Syncing repository: kolyfish/Smart_Stock_Light
+2025-12-22T00:16:25.9684757Z ##[group]Getting Git version info
+2025-12-22T00:16:25.9685605Z Working directory is '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-22T00:16:25.9686617Z [command]/usr/bin/git version
+2025-12-22T00:16:25.9754304Z git version 2.52.0
+2025-12-22T00:16:25.9780166Z ##[endgroup]
+2025-12-22T00:16:25.9794424Z Temporarily overriding HOME='/home/runner/work/_temp/52436b30-9106-4699-bd6c-87dba4ebeb7e' before making global git config changes
+2025-12-22T00:16:25.9795798Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-22T00:16:25.9807305Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-22T00:16:25.9843880Z Deleting the contents of '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-22T00:16:25.9847197Z ##[group]Initializing the repository
+2025-12-22T00:16:25.9851327Z [command]/usr/bin/git init /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-22T00:16:25.9943779Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-22T00:16:25.9945170Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-22T00:16:25.9946360Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-22T00:16:25.9947693Z hint: call:
+2025-12-22T00:16:25.9948211Z hint:
+2025-12-22T00:16:25.9949041Z hint: 	git config --global init.defaultBranch <name>
+2025-12-22T00:16:25.9950074Z hint:
+2025-12-22T00:16:25.9951068Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-22T00:16:25.9952731Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-22T00:16:25.9954240Z hint:
+2025-12-22T00:16:25.9954960Z hint: 	git branch -m <name>
+2025-12-22T00:16:25.9955739Z hint:
+2025-12-22T00:16:25.9956758Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-22T00:16:25.9958673Z Initialized empty Git repository in /home/runner/work/Smart_Stock_Light/Smart_Stock_Light/.git/
+2025-12-22T00:16:25.9961678Z [command]/usr/bin/git remote add origin https://github.com/kolyfish/Smart_Stock_Light
+2025-12-22T00:16:25.9995005Z ##[endgroup]
+2025-12-22T00:16:25.9996194Z ##[group]Disabling automatic garbage collection
+2025-12-22T00:16:25.9999825Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-22T00:16:26.0028494Z ##[endgroup]
+2025-12-22T00:16:26.0029144Z ##[group]Setting up auth
+2025-12-22T00:16:26.0034938Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-22T00:16:26.0064641Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-22T00:16:26.0375973Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-22T00:16:26.0404010Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-22T00:16:26.0620094Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-22T00:16:26.0663179Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-22T00:16:26.0892078Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-22T00:16:26.0925335Z ##[endgroup]
+2025-12-22T00:16:26.0926149Z ##[group]Fetching the repository
+2025-12-22T00:16:26.0933132Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +38e7034dd98c03ee11443a05a6f39c48525f6618:refs/remotes/origin/main
+2025-12-22T00:16:26.6161310Z From https://github.com/kolyfish/Smart_Stock_Light
+2025-12-22T00:16:26.6163640Z  * [new ref]         38e7034dd98c03ee11443a05a6f39c48525f6618 -> origin/main
+2025-12-22T00:16:26.6195628Z ##[endgroup]
+2025-12-22T00:16:26.6196831Z ##[group]Determining the checkout info
+2025-12-22T00:16:26.6199607Z ##[endgroup]
+2025-12-22T00:16:26.6204587Z [command]/usr/bin/git sparse-checkout disable
+2025-12-22T00:16:26.6246579Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-22T00:16:26.6275676Z ##[group]Checking out the ref
+2025-12-22T00:16:26.6279057Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-22T00:16:26.6372267Z Switched to a new branch 'main'
+2025-12-22T00:16:26.6375816Z branch 'main' set up to track 'origin/main'.
+2025-12-22T00:16:26.6382495Z ##[endgroup]
+2025-12-22T00:16:26.6415032Z [command]/usr/bin/git log -1 --format=%H
+2025-12-22T00:16:26.6436037Z 38e7034dd98c03ee11443a05a6f39c48525f6618
+2025-12-22T00:16:26.6724746Z ##[group]Run actions/setup-python@v5
+2025-12-22T00:16:26.6725700Z with:
+2025-12-22T00:16:26.6726356Z   python-version: 3.10
+2025-12-22T00:16:26.6727089Z   check-latest: false
+2025-12-22T00:16:26.6728052Z   token: ***
+2025-12-22T00:16:26.6728717Z   update-environment: true
+2025-12-22T00:16:26.6729519Z   allow-prereleases: false
+2025-12-22T00:16:26.6730309Z   freethreaded: false
+2025-12-22T00:16:26.6731002Z ##[endgroup]
+2025-12-22T00:16:26.8404271Z ##[group]Installed versions
+2025-12-22T00:16:26.8842075Z Successfully set up CPython (3.10.19)
+2025-12-22T00:16:26.8844863Z ##[endgroup]
+2025-12-22T00:16:26.8991553Z ##[group]Run python -m venv venv
+2025-12-22T00:16:26.8992812Z [36;1mpython -m venv venv[0m
+2025-12-22T00:16:26.8994123Z [36;1msource venv/bin/activate[0m
+2025-12-22T00:16:26.8995331Z [36;1m# 跳過 pip 升級，直接安裝依賴，避免觸發 azure 套件解析錯誤[0m
+2025-12-22T00:16:26.8996631Z [36;1mpip install -r requirements.txt[0m
+2025-12-22T00:16:26.8998268Z [36;1mpip install playwright pytest-playwright requests pytest-mock[0m
+2025-12-22T00:16:26.8999926Z [36;1mplaywright install chromium[0m
+2025-12-22T00:16:26.9085212Z shell: /usr/bin/bash -e {0}
+2025-12-22T00:16:26.9086269Z env:
+2025-12-22T00:16:26.9087348Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:16:26.9089222Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-22T00:16:26.9091028Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:16:26.9092661Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:16:26.9094472Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:16:26.9096055Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-22T00:16:26.9097384Z ##[endgroup]
+2025-12-22T00:16:32.6409003Z Ignoring pyobjc: markers 'sys_platform == "darwin"' don't match your environment
+2025-12-22T00:16:32.7620750Z Collecting Flask==3.0.0
+2025-12-22T00:16:32.8416630Z   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+2025-12-22T00:16:32.8726451Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 3.3 MB/s eta 0:00:00
+2025-12-22T00:16:32.9438712Z Collecting yfinance>=0.2.66
+2025-12-22T00:16:32.9643638Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl (123 kB)
+2025-12-22T00:16:32.9734118Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 kB 16.7 MB/s eta 0:00:00
+2025-12-22T00:16:33.0080557Z Collecting qrcode==7.4.2
+2025-12-22T00:16:33.0278012Z   Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+2025-12-22T00:16:33.0321220Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 16.5 MB/s eta 0:00:00
+2025-12-22T00:16:33.4692622Z Collecting Pillow>=10.4.0
+2025-12-22T00:16:33.4931151Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+2025-12-22T00:16:33.5933599Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 71.7 MB/s eta 0:00:00
+2025-12-22T00:16:33.6996340Z Collecting plugp100>=4.0.0
+2025-12-22T00:16:33.7204691Z   Downloading plugp100-5.1.5-py3-none-any.whl (103 kB)
+2025-12-22T00:16:33.7250135Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 kB 42.0 MB/s eta 0:00:00
+2025-12-22T00:16:33.7603853Z Collecting pyttsx3==2.90
+2025-12-22T00:16:33.7814971Z   Downloading pyttsx3-2.90-py3-none-any.whl (39 kB)
+2025-12-22T00:16:33.8246838Z Collecting python-dotenv
+2025-12-22T00:16:33.8439983Z   Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+2025-12-22T00:16:33.9430174Z Collecting pytest
+2025-12-22T00:16:33.9636408Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2025-12-22T00:16:33.9699700Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 93.2 MB/s eta 0:00:00
+2025-12-22T00:16:34.0236729Z Collecting pytest-mock
+2025-12-22T00:16:34.0434930Z   Downloading pytest_mock-3.15.1-py3-none-any.whl (10 kB)
+2025-12-22T00:16:34.1447424Z Collecting playwright
+2025-12-22T00:16:34.1641837Z   Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl (46.0 MB)
+2025-12-22T00:16:34.4776412Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 MB 69.3 MB/s eta 0:00:00
+2025-12-22T00:16:34.5629061Z Collecting pytest-playwright
+2025-12-22T00:16:34.5829922Z   Downloading pytest_playwright-0.7.2-py3-none-any.whl (16 kB)
+2025-12-22T00:16:34.6555418Z Collecting requests
+2025-12-22T00:16:34.6749531Z   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-12-22T00:16:34.6790098Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 27.7 MB/s eta 0:00:00
+2025-12-22T00:16:34.7450097Z Collecting Werkzeug>=3.0.0
+2025-12-22T00:16:34.7642689Z   Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+2025-12-22T00:16:34.7694242Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 74.6 MB/s eta 0:00:00
+2025-12-22T00:16:34.8106058Z Collecting Jinja2>=3.1.2
+2025-12-22T00:16:34.8298619Z   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-12-22T00:16:34.8340944Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 60.2 MB/s eta 0:00:00
+2025-12-22T00:16:34.8822401Z Collecting click>=8.1.3
+2025-12-22T00:16:34.9014365Z   Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2025-12-22T00:16:34.9057892Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 46.6 MB/s eta 0:00:00
+2025-12-22T00:16:34.9411536Z Collecting itsdangerous>=2.1.2
+2025-12-22T00:16:34.9606090Z   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-12-22T00:16:34.9942882Z Collecting blinker>=1.6.2
+2025-12-22T00:16:35.0132109Z   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-12-22T00:16:35.0907523Z Collecting typing-extensions
+2025-12-22T00:16:35.1098339Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-12-22T00:16:35.1137714Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 19.9 MB/s eta 0:00:00
+2025-12-22T00:16:35.1448001Z Collecting pypng
+2025-12-22T00:16:35.1649766Z   Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+2025-12-22T00:16:35.1688483Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 27.3 MB/s eta 0:00:00
+2025-12-22T00:16:35.2293190Z Collecting peewee>=3.16.2
+2025-12-22T00:16:35.2491265Z   Downloading peewee-3.18.3.tar.gz (3.0 MB)
+2025-12-22T00:16:35.2745025Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 131.9 MB/s eta 0:00:00
+2025-12-22T00:16:35.4334888Z   Installing build dependencies: started
+2025-12-22T00:16:37.8427980Z   Installing build dependencies: finished with status 'done'
+2025-12-22T00:16:37.8436156Z   Getting requirements to build wheel: started
+2025-12-22T00:16:38.8718884Z   Getting requirements to build wheel: finished with status 'done'
+2025-12-22T00:16:38.8728508Z   Preparing metadata (pyproject.toml): started
+2025-12-22T00:16:39.0973305Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-12-22T00:16:39.2172290Z Collecting frozendict>=2.3.4
+2025-12-22T00:16:39.2377464Z   Downloading frozendict-2.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (120 kB)
+2025-12-22T00:16:39.2423515Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.2/120.2 kB 47.7 MB/s eta 0:00:00
+2025-12-22T00:16:39.2868021Z Collecting beautifulsoup4>=4.11.1
+2025-12-22T00:16:39.3063144Z   Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+2025-12-22T00:16:39.3108332Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 41.8 MB/s eta 0:00:00
+2025-12-22T00:16:39.3954386Z Collecting pytz>=2022.5
+2025-12-22T00:16:39.4147439Z   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-12-22T00:16:39.4213678Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 112.1 MB/s eta 0:00:00
+2025-12-22T00:16:39.9094003Z Collecting numpy>=1.16.5
+2025-12-22T00:16:39.9290634Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2025-12-22T00:16:40.0373911Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 133.9 MB/s eta 0:00:00
+2025-12-22T00:16:40.2835856Z Collecting websockets>=13.0
+2025-12-22T00:16:40.3034730Z   Downloading websockets-15.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (181 kB)
+2025-12-22T00:16:40.3086573Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.6/181.6 kB 61.0 MB/s eta 0:00:00
+2025-12-22T00:16:40.6221879Z Collecting pandas>=1.3.0
+2025-12-22T00:16:40.6417208Z   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2025-12-22T00:16:40.7303890Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 148.6 MB/s eta 0:00:00
+2025-12-22T00:16:41.1507414Z Collecting protobuf>=3.19.0
+2025-12-22T00:16:41.1704592Z   Downloading protobuf-6.33.2-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2025-12-22T00:16:41.1763235Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.3/323.3 kB 89.9 MB/s eta 0:00:00
+2025-12-22T00:16:41.3022645Z Collecting curl_cffi>=0.7
+2025-12-22T00:16:41.3496104Z   Downloading curl_cffi-0.14.0-cp39-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (8.7 MB)
+2025-12-22T00:16:41.4101374Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 148.6 MB/s eta 0:00:00
+2025-12-22T00:16:41.4689064Z Collecting platformdirs>=2.0.0
+2025-12-22T00:16:41.4883907Z   Downloading platformdirs-4.5.1-py3-none-any.whl (18 kB)
+2025-12-22T00:16:41.5204940Z Collecting multitasking>=0.0.7
+2025-12-22T00:16:41.5401702Z   Downloading multitasking-0.0.12.tar.gz (19 kB)
+2025-12-22T00:16:41.5462964Z   Preparing metadata (setup.py): started
+2025-12-22T00:16:41.6942824Z   Preparing metadata (setup.py): finished with status 'done'
+2025-12-22T00:16:41.7562708Z Collecting semantic-version==2.10.0
+2025-12-22T00:16:41.7754600Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-12-22T00:16:41.8246107Z Collecting certifi>=2021.5.30
+2025-12-22T00:16:41.8439024Z   Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+2025-12-22T00:16:41.8486422Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 62.9 MB/s eta 0:00:00
+2025-12-22T00:16:41.9293515Z Collecting urllib3<3,>=2.5
+2025-12-22T00:16:41.9492353Z   Downloading urllib3-2.6.2-py3-none-any.whl (131 kB)
+2025-12-22T00:16:41.9536908Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.2/131.2 kB 55.0 MB/s eta 0:00:00
+2025-12-22T00:16:42.4514015Z Collecting cryptography>=38.0.3
+2025-12-22T00:16:42.4712252Z   Downloading cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-12-22T00:16:42.5025700Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 153.8 MB/s eta 0:00:00
+2025-12-22T00:16:42.5484316Z Collecting jsons>=1.6.3
+2025-12-22T00:16:42.5735900Z   Downloading jsons-1.6.3-py3-none-any.whl (60 kB)
+2025-12-22T00:16:42.5774692Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 kB 27.1 MB/s eta 0:00:00
+2025-12-22T00:16:43.8796640Z Collecting aiohttp>=3.8.1
+2025-12-22T00:16:43.8994820Z   Downloading aiohttp-3.13.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-12-22T00:16:43.9142620Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 133.4 MB/s eta 0:00:00
+2025-12-22T00:16:43.9530230Z Collecting scapy>=2.5.0
+2025-12-22T00:16:43.9730307Z   Downloading scapy-2.6.1-py3-none-any.whl (2.4 MB)
+2025-12-22T00:16:43.9918867Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 148.3 MB/s eta 0:00:00
+2025-12-22T00:16:44.0585947Z Collecting exceptiongroup>=1
+2025-12-22T00:16:44.0775260Z   Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+2025-12-22T00:16:44.1094458Z Collecting iniconfig>=1.0.1
+2025-12-22T00:16:44.1287202Z   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+2025-12-22T00:16:44.1774157Z Collecting tomli>=1
+2025-12-22T00:16:44.1966086Z   Downloading tomli-2.3.0-py3-none-any.whl (14 kB)
+2025-12-22T00:16:44.2485456Z Collecting pygments>=2.7.2
+2025-12-22T00:16:44.2682649Z   Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-12-22T00:16:44.2798844Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 129.9 MB/s eta 0:00:00
+2025-12-22T00:16:44.3217112Z Collecting pluggy<2,>=1.5
+2025-12-22T00:16:44.3416680Z   Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+2025-12-22T00:16:44.3895027Z Collecting packaging>=22
+2025-12-22T00:16:44.4088530Z   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2025-12-22T00:16:44.4125840Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 31.8 MB/s eta 0:00:00
+2025-12-22T00:16:44.7447310Z Collecting greenlet<4.0.0,>=3.1.1
+2025-12-22T00:16:44.7651173Z   Downloading greenlet-3.3.0-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (586 kB)
+2025-12-22T00:16:44.7728370Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 586.9/586.9 kB 110.6 MB/s eta 0:00:00
+2025-12-22T00:16:44.8155072Z Collecting pyee<14,>=13
+2025-12-22T00:16:44.8366648Z   Downloading pyee-13.0.0-py3-none-any.whl (15 kB)
+2025-12-22T00:16:44.8933819Z Collecting pytest-base-url<3.0.0,>=1.0.0
+2025-12-22T00:16:44.9127162Z   Downloading pytest_base_url-2.1.0-py3-none-any.whl (5.3 kB)
+2025-12-22T00:16:44.9527951Z Collecting python-slugify<9.0.0,>=6.0.0
+2025-12-22T00:16:44.9718473Z   Downloading python_slugify-8.0.4-py2.py3-none-any.whl (10 kB)
+2025-12-22T00:16:45.0347505Z Collecting idna<4,>=2.5
+2025-12-22T00:16:45.0538125Z   Downloading idna-3.11-py3-none-any.whl (71 kB)
+2025-12-22T00:16:45.0577104Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 32.7 MB/s eta 0:00:00
+2025-12-22T00:16:45.2681844Z Collecting charset_normalizer<4,>=2
+2025-12-22T00:16:45.2875938Z   Downloading charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+2025-12-22T00:16:45.2921623Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.6/153.6 kB 59.6 MB/s eta 0:00:00
+2025-12-22T00:16:45.9605271Z Collecting multidict<7.0,>=4.5
+2025-12-22T00:16:45.9803256Z   Downloading multidict-6.7.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (241 kB)
+2025-12-22T00:16:45.9925042Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.7/241.7 kB 82.7 MB/s eta 0:00:00
+2025-12-22T00:16:46.1706540Z Collecting frozenlist>=1.1.1
+2025-12-22T00:16:46.1899688Z   Downloading frozenlist-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+2025-12-22T00:16:46.1952215Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.5/219.5 kB 73.9 MB/s eta 0:00:00
+2025-12-22T00:16:46.2268265Z Collecting aiosignal>=1.4.0
+2025-12-22T00:16:46.2460460Z   Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2025-12-22T00:16:46.2925995Z Collecting aiohappyeyeballs>=2.5.0
+2025-12-22T00:16:46.3121309Z   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+2025-12-22T00:16:46.3556696Z Collecting attrs>=17.3.0
+2025-12-22T00:16:46.3751477Z   Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+2025-12-22T00:16:46.3789784Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.6/67.6 kB 31.1 MB/s eta 0:00:00
+2025-12-22T00:16:46.5236307Z Collecting propcache>=0.2.0
+2025-12-22T00:16:46.5428057Z   Downloading propcache-0.4.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+2025-12-22T00:16:46.5477489Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.9/196.9 kB 71.7 MB/s eta 0:00:00
+2025-12-22T00:16:47.2002400Z Collecting yarl<2.0,>=1.17.0
+2025-12-22T00:16:47.2200060Z   Downloading yarl-1.22.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (346 kB)
+2025-12-22T00:16:47.2262613Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.0/347.0 kB 93.3 MB/s eta 0:00:00
+2025-12-22T00:16:47.2630996Z Collecting async-timeout<6.0,>=4.0
+2025-12-22T00:16:47.2823758Z   Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+2025-12-22T00:16:47.3368054Z Collecting soupsieve>=1.6.1
+2025-12-22T00:16:47.3560551Z   Downloading soupsieve-2.8.1-py3-none-any.whl (36 kB)
+2025-12-22T00:16:47.6632945Z Collecting cffi>=2.0.0
+2025-12-22T00:16:47.6830091Z   Downloading cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+2025-12-22T00:16:47.6884365Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.5/216.5 kB 73.5 MB/s eta 0:00:00
+2025-12-22T00:16:47.9805624Z Collecting MarkupSafe>=2.0
+2025-12-22T00:16:48.0000006Z   Downloading markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+2025-12-22T00:16:48.0432288Z Collecting typish>=1.9.2
+2025-12-22T00:16:48.0629649Z   Downloading typish-1.9.3-py3-none-any.whl (45 kB)
+2025-12-22T00:16:48.0667034Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.1/45.1 kB 21.5 MB/s eta 0:00:00
+2025-12-22T00:16:48.1979201Z Collecting tzdata>=2022.7
+2025-12-22T00:16:48.2177459Z   Downloading tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+2025-12-22T00:16:48.2234904Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.5/348.5 kB 94.9 MB/s eta 0:00:00
+2025-12-22T00:16:48.2649449Z Collecting python-dateutil>=2.8.2
+2025-12-22T00:16:48.2842395Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-12-22T00:16:48.2896554Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 73.5 MB/s eta 0:00:00
+2025-12-22T00:16:48.4198656Z Collecting text-unidecode>=1.3
+2025-12-22T00:16:48.4391039Z   Downloading text_unidecode-1.3-py2.py3-none-any.whl (78 kB)
+2025-12-22T00:16:48.4431330Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.2/78.2 kB 34.3 MB/s eta 0:00:00
+2025-12-22T00:16:48.5564342Z Collecting pycparser
+2025-12-22T00:16:48.5766360Z   Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+2025-12-22T00:16:48.5823910Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.1/118.1 kB 30.2 MB/s eta 0:00:00
+2025-12-22T00:16:48.6505917Z Collecting six>=1.5
+2025-12-22T00:16:48.6698111Z   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-12-22T00:16:48.7415127Z Building wheels for collected packages: peewee
+2025-12-22T00:16:48.7424343Z   Building wheel for peewee (pyproject.toml): started
+2025-12-22T00:17:00.6160318Z   Building wheel for peewee (pyproject.toml): finished with status 'done'
+2025-12-22T00:17:00.6174409Z   Created wheel for peewee: filename=peewee-3.18.3-cp310-cp310-linux_x86_64.whl size=988830 sha256=f07a8f830058dd1ec4cbc110d1f1a9d2c03dbb462749221e99165f886c571e54
+2025-12-22T00:17:00.6177869Z   Stored in directory: /home/runner/.cache/pip/wheels/3d/96/39/80c50cbf6bd446cdca9dac7d78a1a0d3a1f313859500529f8d
+2025-12-22T00:17:00.6199434Z Successfully built peewee
+2025-12-22T00:17:01.0225941Z Installing collected packages: typish, text-unidecode, pytz, pyttsx3, pypng, peewee, multitasking, websockets, urllib3, tzdata, typing-extensions, tomli, soupsieve, six, semantic-version, scapy, python-slugify, python-dotenv, pygments, pycparser, protobuf, propcache, pluggy, platformdirs, Pillow, packaging, numpy, MarkupSafe, jsons, itsdangerous, iniconfig, idna, greenlet, frozenlist, frozendict, click, charset_normalizer, certifi, blinker, attrs, async-timeout, aiohappyeyeballs, Werkzeug, requests, qrcode, python-dateutil, pyee, multidict, Jinja2, exceptiongroup, cffi, beautifulsoup4, aiosignal, yarl, pytest, playwright, pandas, Flask, curl_cffi, cryptography, yfinance, pytest-mock, pytest-base-url, aiohttp, pytest-playwright, plugp100
+2025-12-22T00:17:01.3458812Z   DEPRECATION: multitasking is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+2025-12-22T00:17:01.3461072Z   Running setup.py install for multitasking: started
+2025-12-22T00:17:01.5440326Z   Running setup.py install for multitasking: finished with status 'done'
+2025-12-22T00:17:12.5641361Z Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Pillow-12.0.0 Werkzeug-3.1.4 aiohappyeyeballs-2.6.1 aiohttp-3.13.2 aiosignal-1.4.0 async-timeout-5.0.1 attrs-25.4.0 beautifulsoup4-4.14.3 blinker-1.9.0 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 cryptography-46.0.3 curl_cffi-0.14.0 exceptiongroup-1.3.1 frozendict-2.4.7 frozenlist-1.8.0 greenlet-3.3.0 idna-3.11 iniconfig-2.3.0 itsdangerous-2.2.0 jsons-1.6.3 multidict-6.7.0 multitasking-0.0.12 numpy-2.2.6 packaging-25.0 pandas-2.3.3 peewee-3.18.3 platformdirs-4.5.1 playwright-1.57.0 pluggy-1.6.0 plugp100-5.1.5 propcache-0.4.1 protobuf-6.33.2 pycparser-2.23 pyee-13.0.0 pygments-2.19.2 pypng-0.20220715.0 pytest-9.0.2 pytest-base-url-2.1.0 pytest-mock-3.15.1 pytest-playwright-0.7.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.1 python-slugify-8.0.4 pyttsx3-2.90 pytz-2025.2 qrcode-7.4.2 requests-2.32.5 scapy-2.6.1 semantic-version-2.10.0 six-1.17.0 soupsieve-2.8.1 text-unidecode-1.3 tomli-2.3.0 typing-extensions-4.15.0 typish-1.9.3 tzdata-2025.3 urllib3-2.6.2 websockets-15.0.1 yarl-1.22.0 yfinance-0.2.66
+2025-12-22T00:17:12.6298792Z 
+2025-12-22T00:17:12.6299565Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-22T00:17:12.6300134Z [notice] To update, run: pip install --upgrade pip
+2025-12-22T00:17:13.5164523Z Requirement already satisfied: playwright in ./venv/lib/python3.10/site-packages (1.57.0)
+2025-12-22T00:17:13.5168631Z Requirement already satisfied: pytest-playwright in ./venv/lib/python3.10/site-packages (0.7.2)
+2025-12-22T00:17:13.5172365Z Requirement already satisfied: requests in ./venv/lib/python3.10/site-packages (2.32.5)
+2025-12-22T00:17:13.5176558Z Requirement already satisfied: pytest-mock in ./venv/lib/python3.10/site-packages (3.15.1)
+2025-12-22T00:17:13.5204309Z Requirement already satisfied: greenlet<4.0.0,>=3.1.1 in ./venv/lib/python3.10/site-packages (from playwright) (3.3.0)
+2025-12-22T00:17:13.5211961Z Requirement already satisfied: pyee<14,>=13 in ./venv/lib/python3.10/site-packages (from playwright) (13.0.0)
+2025-12-22T00:17:13.5260359Z Requirement already satisfied: pytest<10.0.0,>=6.2.4 in ./venv/lib/python3.10/site-packages (from pytest-playwright) (9.0.2)
+2025-12-22T00:17:13.5268711Z Requirement already satisfied: pytest-base-url<3.0.0,>=1.0.0 in ./venv/lib/python3.10/site-packages (from pytest-playwright) (2.1.0)
+2025-12-22T00:17:13.5276344Z Requirement already satisfied: python-slugify<9.0.0,>=6.0.0 in ./venv/lib/python3.10/site-packages (from pytest-playwright) (8.0.4)
+2025-12-22T00:17:13.5337855Z Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.10/site-packages (from requests) (3.11)
+2025-12-22T00:17:13.5346640Z Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.10/site-packages (from requests) (3.4.4)
+2025-12-22T00:17:13.5353195Z Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.10/site-packages (from requests) (2.6.2)
+2025-12-22T00:17:13.5360006Z Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.10/site-packages (from requests) (2025.11.12)
+2025-12-22T00:17:13.5649365Z Requirement already satisfied: typing-extensions in ./venv/lib/python3.10/site-packages (from pyee<14,>=13->playwright) (4.15.0)
+2025-12-22T00:17:13.5770345Z Requirement already satisfied: packaging>=22 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (25.0)
+2025-12-22T00:17:13.5779175Z Requirement already satisfied: pluggy<2,>=1.5 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (1.6.0)
+2025-12-22T00:17:13.5786005Z Requirement already satisfied: iniconfig>=1.0.1 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (2.3.0)
+2025-12-22T00:17:13.5797168Z Requirement already satisfied: exceptiongroup>=1 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (1.3.1)
+2025-12-22T00:17:13.5809900Z Requirement already satisfied: tomli>=1 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (2.3.0)
+2025-12-22T00:17:13.5816722Z Requirement already satisfied: pygments>=2.7.2 in ./venv/lib/python3.10/site-packages (from pytest<10.0.0,>=6.2.4->pytest-playwright) (2.19.2)
+2025-12-22T00:17:13.5906759Z Requirement already satisfied: text-unidecode>=1.3 in ./venv/lib/python3.10/site-packages (from python-slugify<9.0.0,>=6.0.0->pytest-playwright) (1.3)
+2025-12-22T00:17:13.9596521Z 
+2025-12-22T00:17:13.9596994Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-22T00:17:13.9597395Z [notice] To update, run: pip install --upgrade pip
+2025-12-22T00:17:14.3189621Z Downloading Chromium 143.0.7499.4 (playwright build v1200) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1200/chromium-linux.zip
+2025-12-22T00:17:14.4161436Z (node:3051) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-22T00:17:14.4163008Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-22T00:17:14.5276329Z |                                                                                |   0% of 164.7 MiB
+2025-12-22T00:17:14.6831718Z |■■■■■■■■                                                                        |  10% of 164.7 MiB
+2025-12-22T00:17:14.7707445Z |■■■■■■■■■■■■■■■■                                                                |  20% of 164.7 MiB
+2025-12-22T00:17:14.8632145Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 164.7 MiB
+2025-12-22T00:17:14.9330489Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 164.7 MiB
+2025-12-22T00:17:14.9997347Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 164.7 MiB
+2025-12-22T00:17:15.0595032Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 164.7 MiB
+2025-12-22T00:17:15.1190744Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 164.7 MiB
+2025-12-22T00:17:15.1790439Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 164.7 MiB
+2025-12-22T00:17:15.2549871Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 164.7 MiB
+2025-12-22T00:17:15.3210073Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 164.7 MiB
+2025-12-22T00:17:17.7920349Z Chromium 143.0.7499.4 (playwright build v1200) downloaded to /home/runner/.cache/ms-playwright/chromium-1200
+2025-12-22T00:17:17.7924424Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2025-12-22T00:17:17.8884980Z (node:3064) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-22T00:17:17.8886634Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-22T00:17:17.9881357Z |                                                                                |   0% of 2.3 MiB
+2025-12-22T00:17:18.0307022Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2025-12-22T00:17:18.0489803Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2025-12-22T00:17:18.0594154Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2025-12-22T00:17:18.0653304Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2025-12-22T00:17:18.0690816Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2025-12-22T00:17:18.0766010Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2025-12-22T00:17:18.0785705Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2025-12-22T00:17:18.0833644Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2025-12-22T00:17:18.0850967Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2025-12-22T00:17:18.0867747Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2025-12-22T00:17:18.1417131Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2025-12-22T00:17:18.1420654Z Downloading Chromium Headless Shell 143.0.7499.4 (playwright build v1200) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1200/chromium-headless-shell-linux.zip
+2025-12-22T00:17:18.2425718Z (node:3075) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-22T00:17:18.2426928Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-22T00:17:18.3502837Z |                                                                                |   0% of 109.7 MiB
+2025-12-22T00:17:18.4803048Z |■■■■■■■■                                                                        |  10% of 109.7 MiB
+2025-12-22T00:17:18.5332568Z |■■■■■■■■■■■■■■■■                                                                |  20% of 109.7 MiB
+2025-12-22T00:17:18.5859691Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 109.7 MiB
+2025-12-22T00:17:18.6311640Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 109.7 MiB
+2025-12-22T00:17:18.6767941Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 109.7 MiB
+2025-12-22T00:17:18.7306030Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 109.7 MiB
+2025-12-22T00:17:18.7663793Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 109.7 MiB
+2025-12-22T00:17:18.8150605Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 109.7 MiB
+2025-12-22T00:17:18.8614223Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 109.7 MiB
+2025-12-22T00:17:18.8982620Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 109.7 MiB
+2025-12-22T00:17:20.7163704Z Chromium Headless Shell 143.0.7499.4 (playwright build v1200) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1200
+2025-12-22T00:17:20.7370264Z ##[group]Run source venv/bin/activate
+2025-12-22T00:17:20.7370578Z [36;1msource venv/bin/activate[0m
+2025-12-22T00:17:20.7370822Z [36;1m# 啟動 app.py 並在背景執行，測試完成後由腳本殺掉[0m
+2025-12-22T00:17:20.7371073Z [36;1mpython tests/run_e2e_ci.py[0m
+2025-12-22T00:17:20.7405333Z shell: /usr/bin/bash -e {0}
+2025-12-22T00:17:20.7405547Z env:
+2025-12-22T00:17:20.7405779Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:17:20.7406174Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-22T00:17:20.7406775Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:17:20.7407131Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:17:20.7407469Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-22T00:17:20.7407806Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-22T00:17:20.7408093Z   SIMULATION_MODE: true
+2025-12-22T00:17:20.7408279Z ##[endgroup]
+2025-12-22T00:17:21.9155854Z 🚀 Starting SmartStockLight in Headless Mode...
+2025-12-22T00:17:21.9156852Z TTS 初始化失敗 (將改用系統原生語音): libespeak.so.1: cannot open shared object file: No such file or directory
+2025-12-22T00:17:21.9157574Z StockMonitor 已啟動。
+2025-12-22T00:17:21.9157938Z [模擬模式] 點亮顏色: 黃色
+2025-12-22T00:17:21.9158378Z ✅ System is up and running. Press Ctrl+C to stop.
+2025-12-22T00:17:21.9158856Z  * Serving Flask app 'web_server'
+2025-12-22T00:17:21.9159218Z  * Debug mode: off
+2025-12-22T00:17:21.9168042Z [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-12-22T00:17:21.9168860Z  * Running on all addresses (0.0.0.0)
+2025-12-22T00:17:21.9169167Z  * Running on http://127.0.0.1:5001
+2025-12-22T00:17:21.9169441Z  * Running on http://10.1.0.28:5001
+2025-12-22T00:17:21.9169734Z [33mPress CTRL+C to quit[0m
+2025-12-22T00:17:32.5513693Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:32.5973650Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "GET / HTTP/1.1" 200 -
+2025-12-22T00:17:32.7043649Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:32.7049825Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:32.7058126Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "GET /api/market_status HTTP/1.1" 200 -
+2025-12-22T00:17:32.9580229Z 127.0.0.1 - - [22/Dec/2025 00:17:32] "GET / HTTP/1.1" 200 -
+2025-12-22T00:17:33.0372884Z 127.0.0.1 - - [22/Dec/2025 00:17:33] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:33.0381680Z 127.0.0.1 - - [22/Dec/2025 00:17:33] "GET /api/market_status HTTP/1.1" 200 -
+2025-12-22T00:17:33.0390057Z 127.0.0.1 - - [22/Dec/2025 00:17:33] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:38.0376797Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:38.1465356Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "POST /api/config HTTP/1.1" 200 -
+2025-12-22T00:17:38.1614456Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:38.2988867Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET / HTTP/1.1" 200 -
+2025-12-22T00:17:38.3847042Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:38.3852873Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:38.3866623Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/market_status HTTP/1.1" 200 -
+2025-12-22T00:17:38.6134410Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "POST /api/config HTTP/1.1" 200 -
+2025-12-22T00:17:38.6256240Z 127.0.0.1 - - [22/Dec/2025 00:17:38] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:40.6180428Z 127.0.0.1 - - [22/Dec/2025 00:17:40] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:42.2448211Z 127.0.0.1 - - [22/Dec/2025 00:17:42] "POST /api/demo_alert HTTP/1.1" 200 -
+2025-12-22T00:17:43.3848134Z 127.0.0.1 - - [22/Dec/2025 00:17:43] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:43.6239765Z 127.0.0.1 - - [22/Dec/2025 00:17:43] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:48.3847922Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:48.5245375Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "GET / HTTP/1.1" 200 -
+2025-12-22T00:17:48.6024838Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:48.6032271Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "GET /api/market_status HTTP/1.1" 200 -
+2025-12-22T00:17:48.6040466Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:48.7623215Z 127.0.0.1 - - [22/Dec/2025 00:17:48] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:49.9667398Z 127.0.0.1 - - [22/Dec/2025 00:17:49] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:51.1707447Z 127.0.0.1 - - [22/Dec/2025 00:17:51] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:52.3749666Z 127.0.0.1 - - [22/Dec/2025 00:17:52] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:53.5790126Z 127.0.0.1 - - [22/Dec/2025 00:17:53] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:53.6027963Z 127.0.0.1 - - [22/Dec/2025 00:17:53] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:54.7830126Z 127.0.0.1 - - [22/Dec/2025 00:17:54] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:55.9871371Z 127.0.0.1 - - [22/Dec/2025 00:17:55] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:57.2522798Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "GET / HTTP/1.1" 200 -
+2025-12-22T00:17:57.3311465Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "GET /api/market_status HTTP/1.1" 200 -
+2025-12-22T00:17:57.3319843Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:17:57.3327216Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:17:57.5458613Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "POST /api/config HTTP/1.1" 200 -
+2025-12-22T00:17:57.5503079Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:17:57.5582351Z 127.0.0.1 - - [22/Dec/2025 00:17:57] "GET /api/market_data HTTP/1.1" 200 -
+2025-12-22T00:18:02.3315906Z 127.0.0.1 - - [22/Dec/2025 00:18:02] "GET /api/logs HTTP/1.1" 200 -
+2025-12-22T00:18:02.4233223Z 127.0.0.1 - - [22/Dec/2025 00:18:02] "POST /api/simulate_data HTTP/1.1" 200 -
+2025-12-22T00:18:02.5322795Z 🚀 正在啟動伺服器進行端到端測試...
+2025-12-22T00:18:02.5323274Z 🧪 正在執行 Playwright UI 測試...
+2025-12-22T00:18:02.5323925Z ============================= test session starts ==============================
+2025-12-22T00:18:02.5324507Z platform linux -- Python 3.10.19, pytest-9.0.2, pluggy-1.6.0
+2025-12-22T00:18:02.5325142Z rootdir: /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-22T00:18:02.5325615Z configfile: pyproject.toml
+2025-12-22T00:18:02.5326009Z plugins: base-url-2.1.0, playwright-0.7.2, mock-3.15.1
+2025-12-22T00:18:02.5326408Z collected 5 items
+2025-12-22T00:18:02.5326590Z 
+2025-12-22T00:18:02.5326837Z tests/test_ui.py .....                                                   [100%]
+2025-12-22T00:18:02.5327168Z 
+2025-12-22T00:18:02.5327357Z ============================== 5 passed in 31.16s ==============================
+2025-12-22T00:18:02.5327659Z 
+2025-12-22T00:18:02.5327814Z ✅ 測試全部通過！
+2025-12-22T00:18:02.5328090Z 🛑 正在停止伺服器...
+2025-12-22T00:18:02.5423011Z Post job cleanup.
+2025-12-22T00:18:02.7054201Z Post job cleanup.
+2025-12-22T00:18:02.7989810Z [command]/usr/bin/git version
+2025-12-22T00:18:02.8025240Z git version 2.52.0
+2025-12-22T00:18:02.8067750Z Temporarily overriding HOME='/home/runner/work/_temp/ca2c6520-bc51-4ae4-86cc-0883b7017b16' before making global git config changes
+2025-12-22T00:18:02.8068966Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-22T00:18:02.8073659Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-22T00:18:02.8108384Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-22T00:18:02.8140055Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-22T00:18:02.8366516Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-22T00:18:02.8389498Z http.https://github.com/.extraheader
+2025-12-22T00:18:02.8402704Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-22T00:18:02.8435623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-22T00:18:02.8678000Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-22T00:18:02.8711229Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-22T00:18:02.9059373Z Cleaning up orphan processes

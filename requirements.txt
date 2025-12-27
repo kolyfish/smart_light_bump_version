@@ -1,0 +1,15 @@
+Flask==3.0.0
+yfinance>=0.2.66
+qrcode==7.4.2
+Pillow>=10.4.0
+plugp100>=4.0.0
+pyttsx3==2.90
+python-dotenv
+pyobjc>=10.0; sys_platform == 'darwin'
+pytest
+pytest-mock
+playwright
+pytest-playwright
+requests
+websocket-client>=1.6.0
+pywebview>=4.4.1

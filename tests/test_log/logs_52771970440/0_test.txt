@@ -1,0 +1,313 @@
+﻿2025-12-21T15:58:11.3098751Z Current runner version: '2.330.0'
+2025-12-21T15:58:11.3122556Z ##[group]Runner Image Provisioner
+2025-12-21T15:58:11.3123332Z Hosted Compute Agent
+2025-12-21T15:58:11.3123793Z Version: 20251211.462
+2025-12-21T15:58:11.3124343Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-21T15:58:11.3124945Z Build Date: 2025-12-11T16:28:49Z
+2025-12-21T15:58:11.3125546Z Worker ID: {167246ff-04e5-453c-aac6-f13537b2c765}
+2025-12-21T15:58:11.3126126Z ##[endgroup]
+2025-12-21T15:58:11.3126604Z ##[group]Operating System
+2025-12-21T15:58:11.3127110Z Ubuntu
+2025-12-21T15:58:11.3127500Z 24.04.3
+2025-12-21T15:58:11.3127918Z LTS
+2025-12-21T15:58:11.3128300Z ##[endgroup]
+2025-12-21T15:58:11.3128752Z ##[group]Runner Image
+2025-12-21T15:58:11.3129171Z Image: ubuntu-24.04
+2025-12-21T15:58:11.3129795Z Version: 20251215.174.1
+2025-12-21T15:58:11.3130655Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-21T15:58:11.3132159Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-21T15:58:11.3133012Z ##[endgroup]
+2025-12-21T15:58:11.3133950Z ##[group]GITHUB_TOKEN Permissions
+2025-12-21T15:58:11.3136582Z Contents: read
+2025-12-21T15:58:11.3137038Z Metadata: read
+2025-12-21T15:58:11.3137561Z Packages: read
+2025-12-21T15:58:11.3138057Z ##[endgroup]
+2025-12-21T15:58:11.3140392Z Secret source: Actions
+2025-12-21T15:58:11.3141368Z Prepare workflow directory
+2025-12-21T15:58:11.3550014Z Prepare all required actions
+2025-12-21T15:58:11.3623064Z Getting action download info
+2025-12-21T15:58:11.6465546Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-21T15:58:11.7782792Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-12-21T15:58:11.9448893Z Complete job name: test
+2025-12-21T15:58:12.0050638Z ##[group]Run actions/checkout@v4
+2025-12-21T15:58:12.0051823Z with:
+2025-12-21T15:58:12.0052322Z   repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:58:12.0053076Z   token: ***
+2025-12-21T15:58:12.0053503Z   ssh-strict: true
+2025-12-21T15:58:12.0053918Z   ssh-user: git
+2025-12-21T15:58:12.0054369Z   persist-credentials: true
+2025-12-21T15:58:12.0054837Z   clean: true
+2025-12-21T15:58:12.0055292Z   sparse-checkout-cone-mode: true
+2025-12-21T15:58:12.0055758Z   fetch-depth: 1
+2025-12-21T15:58:12.0056169Z   fetch-tags: false
+2025-12-21T15:58:12.0056597Z   show-progress: true
+2025-12-21T15:58:12.0057001Z   lfs: false
+2025-12-21T15:58:12.0057425Z   submodules: false
+2025-12-21T15:58:12.0057815Z   set-safe-directory: true
+2025-12-21T15:58:12.0058618Z ##[endgroup]
+2025-12-21T15:58:12.1052964Z Syncing repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:58:12.1054793Z ##[group]Getting Git version info
+2025-12-21T15:58:12.1055772Z Working directory is '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:58:12.1056862Z [command]/usr/bin/git version
+2025-12-21T15:58:12.1107336Z git version 2.52.0
+2025-12-21T15:58:12.1129130Z ##[endgroup]
+2025-12-21T15:58:12.1149296Z Temporarily overriding HOME='/home/runner/work/_temp/62f6690e-299e-44d6-9ccc-43f1e272c545' before making global git config changes
+2025-12-21T15:58:12.1150878Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T15:58:12.1154201Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:58:12.1191027Z Deleting the contents of '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:58:12.1193823Z ##[group]Initializing the repository
+2025-12-21T15:58:12.1197576Z [command]/usr/bin/git init /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:58:12.1305727Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-21T15:58:12.1307819Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-21T15:58:12.1310048Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-21T15:58:12.1311751Z hint: call:
+2025-12-21T15:58:12.1312367Z hint:
+2025-12-21T15:58:12.1313252Z hint: 	git config --global init.defaultBranch <name>
+2025-12-21T15:58:12.1314175Z hint:
+2025-12-21T15:58:12.1315166Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-21T15:58:12.1316570Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-21T15:58:12.1317775Z hint:
+2025-12-21T15:58:12.1318422Z hint: 	git branch -m <name>
+2025-12-21T15:58:12.1319149Z hint:
+2025-12-21T15:58:12.1320455Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-21T15:58:12.1322180Z Initialized empty Git repository in /home/runner/work/Smart_Stock_Light/Smart_Stock_Light/.git/
+2025-12-21T15:58:12.1325102Z [command]/usr/bin/git remote add origin https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:58:12.1351796Z ##[endgroup]
+2025-12-21T15:58:12.1353056Z ##[group]Disabling automatic garbage collection
+2025-12-21T15:58:12.1356347Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-21T15:58:12.1380690Z ##[endgroup]
+2025-12-21T15:58:12.1381954Z ##[group]Setting up auth
+2025-12-21T15:58:12.1387880Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T15:58:12.1413368Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T15:58:12.1700774Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T15:58:12.1725937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T15:58:12.1897742Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T15:58:12.1927461Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T15:58:12.2112829Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-21T15:58:12.2140224Z ##[endgroup]
+2025-12-21T15:58:12.2140966Z ##[group]Fetching the repository
+2025-12-21T15:58:12.2148214Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f624461e26183197ab083c531237be6d8074b0e4:refs/remotes/origin/main
+2025-12-21T15:58:12.5123574Z From https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:58:12.5124648Z  * [new ref]         f624461e26183197ab083c531237be6d8074b0e4 -> origin/main
+2025-12-21T15:58:12.5149996Z ##[endgroup]
+2025-12-21T15:58:12.5150611Z ##[group]Determining the checkout info
+2025-12-21T15:58:12.5152198Z ##[endgroup]
+2025-12-21T15:58:12.5156842Z [command]/usr/bin/git sparse-checkout disable
+2025-12-21T15:58:12.5192957Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-21T15:58:12.5215102Z ##[group]Checking out the ref
+2025-12-21T15:58:12.5219580Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-21T15:58:12.5295558Z Switched to a new branch 'main'
+2025-12-21T15:58:12.5296728Z branch 'main' set up to track 'origin/main'.
+2025-12-21T15:58:12.5302960Z ##[endgroup]
+2025-12-21T15:58:12.5330722Z [command]/usr/bin/git log -1 --format=%H
+2025-12-21T15:58:12.5348110Z f624461e26183197ab083c531237be6d8074b0e4
+2025-12-21T15:58:12.5547343Z ##[group]Run actions/setup-python@v5
+2025-12-21T15:58:12.5547794Z with:
+2025-12-21T15:58:12.5548111Z   python-version: 3.10
+2025-12-21T15:58:12.5548457Z   check-latest: false
+2025-12-21T15:58:12.5548935Z   token: ***
+2025-12-21T15:58:12.5549250Z   update-environment: true
+2025-12-21T15:58:12.5549898Z   allow-prereleases: false
+2025-12-21T15:58:12.5550289Z   freethreaded: false
+2025-12-21T15:58:12.5550640Z ##[endgroup]
+2025-12-21T15:58:12.7123934Z ##[group]Installed versions
+2025-12-21T15:58:12.7214262Z Successfully set up CPython (3.10.19)
+2025-12-21T15:58:12.7215373Z ##[endgroup]
+2025-12-21T15:58:12.7315665Z ##[group]Run python -m venv venv
+2025-12-21T15:58:12.7316201Z [36;1mpython -m venv venv[0m
+2025-12-21T15:58:12.7316611Z [36;1msource venv/bin/activate[0m
+2025-12-21T15:58:12.7317056Z [36;1m# 跳過 pip 升級，避免觸發 azure 套件解析錯誤[0m
+2025-12-21T15:58:12.7317660Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T15:58:12.7318313Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T15:58:12.7318947Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T15:58:12.7319746Z [36;1mplaywright install chromium[0m
+2025-12-21T15:58:12.7352692Z shell: /usr/bin/bash -e {0}
+2025-12-21T15:58:12.7353136Z env:
+2025-12-21T15:58:12.7353605Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7354294Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T15:58:12.7354995Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7355641Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7356251Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7356854Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T15:58:12.7357354Z ##[endgroup]
+2025-12-21T15:58:16.4196637Z Collecting Flask==3.0.0
+2025-12-21T15:58:16.4558702Z   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+2025-12-21T15:58:16.4791008Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 4.5 MB/s eta 0:00:00
+2025-12-21T15:58:16.5274543Z Collecting yfinance>=0.2.66
+2025-12-21T15:58:16.5316100Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl (123 kB)
+2025-12-21T15:58:16.6891545Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 kB 731.1 kB/s eta 0:00:00
+2025-12-21T15:58:16.7550864Z Collecting qrcode==7.4.2
+2025-12-21T15:58:16.7588571Z   Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+2025-12-21T15:58:17.1823080Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 85.5 kB/s eta 0:00:00
+2025-12-21T15:58:17.5849209Z Collecting Pillow>=10.4.0
+2025-12-21T15:58:17.5890491Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+2025-12-21T15:58:18.0327716Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 15.9 MB/s eta 0:00:00
+2025-12-21T15:58:18.1065537Z Collecting plugp100>=4.0.0
+2025-12-21T15:58:18.1113194Z   Downloading plugp100-5.1.5-py3-none-any.whl (103 kB)
+2025-12-21T15:58:18.1155144Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 kB 48.9 MB/s eta 0:00:00
+2025-12-21T15:58:18.1366333Z Collecting pyttsx3==2.90
+2025-12-21T15:58:18.1446937Z   Downloading pyttsx3-2.90-py3-none-any.whl (39 kB)
+2025-12-21T15:58:18.1709193Z Collecting python-dotenv
+2025-12-21T15:58:18.1749897Z   Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+2025-12-21T15:58:18.2300566Z Collecting pyobjc>=10.0
+2025-12-21T15:58:18.2352622Z   Downloading pyobjc-12.1-py3-none-any.whl (4.2 kB)
+2025-12-21T15:58:18.3110874Z Collecting pytest
+2025-12-21T15:58:18.3151121Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2025-12-21T15:58:18.3206006Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 117.6 MB/s eta 0:00:00
+2025-12-21T15:58:18.3562969Z Collecting pytest-mock
+2025-12-21T15:58:18.3600726Z   Downloading pytest_mock-3.15.1-py3-none-any.whl (10 kB)
+2025-12-21T15:58:18.4373660Z Collecting playwright
+2025-12-21T15:58:18.4448996Z   Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl (46.0 MB)
+2025-12-21T15:58:18.6994999Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 MB 94.2 MB/s eta 0:00:00
+2025-12-21T15:58:18.7724682Z Collecting pytest-playwright
+2025-12-21T15:58:18.7788639Z   Downloading pytest_playwright-0.7.2-py3-none-any.whl (16 kB)
+2025-12-21T15:58:18.8316395Z Collecting requests
+2025-12-21T15:58:18.8354068Z   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-12-21T15:58:18.8392316Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 30.5 MB/s eta 0:00:00
+2025-12-21T15:58:18.8615848Z Collecting itsdangerous>=2.1.2
+2025-12-21T15:58:18.8671114Z   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-12-21T15:58:18.8845406Z Collecting blinker>=1.6.2
+2025-12-21T15:58:18.8882631Z   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-12-21T15:58:18.9186001Z Collecting click>=8.1.3
+2025-12-21T15:58:18.9223445Z   Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2025-12-21T15:58:18.9262786Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 53.0 MB/s eta 0:00:00
+2025-12-21T15:58:18.9725838Z Collecting Werkzeug>=3.0.0
+2025-12-21T15:58:18.9765880Z   Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+2025-12-21T15:58:18.9817939Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 71.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.0061503Z Collecting Jinja2>=3.1.2
+2025-12-21T15:58:19.0099545Z   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-12-21T15:58:19.0142528Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 57.4 MB/s eta 0:00:00
+2025-12-21T15:58:19.0741360Z Collecting typing-extensions
+2025-12-21T15:58:19.0778513Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-12-21T15:58:19.0814465Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 20.8 MB/s eta 0:00:00
+2025-12-21T15:58:19.1030683Z Collecting pypng
+2025-12-21T15:58:19.1071187Z   Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+2025-12-21T15:58:19.1109027Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 25.7 MB/s eta 0:00:00
+2025-12-21T15:58:19.1610845Z Collecting platformdirs>=2.0.0
+2025-12-21T15:58:19.1648911Z   Downloading platformdirs-4.5.1-py3-none-any.whl (18 kB)
+2025-12-21T15:58:19.1932467Z Collecting beautifulsoup4>=4.11.1
+2025-12-21T15:58:19.1971369Z   Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+2025-12-21T15:58:19.2020401Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 50.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.2597638Z Collecting pytz>=2022.5
+2025-12-21T15:58:19.2645040Z   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-12-21T15:58:19.2718771Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 105.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.3735054Z Collecting frozendict>=2.3.4
+2025-12-21T15:58:19.3780555Z   Downloading frozendict-2.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (120 kB)
+2025-12-21T15:58:19.3824399Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.2/120.2 kB 51.5 MB/s eta 0:00:00
+2025-12-21T15:58:19.4877546Z Collecting curl_cffi>=0.7
+2025-12-21T15:58:19.4938730Z   Downloading curl_cffi-0.14.0-cp39-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (8.7 MB)
+2025-12-21T15:58:19.5393459Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 202.1 MB/s eta 0:00:00
+2025-12-21T15:58:19.5628349Z Collecting multitasking>=0.0.7
+2025-12-21T15:58:19.5665225Z   Downloading multitasking-0.0.12.tar.gz (19 kB)
+2025-12-21T15:58:19.5720618Z   Preparing metadata (setup.py): started
+2025-12-21T15:58:19.7362694Z   Preparing metadata (setup.py): finished with status 'done'
+2025-12-21T15:58:19.9274671Z Collecting websockets>=13.0
+2025-12-21T15:58:19.9313660Z   Downloading websockets-15.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (181 kB)
+2025-12-21T15:58:19.9358043Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.6/181.6 kB 76.7 MB/s eta 0:00:00
+2025-12-21T15:58:20.3520068Z Collecting numpy>=1.16.5
+2025-12-21T15:58:20.3560273Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2025-12-21T15:58:20.4392434Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 178.4 MB/s eta 0:00:00
+2025-12-21T15:58:20.7290008Z Collecting pandas>=1.3.0
+2025-12-21T15:58:20.7332264Z   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2025-12-21T15:58:20.7964583Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 199.9 MB/s eta 0:00:00
+2025-12-21T15:58:20.8465760Z Collecting peewee>=3.16.2
+2025-12-21T15:58:20.8511704Z   Downloading peewee-3.18.3.tar.gz (3.0 MB)
+2025-12-21T15:58:20.8840001Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 98.7 MB/s eta 0:00:00
+2025-12-21T15:58:21.0250211Z   Installing build dependencies: started
+2025-12-21T15:58:22.6406214Z   Installing build dependencies: finished with status 'done'
+2025-12-21T15:58:22.6415636Z   Getting requirements to build wheel: started
+2025-12-21T15:58:22.9084595Z   Getting requirements to build wheel: finished with status 'done'
+2025-12-21T15:58:22.9095827Z   Preparing metadata (pyproject.toml): started
+2025-12-21T15:58:23.0972609Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-12-21T15:58:23.4406223Z Collecting protobuf>=3.19.0
+2025-12-21T15:58:23.4445750Z   Downloading protobuf-6.33.2-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2025-12-21T15:58:23.4495264Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.3/323.3 kB 112.5 MB/s eta 0:00:00
+2025-12-21T15:58:23.4892260Z Collecting semantic-version==2.10.0
+2025-12-21T15:58:23.4931417Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-12-21T15:58:23.5122371Z Collecting scapy>=2.5.0
+2025-12-21T15:58:23.5185353Z   Downloading scapy-2.6.1-py3-none-any.whl (2.4 MB)
+2025-12-21T15:58:23.5312525Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 223.8 MB/s eta 0:00:00
+2025-12-21T15:58:23.5864134Z Collecting urllib3<3,>=2.5
+2025-12-21T15:58:23.5898807Z   Downloading urllib3-2.6.2-py3-none-any.whl (131 kB)
+2025-12-21T15:58:23.5940009Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.2/131.2 kB 62.7 MB/s eta 0:00:00
+2025-12-21T15:58:24.0225042Z Collecting cryptography>=38.0.3
+2025-12-21T15:58:24.0270427Z   Downloading cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-12-21T15:58:24.0475934Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 242.2 MB/s eta 0:00:00
+2025-12-21T15:58:24.0765067Z Collecting jsons>=1.6.3
+2025-12-21T15:58:24.0805069Z   Downloading jsons-1.6.3-py3-none-any.whl (60 kB)
+2025-12-21T15:58:24.0841195Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 kB 31.3 MB/s eta 0:00:00
+2025-12-21T15:58:25.2500538Z Collecting aiohttp>=3.8.1
+2025-12-21T15:58:25.2547149Z   Downloading aiohttp-3.13.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-12-21T15:58:25.2648997Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 204.9 MB/s eta 0:00:00
+2025-12-21T15:58:25.2966082Z Collecting certifi>=2021.5.30
+2025-12-21T15:58:25.3012590Z   Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+2025-12-21T15:58:25.3052841Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 78.0 MB/s eta 0:00:00
+2025-12-21T15:58:25.5761371Z Collecting pyobjc-framework-InstallerPlugins==12.1
+2025-12-21T15:58:25.5813458Z   Downloading pyobjc_framework_installerplugins-12.1-py2.py3-none-any.whl (4.8 kB)
+2025-12-21T15:58:25.6277670Z Collecting pyobjc-framework-SyncServices==12.1
+2025-12-21T15:58:25.6327522Z   Downloading pyobjc_framework_syncservices-12.1.tar.gz (31 kB)
+2025-12-21T15:58:25.6435626Z   Installing build dependencies: started
+2025-12-21T15:58:27.0884265Z   Installing build dependencies: finished with status 'done'
+2025-12-21T15:58:27.0891275Z   Getting requirements to build wheel: started
+2025-12-21T15:58:27.3151446Z   Getting requirements to build wheel: finished with status 'error'
+2025-12-21T15:58:27.3206078Z   error: subprocess-exited-with-error
+2025-12-21T15:58:27.3206461Z   
+2025-12-21T15:58:27.3206985Z   × Getting requirements to build wheel did not run successfully.
+2025-12-21T15:58:27.3207334Z   │ exit code: 1
+2025-12-21T15:58:27.3207692Z   ╰─> [27 lines of output]
+2025-12-21T15:58:27.3208037Z       Traceback (most recent call last):
+2025-12-21T15:58:27.3213841Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+2025-12-21T15:58:27.3214647Z           main()
+2025-12-21T15:58:27.3215453Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+2025-12-21T15:58:27.3216235Z           json_out['return_val'] = hook(**hook_input['kwargs'])
+2025-12-21T15:58:27.3217130Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+2025-12-21T15:58:27.3217935Z           return hook(config_settings)
+2025-12-21T15:58:27.3218616Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+2025-12-21T15:58:27.3219517Z           return self._get_build_requires(config_settings, requirements=[])
+2025-12-21T15:58:27.3220321Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+2025-12-21T15:58:27.3220915Z           self.run_setup()
+2025-12-21T15:58:27.3221536Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 317, in run_setup
+2025-12-21T15:58:27.3222444Z           exec(code, locals())
+2025-12-21T15:58:27.3222938Z         File "<string>", line 26, in <module>
+2025-12-21T15:58:27.3223667Z         File "/tmp/pip-install-6o71zmrj/pyobjc-framework-syncservices_df7ae3fee9b84c99a0f096cee124f21b/pyobjc_setup.py", line 552, in setup
+2025-12-21T15:58:27.3224182Z           os_level = get_os_level()
+2025-12-21T15:58:27.3224725Z         File "/tmp/pip-install-6o71zmrj/pyobjc-framework-syncservices_df7ae3fee9b84c99a0f096cee124f21b/pyobjc_setup.py", line 252, in get_os_level
+2025-12-21T15:58:27.3225340Z           subprocess.check_output(["/usr/bin/sw_vers", "-productVersion"])
+2025-12-21T15:58:27.3225862Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 421, in check_output
+2025-12-21T15:58:27.3226340Z           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+2025-12-21T15:58:27.3227106Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 503, in run
+2025-12-21T15:58:27.3227513Z           with Popen(*popenargs, **kwargs) as process:
+2025-12-21T15:58:27.3227957Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 971, in __init__
+2025-12-21T15:58:27.3228406Z           self._execute_child(args, executable, preexec_fn, close_fds,
+2025-12-21T15:58:27.3228880Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 1863, in _execute_child
+2025-12-21T15:58:27.3229506Z           raise child_exception_type(errno_num, err_msg, err_filename)
+2025-12-21T15:58:27.3229893Z       FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/sw_vers'
+2025-12-21T15:58:27.3230218Z       [end of output]
+2025-12-21T15:58:27.3230404Z   
+2025-12-21T15:58:27.3230678Z   note: This error originates from a subprocess, and is likely not a problem with pip.
+2025-12-21T15:58:27.3231173Z error: subprocess-exited-with-error
+2025-12-21T15:58:27.3231335Z 
+2025-12-21T15:58:27.3231608Z × Getting requirements to build wheel did not run successfully.
+2025-12-21T15:58:27.3231923Z │ exit code: 1
+2025-12-21T15:58:27.3232123Z ╰─> See above for output.
+2025-12-21T15:58:27.3232255Z 
+2025-12-21T15:58:27.3232446Z note: This error originates from a subprocess, and is likely not a problem with pip.
+2025-12-21T15:58:27.3743024Z 
+2025-12-21T15:58:27.3743507Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T15:58:27.3743860Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T15:58:27.7097535Z ##[error]Process completed with exit code 1.
+2025-12-21T15:58:27.7195083Z Post job cleanup.
+2025-12-21T15:58:27.8060578Z [command]/usr/bin/git version
+2025-12-21T15:58:27.8092210Z git version 2.52.0
+2025-12-21T15:58:27.8129259Z Temporarily overriding HOME='/home/runner/work/_temp/de6a558e-42fa-43af-b7c7-8039e42e9f64' before making global git config changes
+2025-12-21T15:58:27.8130276Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T15:58:27.8141249Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:58:27.8170913Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T15:58:27.8197527Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T15:58:27.8381997Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T15:58:27.8401025Z http.https://github.com/.extraheader
+2025-12-21T15:58:27.8411379Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-21T15:58:27.8435598Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T15:58:27.8603313Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T15:58:27.8627711Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T15:58:27.8884162Z Cleaning up orphan processes

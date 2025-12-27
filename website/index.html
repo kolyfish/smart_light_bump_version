@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolyfish | 瘋狂工程師與他們的產地</title>
+    <meta name="description" content="我是一個把奇怪想法變成程式碼的工程師。這裡有我的作品、這有賣我的酷東西，還有我的履歷。">
+    <!-- Tailwind CSS (via CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',    /* Slate 900 */
+                        card: '#1e293b',    /* Slate 800 */
+                        primary: '#0ea5e9',   /* Sky 500 */
+                        accent: '#8b5cf6',    /* Violet 500 */
+                        dange: '#ef4444',
+                        shopee: '#ee4d2d'     /* Shopee Brand Color */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .code-bg {
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-slate-200 antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#"
+                class="font-bold text-xl tracking-tight hover:text-white transition-colors flex items-center gap-2">
+                <i class="fas fa-terminal text-primary"></i>
+                <span class="font-mono">KOLYFISH<span class="text-primary">.DEV</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-primary transition-colors">關於我</a>
+                <a href="#projects" class="hover:text-primary transition-colors">軍火庫 (Projects)</a>
+                <a href="#resume" class="hover:text-primary transition-colors">履歷表</a>
+                <a href="https://shopee.tw" target="_blank"
+                    class="px-4 py-2 rounded-full bg-gradient-to-r from-[#ee4d2d] to-[#ff7337] text-white hover:shadow-lg hover:shadow-orange-500/20 transition transform hover:-translate-y-0.5">
+                    <i class="fas fa-shopping-bag mr-1"></i> 逛逛賣場
+                </a>
+            </div>
+
+            <!-- Mobile Menu Btn -->
+            <button class="md:hidden text-2xl text-slate-400 hover:text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden code-bg">
+        <!-- Decoration -->
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/10 rounded-full blur-[100px] animate-pulse"
+            style="animation-delay: 2s"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-mono mb-8 hover:bg-primary/10 transition cursor-default">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                SYSTEM.READY = TRUE
+            </div>
+
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight tracking-tight text-white drop-shadow-2xl">
+                我不只寫程式，<br>
+                <span class="gradient-text">我解決瘋狂的問題。</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+                我是 <strong class="text-white font-semibold">Kolyfish</strong>。一個不想當螺絲釘的工程師。<br>
+                這裡有我的自動化實驗、硬體改造戰績，還有我不該公開的技術筆記。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#projects"
+                    class="px-8 py-4 bg-primary hover:bg-sky-400 text-dark font-bold rounded-xl transition-all hover:scale-105 shadow-[0_0_20px_rgba(14,165,233,0.3)] flex items-center justify-center gap-2">
+                    <i class="fas fa-rocket"></i> 參觀軍火庫
+                </a>
+                <a href="https://www.youtube.com/channel/UCsPtjEYQIO6gUn5KSGUddsQ" target="_blank"
+                    class="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 glow-hover">
+                    <i class="fab fa-youtube text-red-500"></i> 訂閱我的頻道
+                </a>
+            </div>
+
+            <!-- Mouse Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-500">
+                <div class="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center pt-2">
+                    <div class="w-1 h-2 bg-slate-500 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Project (Hero Product) -->
+    <section id="projects" class="py-32 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-4 items-end mb-12 border-b border-white/10 pb-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-white">Project_01</h2>
+                <span class="text-primary font-mono text-xl mb-1">/// SmartStockLight</span>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Visual Side -->
+                <div class="order-2 lg:order-1 relative group perspective-1000">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-500">
+                    </div>
+                    <div
+                        class="relative bg-card rounded-2xl border border-white/10 overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:rotate-y-2 group-hover:scale-[1.01]">
+                        <!-- Video Player (YouTube Shorts Embed) -->
+                        <div class="h-[600px] bg-transparent flex items-center justify-center relative overflow-hidden">
+                            <iframe style="width: 338px; height: 600px; aspect-ratio: 9/16;"
+                                class="rounded-3xl shadow-2xl border-4 border-slate-800 bg-black"
+                                src="https://www.youtube.com/embed/CjGyljgIMkM" title="Smart Stock Light Demo"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+
+                            <!-- Tag -->
+                            <div
+                                class="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur text-xs font-mono text-green-400 border border-green-500/30 rounded pointer-events-none">
+                                ● DEMO VIDEO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="order-1 lg:order-2">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs font-bold rounded-lg border border-white/5">Python</span>
+                        <span
+                            class="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs font-bold rounded-lg border border-white/5">IoT
+                            / Tapo</span>
+                        <span
+                            class="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs font-bold rounded-lg border border-white/5">Flask</span>
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-white mb-4">股市實體警報器 <span
+                            class="text-slate-500 text-lg font-normal block mt-1">Don't check price, feel the
+                            light.</span></h3>
+
+                    <p class="text-slate-400 mb-8 leading-relaxed text-lg">
+                        這不是一般的股票軟體。這是一個救命裝置。<br>
+                        我把它連動到房間的吸頂燈，當美股半夜閃崩時，燈光會瞬間變紅並發出警報聲，把我從睡夢中叫醒停損。<br>
+                        <strong>解決痛點：</strong> 治好你的看盤焦慮症，不用再每 5 分鐘刷一次手機。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fas fa-wifi text-primary mb-2 text-xl"></i>
+                            <h4 class="font-bold text-white text-sm">自動掃描</h4>
+                            <p class="text-xs text-slate-500 mt-1">免設定 IP，一鍵搜尋家中裝置</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fas fa-moon text-accent mb-2 text-xl"></i>
+                            <h4 class="font-bold text-white text-sm">睡眠待命</h4>
+                            <p class="text-xs text-slate-500 mt-1">微光監控，崩盤時強力喚醒</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://shopee.tw" target="_blank"
+                            class="flex-1 bg-gradient-to-br from-[#ee4d2d] to-[#d03e1e] text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-orange-900/20 hover:shadow-orange-900/40 transition hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-shopping-bag"></i> 蝦皮購買 (NT$299)
+                        </a>
+                        <a href="https://github.com/kolyfish/Smart_Stock_Light" target="_blank"
+                            class="px-6 py-4 bg-card border border-white/10 hover:border-white/30 text-white rounded-xl font-bold transition text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume / Connect Section -->
+    <section id="resume" class="py-24 bg-card/20 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">想找我解決問題？</h2>
+            <p class="text-xl text-slate-400 mb-12 leading-relaxed">
+                不管是想討論技術、合作開發，還是單純想請我喝杯咖啡。<br>
+                我都在尋找下一個有趣的挑戰。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <!-- Card 1: Resume -->
+                <div
+                    class="p-8 bg-dark border border-white/10 rounded-2xl hover:border-primary/50 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition">
+                        <i class="fas fa-file-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">下載履歷表</h3>
+                    <p class="text-slate-400 text-sm mb-6">如果你是 HR 或獵人頭，這裡有我詳細的技能樹與專案經驗 (Automation / IoT / Full-Stack)。
+                    </p>
+                    <a href="resume.pdf" target="_blank" class="text-primary font-bold hover:underline">Download PDF
+                        &rarr;</a>
+                </div>
+
+                <!-- Card 2: Contact -->
+                <div
+                    class="p-8 bg-dark border border-white/10 rounded-2xl hover:border-accent/50 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition">
+                        <i class="fas fa-paper-plane text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">直接聯絡我</h3>
+                    <p class="text-slate-400 text-sm mb-6">有好的 Idea？或者想外包自動化工具？直接發信給我吧，我通常 24 小時內回覆。</p>
+                    <a href="mailto:kolyfish2@gmail.com"
+                        class="text-accent font-bold hover:underline">kolyfish2@gmail.com &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-dark">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-slate-500 text-sm">
+                &copy; 2025 <strong class="text-slate-300">Kolyfish</strong>. All rights reserved.
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-white transition"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UCsPtjEYQIO6gUn5KSGUddsQ" target="_blank"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

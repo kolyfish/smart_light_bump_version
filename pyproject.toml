@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "smart-stock-light"
+version = "0.1.0"
+description = "智慧股票燈具：當股價達到目標時，透過 Wi-Fi 控制 TP-Link Tapo 智慧燈泡變色並發出語音警報"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "*.py"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+plugp100 = "^5.1.5"
+yfinance = "^0.2.0"
+pyttsx3 = "^2.90"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

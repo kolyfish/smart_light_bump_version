@@ -1,0 +1,105 @@
+﻿2025-12-21T15:33:05.4429221Z ##[group]Run python -m pip install --upgrade pip
+2025-12-21T15:33:05.4430861Z [36;1mpython -m pip install --upgrade pip[0m
+2025-12-21T15:33:05.4432524Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T15:33:05.4434150Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T15:33:05.4435733Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T15:33:05.4437267Z [36;1mplaywright install chromium[0m
+2025-12-21T15:33:05.4485564Z shell: /usr/bin/bash -e {0}
+2025-12-21T15:33:05.4486485Z env:
+2025-12-21T15:33:05.4487395Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:33:05.4489085Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T15:33:05.4491057Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:33:05.4492562Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:33:05.4494023Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:33:05.4495519Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T15:33:05.4496726Z ##[endgroup]
+2025-12-21T15:33:06.1379100Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages (25.3)
+2025-12-21T15:33:06.9627528Z Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+2025-12-21T15:33:07.0628840Z   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:33:07.1224473Z Collecting yfinance>=0.2.66 (from -r requirements.txt (line 2))
+2025-12-21T15:33:07.1418138Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl.metadata (6.0 kB)
+2025-12-21T15:33:07.1747357Z Collecting qrcode==7.4.2 (from -r requirements.txt (line 3))
+2025-12-21T15:33:07.1942394Z   Downloading qrcode-7.4.2-py3-none-any.whl.metadata (17 kB)
+2025-12-21T15:33:07.4604013Z Collecting Pillow>=10.4.0 (from -r requirements.txt (line 4))
+2025-12-21T15:33:07.4813838Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2025-12-21T15:33:07.5668176Z Collecting plugp100>=4.0.0 (from -r requirements.txt (line 5))
+2025-12-21T15:33:07.5860513Z   Downloading plugp100-5.1.5-py3-none-any.whl.metadata (6.2 kB)
+2025-12-21T15:33:07.6161472Z Collecting pyttsx3==2.90 (from -r requirements.txt (line 6))
+2025-12-21T15:33:07.6355954Z   Downloading pyttsx3-2.90-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:33:07.6706515Z Collecting python-dotenv (from -r requirements.txt (line 7))
+2025-12-21T15:33:07.6894958Z   Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+2025-12-21T15:33:07.7318794Z Collecting pyobjc>=10.0 (from -r requirements.txt (line 8))
+2025-12-21T15:33:07.7510241Z   Downloading pyobjc-12.1-py3-none-any.whl.metadata (26 kB)
+2025-12-21T15:33:07.9036406Z ERROR: Exception:
+2025-12-21T15:33:07.9037031Z Traceback (most recent call last):
+2025-12-21T15:33:07.9044922Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3367, in _dep_map
+2025-12-21T15:33:07.9046090Z     return self.__dep_map
+2025-12-21T15:33:07.9047178Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3147, in __getattr__
+2025-12-21T15:33:07.9048290Z     raise AttributeError(attr)
+2025-12-21T15:33:07.9048782Z AttributeError: _DistInfoDistribution__dep_map
+2025-12-21T15:33:07.9049144Z 
+2025-12-21T15:33:07.9049452Z During handling of the above exception, another exception occurred:
+2025-12-21T15:33:07.9049919Z 
+2025-12-21T15:33:07.9050091Z Traceback (most recent call last):
+2025-12-21T15:33:07.9051342Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+2025-12-21T15:33:07.9052412Z     status = _inner_run()
+2025-12-21T15:33:07.9053492Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+2025-12-21T15:33:07.9055185Z     return self.run(options, args)
+2025-12-21T15:33:07.9056232Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 85, in wrapper
+2025-12-21T15:33:07.9057231Z     return func(self, options, args)
+2025-12-21T15:33:07.9058169Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/commands/install.py", line 388, in run
+2025-12-21T15:33:07.9059029Z     requirement_set = resolver.resolve(
+2025-12-21T15:33:07.9059996Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 99, in resolve
+2025-12-21T15:33:07.9061166Z     result = self._result = resolver.resolve(
+2025-12-21T15:33:07.9062199Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 601, in resolve
+2025-12-21T15:33:07.9063273Z     state = resolution.resolve(requirements, max_rounds=max_rounds)
+2025-12-21T15:33:07.9064352Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 434, in resolve
+2025-12-21T15:33:07.9065372Z     self._add_to_criteria(self.state.criteria, r, parent=None)
+2025-12-21T15:33:07.9066448Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 150, in _add_to_criteria
+2025-12-21T15:33:07.9067412Z     if not criterion.candidates:
+2025-12-21T15:33:07.9068279Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/resolvelib/structs.py", line 194, in __bool__
+2025-12-21T15:33:07.9069132Z     return bool(self._sequence)
+2025-12-21T15:33:07.9070093Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 165, in __bool__
+2025-12-21T15:33:07.9071245Z     self._bool = any(self)
+2025-12-21T15:33:07.9072200Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 149, in <genexpr>
+2025-12-21T15:33:07.9073311Z     return (c for c in iterator if id(c) not in self._incompatible_ids)
+2025-12-21T15:33:07.9074449Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 39, in _iter_built
+2025-12-21T15:33:07.9075479Z     candidate = func()
+2025-12-21T15:33:07.9076476Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 180, in _make_candidate_from_link
+2025-12-21T15:33:07.9077808Z     base: BaseCandidate | None = self._make_base_candidate_from_link(
+2025-12-21T15:33:07.9079137Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 226, in _make_base_candidate_from_link
+2025-12-21T15:33:07.9080250Z     self._link_candidate_cache[link] = LinkCandidate(
+2025-12-21T15:33:07.9081401Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 318, in __init__
+2025-12-21T15:33:07.9082301Z     super().__init__(
+2025-12-21T15:33:07.9083158Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 161, in __init__
+2025-12-21T15:33:07.9084081Z     self.dist = self._prepare()
+2025-12-21T15:33:07.9084959Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 260, in _prepare
+2025-12-21T15:33:07.9085867Z     self._check_metadata_consistency(dist)
+2025-12-21T15:33:07.9086890Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 232, in _check_metadata_consistency
+2025-12-21T15:33:07.9088257Z     list(dist.iter_dependencies(list(dist.iter_provided_extras())))
+2025-12-21T15:33:07.9089510Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 247, in iter_provided_extras
+2025-12-21T15:33:07.9090442Z     return self._extra_mapping.keys()
+2025-12-21T15:33:07.9091585Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 91, in _extra_mapping
+2025-12-21T15:33:07.9092557Z     canonicalize_name(extra): extra for extra in self._dist.extras
+2025-12-21T15:33:07.9093523Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3323, in extras
+2025-12-21T15:33:07.9094358Z     return [dep for dep in self._dep_map if dep]
+2025-12-21T15:33:07.9095248Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3369, in _dep_map
+2025-12-21T15:33:07.9096172Z     self.__dep_map = self._compute_dependencies()
+2025-12-21T15:33:07.9097131Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3386, in _compute_dependencies
+2025-12-21T15:33:07.9098155Z     common = types.MappingProxyType(dict.fromkeys(reqs_for_extra(None)))
+2025-12-21T15:33:07.9099182Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3383, in reqs_for_extra
+2025-12-21T15:33:07.9100092Z     if not req.marker or req.marker.evaluate({'extra': extra}):
+2025-12-21T15:33:07.9101135Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 347, in evaluate
+2025-12-21T15:33:07.9101945Z     return _evaluate_markers(
+2025-12-21T15:33:07.9102804Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 239, in _evaluate_markers
+2025-12-21T15:33:07.9103753Z     groups[-1].append(_eval_op(lhs_value, op, rhs_value))
+2025-12-21T15:33:07.9104640Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 187, in _eval_op
+2025-12-21T15:33:07.9105460Z     return spec.contains(lhs, prereleases=True)
+2025-12-21T15:33:07.9106331Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 552, in contains
+2025-12-21T15:33:07.9107156Z     normalized_item = _coerce_version(item)
+2025-12-21T15:33:07.9108060Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 28, in _coerce_version
+2025-12-21T15:33:07.9108951Z     version = Version(version)
+2025-12-21T15:33:07.9109731Z   File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/pip/_vendor/packaging/version.py", line 202, in __init__
+2025-12-21T15:33:07.9110790Z     raise InvalidVersion(f"Invalid version: {version!r}")
+2025-12-21T15:33:07.9111446Z pip._vendor.packaging.version.InvalidVersion: Invalid version: '6.11.0-1018-azure'
+2025-12-21T15:33:07.9528193Z ##[error]Process completed with exit code 2.

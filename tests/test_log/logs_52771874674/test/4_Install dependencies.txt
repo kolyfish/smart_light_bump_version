@@ -1,0 +1,124 @@
+﻿2025-12-21T15:54:34.0583705Z ##[group]Run python -m venv venv
+2025-12-21T15:54:34.0584332Z [36;1mpython -m venv venv[0m
+2025-12-21T15:54:34.0585043Z [36;1msource venv/bin/activate[0m
+2025-12-21T15:54:34.0585593Z [36;1m# 強制忽略系統已安裝的套件，避免 InvalidVersion 錯誤[0m
+2025-12-21T15:54:34.0586359Z [36;1mpython -m pip install --ignore-installed --upgrade pip setuptools wheel[0m
+2025-12-21T15:54:34.0587268Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T15:54:34.0588012Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T15:54:34.0588755Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T15:54:34.0589468Z [36;1mplaywright install chromium[0m
+2025-12-21T15:54:34.0703249Z shell: /usr/bin/bash -e {0}
+2025-12-21T15:54:34.0703753Z env:
+2025-12-21T15:54:34.0704225Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:54:34.0705286Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T15:54:34.0706069Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:54:34.0706795Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:54:34.0707508Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:54:34.0708225Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T15:54:34.0708820Z ##[endgroup]
+2025-12-21T15:54:39.0780256Z Collecting pip
+2025-12-21T15:54:39.1088438Z   Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+2025-12-21T15:54:39.1463483Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 50.6 MB/s eta 0:00:00
+2025-12-21T15:54:39.4149089Z Collecting setuptools
+2025-12-21T15:54:39.4188160Z   Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-12-21T15:54:39.4310695Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 118.9 MB/s eta 0:00:00
+2025-12-21T15:54:39.4753827Z Collecting wheel
+2025-12-21T15:54:39.4791434Z   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+2025-12-21T15:54:39.4831520Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 32.3 MB/s eta 0:00:00
+2025-12-21T15:54:39.6387105Z Installing collected packages: wheel, setuptools, pip
+2025-12-21T15:54:41.1296863Z Successfully installed pip-25.3 setuptools-80.9.0 wheel-0.45.1
+2025-12-21T15:54:41.2761499Z 
+2025-12-21T15:54:41.2762030Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T15:54:41.2762771Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T15:54:41.7912115Z Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+2025-12-21T15:54:41.8477928Z   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:54:41.8845731Z Collecting yfinance>=0.2.66 (from -r requirements.txt (line 2))
+2025-12-21T15:54:41.8879052Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl.metadata (6.0 kB)
+2025-12-21T15:54:41.9032269Z Collecting qrcode==7.4.2 (from -r requirements.txt (line 3))
+2025-12-21T15:54:41.9076569Z   Downloading qrcode-7.4.2-py3-none-any.whl.metadata (17 kB)
+2025-12-21T15:54:42.1236857Z Collecting Pillow>=10.4.0 (from -r requirements.txt (line 4))
+2025-12-21T15:54:42.1274085Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2025-12-21T15:54:42.2234559Z Collecting plugp100>=4.0.0 (from -r requirements.txt (line 5))
+2025-12-21T15:54:42.2895842Z   Downloading plugp100-5.1.5-py3-none-any.whl.metadata (6.2 kB)
+2025-12-21T15:54:42.3028352Z Collecting pyttsx3==2.90 (from -r requirements.txt (line 6))
+2025-12-21T15:54:42.3071367Z   Downloading pyttsx3-2.90-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:54:42.3263630Z Collecting python-dotenv (from -r requirements.txt (line 7))
+2025-12-21T15:54:42.3297123Z   Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+2025-12-21T15:54:42.3538462Z Collecting pyobjc>=10.0 (from -r requirements.txt (line 8))
+2025-12-21T15:54:42.3582114Z   Downloading pyobjc-12.1-py3-none-any.whl.metadata (26 kB)
+2025-12-21T15:54:42.4021460Z 
+2025-12-21T15:54:42.4050836Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T15:54:42.4052077Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T15:54:42.4052686Z ERROR: Exception:
+2025-12-21T15:54:42.4053150Z Traceback (most recent call last):
+2025-12-21T15:54:42.4059676Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3367, in _dep_map
+2025-12-21T15:54:42.4060526Z     return self.__dep_map
+2025-12-21T15:54:42.4061354Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3147, in __getattr__
+2025-12-21T15:54:42.4062124Z     raise AttributeError(attr)
+2025-12-21T15:54:42.4062483Z AttributeError: _DistInfoDistribution__dep_map
+2025-12-21T15:54:42.4062710Z 
+2025-12-21T15:54:42.4062916Z During handling of the above exception, another exception occurred:
+2025-12-21T15:54:42.4063229Z 
+2025-12-21T15:54:42.4063344Z Traceback (most recent call last):
+2025-12-21T15:54:42.4064145Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+2025-12-21T15:54:42.4065060Z     status = _inner_run()
+2025-12-21T15:54:42.4065771Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+2025-12-21T15:54:42.4066494Z     return self.run(options, args)
+2025-12-21T15:54:42.4067211Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 85, in wrapper
+2025-12-21T15:54:42.4067905Z     return func(self, options, args)
+2025-12-21T15:54:42.4068545Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py", line 388, in run
+2025-12-21T15:54:42.4069155Z     requirement_set = resolver.resolve(
+2025-12-21T15:54:42.4069889Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 99, in resolve
+2025-12-21T15:54:42.4070598Z     result = self._result = resolver.resolve(
+2025-12-21T15:54:42.4071329Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 601, in resolve
+2025-12-21T15:54:42.4072080Z     state = resolution.resolve(requirements, max_rounds=max_rounds)
+2025-12-21T15:54:42.4073023Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 434, in resolve
+2025-12-21T15:54:42.4073762Z     self._add_to_criteria(self.state.criteria, r, parent=None)
+2025-12-21T15:54:42.4074576Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 150, in _add_to_criteria
+2025-12-21T15:54:42.4075440Z     if not criterion.candidates:
+2025-12-21T15:54:42.4076104Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/structs.py", line 194, in __bool__
+2025-12-21T15:54:42.4076715Z     return bool(self._sequence)
+2025-12-21T15:54:42.4077426Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 165, in __bool__
+2025-12-21T15:54:42.4078113Z     self._bool = any(self)
+2025-12-21T15:54:42.4078804Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 149, in <genexpr>
+2025-12-21T15:54:42.4079588Z     return (c for c in iterator if id(c) not in self._incompatible_ids)
+2025-12-21T15:54:42.4080412Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 39, in _iter_built
+2025-12-21T15:54:42.4081608Z     candidate = func()
+2025-12-21T15:54:42.4082351Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 180, in _make_candidate_from_link
+2025-12-21T15:54:42.4083155Z     base: BaseCandidate | None = self._make_base_candidate_from_link(
+2025-12-21T15:54:42.4084033Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 226, in _make_base_candidate_from_link
+2025-12-21T15:54:42.4084928Z     self._link_candidate_cache[link] = LinkCandidate(
+2025-12-21T15:54:42.4085745Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 318, in __init__
+2025-12-21T15:54:42.4086424Z     super().__init__(
+2025-12-21T15:54:42.4087132Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 161, in __init__
+2025-12-21T15:54:42.4087828Z     self.dist = self._prepare()
+2025-12-21T15:54:42.4088574Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 260, in _prepare
+2025-12-21T15:54:42.4089271Z     self._check_metadata_consistency(dist)
+2025-12-21T15:54:42.4090130Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 232, in _check_metadata_consistency
+2025-12-21T15:54:42.4090960Z     list(dist.iter_dependencies(list(dist.iter_provided_extras())))
+2025-12-21T15:54:42.4091802Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 247, in iter_provided_extras
+2025-12-21T15:54:42.4092595Z     return self._extra_mapping.keys()
+2025-12-21T15:54:42.4093346Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 91, in _extra_mapping
+2025-12-21T15:54:42.4094097Z     canonicalize_name(extra): extra for extra in self._dist.extras
+2025-12-21T15:54:42.4094991Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3323, in extras
+2025-12-21T15:54:42.4095651Z     return [dep for dep in self._dep_map if dep]
+2025-12-21T15:54:42.4096377Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3369, in _dep_map
+2025-12-21T15:54:42.4097041Z     self.__dep_map = self._compute_dependencies()
+2025-12-21T15:54:42.4097821Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3386, in _compute_dependencies
+2025-12-21T15:54:42.4098638Z     common = types.MappingProxyType(dict.fromkeys(reqs_for_extra(None)))
+2025-12-21T15:54:42.4099481Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3383, in reqs_for_extra
+2025-12-21T15:54:42.4100220Z     if not req.marker or req.marker.evaluate({'extra': extra}):
+2025-12-21T15:54:42.4100974Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 347, in evaluate
+2025-12-21T15:54:42.4101601Z     return _evaluate_markers(
+2025-12-21T15:54:42.4102305Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 239, in _evaluate_markers
+2025-12-21T15:54:42.4103005Z     groups[-1].append(_eval_op(lhs_value, op, rhs_value))
+2025-12-21T15:54:42.4103910Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 187, in _eval_op
+2025-12-21T15:54:42.4104707Z     return spec.contains(lhs, prereleases=True)
+2025-12-21T15:54:42.4105587Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 552, in contains
+2025-12-21T15:54:42.4106238Z     normalized_item = _coerce_version(item)
+2025-12-21T15:54:42.4106973Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 28, in _coerce_version
+2025-12-21T15:54:42.4107631Z     version = Version(version)
+2025-12-21T15:54:42.4108295Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/version.py", line 202, in __init__
+2025-12-21T15:54:42.4108997Z     raise InvalidVersion(f"Invalid version: {version!r}")
+2025-12-21T15:54:42.4109475Z pip._vendor.packaging.version.InvalidVersion: Invalid version: '6.11.0-1018-azure'
+2025-12-21T15:54:42.4505468Z ##[error]Process completed with exit code 2.

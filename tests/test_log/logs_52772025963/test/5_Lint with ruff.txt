@@ -1,0 +1,85 @@
+﻿2025-12-21T16:01:24.2949133Z ##[group]Run source venv/bin/activate
+2025-12-21T16:01:24.2949476Z [36;1msource venv/bin/activate[0m
+2025-12-21T16:01:24.2949821Z [36;1m# stop the build if there are Python syntax errors or undefined names[0m
+2025-12-21T16:01:24.2950250Z [36;1m# ruff check --select=E9,F63,F7,F82 --target-version=py310 .[0m
+2025-12-21T16:01:24.2950598Z [36;1m# exit-zero treats all errors as warnings. [0m
+2025-12-21T16:01:24.2950902Z [36;1mruff check --target-version=py310 .[0m
+2025-12-21T16:01:24.2985130Z shell: /usr/bin/bash -e {0}
+2025-12-21T16:01:24.2985363Z env:
+2025-12-21T16:01:24.2985596Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:01:24.2985999Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T16:01:24.2986394Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:01:24.2986745Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:01:24.2987098Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:01:24.2987476Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T16:01:24.2987765Z ##[endgroup]
+2025-12-21T16:01:24.3135545Z E701 Multiple statements on one line (colon)
+2025-12-21T16:01:24.3136141Z   --> market_data_agent.py:58:34
+2025-12-21T16:01:24.3136522Z    |
+2025-12-21T16:01:24.3136813Z 56 |         now = datetime.datetime.now()
+2025-12-21T16:01:24.3137290Z 57 |         if '.TW' in symbol.upper() or '.TWO' in symbol.upper():
+2025-12-21T16:01:24.3137776Z 58 |             if now.weekday() >= 5: return False
+2025-12-21T16:01:24.3138174Z    |                                  ^
+2025-12-21T16:01:24.3138551Z 59 |             current_time = now.time()
+2025-12-21T16:01:24.3139073Z 60 |             return datetime.time(9, 0) <= current_time <= datetime.time(13, 30)
+2025-12-21T16:01:24.3139604Z    |
+2025-12-21T16:01:24.3139736Z 
+2025-12-21T16:01:24.3139901Z E701 Multiple statements on one line (colon)
+2025-12-21T16:01:24.3140349Z   --> market_data_agent.py:63:34
+2025-12-21T16:01:24.3140695Z    |
+2025-12-21T16:01:24.3140930Z 61 |         else:
+2025-12-21T16:01:24.3141461Z 62 |             # 美股概略
+2025-12-21T16:01:24.3141897Z 63 |             if now.weekday() == 5: return now.time() <= datetime.time(6, 0)
+2025-12-21T16:01:24.3142412Z    |                                  ^
+2025-12-21T16:01:24.3142815Z 64 |             if now.weekday() == 6: return False
+2025-12-21T16:01:24.3143350Z 65 |             if now.weekday() == 0: return now.time() >= datetime.time(21, 0)
+2025-12-21T16:01:24.3143842Z    |
+2025-12-21T16:01:24.3143983Z 
+2025-12-21T16:01:24.3144134Z E701 Multiple statements on one line (colon)
+2025-12-21T16:01:24.3144727Z   --> market_data_agent.py:64:34
+2025-12-21T16:01:24.3145073Z    |
+2025-12-21T16:01:24.3145381Z 62 |             # 美股概略
+2025-12-21T16:01:24.3145799Z 63 |             if now.weekday() == 5: return now.time() <= datetime.time(6, 0)
+2025-12-21T16:01:24.3146320Z 64 |             if now.weekday() == 6: return False
+2025-12-21T16:01:24.3146720Z    |                                  ^
+2025-12-21T16:01:24.3147219Z 65 |             if now.weekday() == 0: return now.time() >= datetime.time(21, 0)
+2025-12-21T16:01:24.3147766Z 66 |             current_time = now.time()
+2025-12-21T16:01:24.3148136Z    |
+2025-12-21T16:01:24.3148278Z 
+2025-12-21T16:01:24.3148439Z E701 Multiple statements on one line (colon)
+2025-12-21T16:01:24.3148845Z   --> market_data_agent.py:65:34
+2025-12-21T16:01:24.3149186Z    |
+2025-12-21T16:01:24.3149547Z 63 |             if now.weekday() == 5: return now.time() <= datetime.time(6, 0)
+2025-12-21T16:01:24.3150065Z 64 |             if now.weekday() == 6: return False
+2025-12-21T16:01:24.3150574Z 65 |             if now.weekday() == 0: return now.time() >= datetime.time(21, 0)
+2025-12-21T16:01:24.3150888Z    |                                  ^
+2025-12-21T16:01:24.3151132Z 66 |             current_time = now.time()
+2025-12-21T16:01:24.3151506Z 67 |             return current_time >= datetime.time(21, 0) or current_time <= datetime.time(6, 0)
+2025-12-21T16:01:24.3152244Z    |
+2025-12-21T16:01:24.3152328Z 
+2025-12-21T16:01:24.3152432Z F401 [*] `datetime.time` imported but unused
+2025-12-21T16:01:24.3152693Z  --> stock_monitor.py:5:40
+2025-12-21T16:01:24.3152887Z   |
+2025-12-21T16:01:24.3153137Z 3 | import yfinance as yf
+2025-12-21T16:01:24.3153679Z 4 | import subprocess
+2025-12-21T16:01:24.3154055Z 5 | from datetime import datetime, time as dt_time
+2025-12-21T16:01:24.3154657Z   |                                        ^^^^^^^
+2025-12-21T16:01:24.3155100Z 6 | from market_data_agent import MarketDataAgent
+2025-12-21T16:01:24.3155378Z   |
+2025-12-21T16:01:24.3155587Z help: Remove unused import: `datetime.time`
+2025-12-21T16:01:24.3155864Z 
+2025-12-21T16:01:24.3155964Z F401 [*] `statistics` imported but unused
+2025-12-21T16:01:24.3156222Z  --> tests/verify_log.py:3:8
+2025-12-21T16:01:24.3156419Z   |
+2025-12-21T16:01:24.3156610Z 1 | from market_data_agent import MarketDataAgent
+2025-12-21T16:01:24.3156875Z 2 | import time
+2025-12-21T16:01:24.3157053Z 3 | import statistics
+2025-12-21T16:01:24.3157245Z   |        ^^^^^^^^^^
+2025-12-21T16:01:24.3157419Z 4 |
+2025-12-21T16:01:24.3157677Z 5 | # 模擬 StockMonitor 的部分行為
+2025-12-21T16:01:24.3157869Z   |
+2025-12-21T16:01:24.3158046Z help: Remove unused import: `statistics`
+2025-12-21T16:01:24.3158218Z 
+2025-12-21T16:01:24.3158286Z Found 6 errors.
+2025-12-21T16:01:24.3158484Z [*] 2 fixable with the `--fix` option.
+2025-12-21T16:01:24.3168696Z ##[error]Process completed with exit code 1.

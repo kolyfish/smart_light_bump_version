@@ -1,0 +1,8 @@
+{
+    "symbol": "BTC-USD",
+    "target_price": 87277.0,
+    "stop_loss_price": 87199.98,
+    "tapo_email": "kolyfish2@gmail.com",
+    "tapo_password": "WWuu0921",
+    "tapo_ip": "192.168.100.150"
+}

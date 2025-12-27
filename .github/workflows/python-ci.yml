@@ -1,0 +1,56 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Gitleaks Security Scan
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+        
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        # 跳過 pip 升級，避免觸發 azure 套件解析錯誤
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # Ensure pytest and ruff are installed
+        pip install pytest pytest-mock ruff playwright pytest-playwright requests
+        playwright install chromium
+        
+    - name: Lint with ruff
+      run: |
+        source venv/bin/activate
+        # stop the build if there are Python syntax errors or undefined names
+        # exit-zero treats all errors as warnings. 
+        ruff check --target-version=py310 .
+        
+    - name: Run Unit Tests
+      run: |
+        source venv/bin/activate
+        # 只執行單元測試，排除 UI 測試 (因為 UI 測試需要 Server)
+        pytest tests/test_monitor.py
+
+    - name: Run E2E Tests
+      env:
+        SIMULATION_MODE: "true"
+      run: |
+        source venv/bin/activate
+        # 透過腳本啟動 Server 並執行 UI 測試
+        python tests/run_e2e_ci.py

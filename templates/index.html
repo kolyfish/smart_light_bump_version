@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>SmartStockLight | Premium Dashboard</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/icon.svg">
+    <link rel="apple-touch-icon" href="/static/icon.svg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.4);
+            --bg-card-hover: rgba(51, 65, 85, 0.5);
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.5);
+            --secondary: #6366f1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Effects */
+            --glass: blur(20px);
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 40%);
+            color: var(--text-main);
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .brand {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Ambient Background */
+        .ambient-light {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.1), transparent 50%);
+        }
+
+        /* Container */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .app-container {
+                grid-template-columns: 380px 1fr;
+                align-items: start;
+            }
+        }
+
+        /* Header */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand i {
+            font-size: 1.25rem;
+            -webkit-text-fill-color: var(--primary);
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 99px;
+            color: var(--success);
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        /* Cards */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass);
+            -webkit-backdrop-filter: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .card-header i {
+            color: var(--primary);
+        }
+
+        /* Values & Data */
+        .market-hero {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .market-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: var(--primary);
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .price-display {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .price-sub {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+        }
+
+        .trend-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .trend-up {
+            color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
+        }
+
+        .trend-down {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        /* Form Elements */
+        .input-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+            margin-left: 0.25rem;
+        }
+
+        input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            border: 1px solid transparent;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Terminal Log */
+        .log-terminal {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 0.8rem;
+            background: #000;
+            color: #4ade80;
+            padding: 1rem;
+            border-radius: 12px;
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #1e293b;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .log-entry {
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .log-entry:last-child {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+
+        .toast {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 1rem;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-success {
+            border-left: 4px solid var(--success);
+        }
+
+        .toast-info {
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Info Areas (Modal-like) */
+        .info-panel {
+            max-height: 0;
+            overflow-y: hidden;
+            /* Changed from hidden to handle scroll when open */
+            transition: max-height 0.4s ease, margin-bottom 0.4s ease;
+        }
+
+        .info-panel.open {
+            max-height: 400px;
+            /* Set a reasonable fixed height to force scroll if content is long */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+            margin-bottom: 1.5rem;
+            padding-right: 0.5rem;
+            /* Add some padding for scrollbar */
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .guide-item {
+            padding: 1rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #ccc;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ambient-light"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="brand">
+                <i class="fas fa-layer-group"></i>
+                SmartStockLight
+            </div>
+            <div class="status-badge" id="app-status">
+                <div class="pulse"></div>
+                <span id="market-status-text">系統連線中...</span>
+            </div>
+            <button id="btn-sound-toggle" class="btn-ghost" onclick="toggleSound()"
+                style="padding: 0.4rem 0.8rem; font-size: 0.875rem; border-radius: 99px; margin-left: 1rem;">
+                <i class="fas fa-volume-mute"></i>
+            </button>
+        </header>
+
+        <!-- Left Column: Controls & Config -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+            <!-- Quick Actions -->
+            <div class="glass-card">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <button onclick="togglePanel('lightGuide')" class="btn-ghost"
+                        style="width: auto; padding: 0.5rem 1rem; font-size: 0.9rem; border-radius: 8px;">
+                        <i class="fas fa-lightbulb"></i> 燈號說明
+                    </button>
+                    <button onclick="togglePanel('manual')" class="btn-ghost"
+                        style="width: auto; padding: 0.5rem 1rem; font-size: 0.9rem; border-radius: 8px;">
+                        <i class="fas fa-book"></i> 產品手冊
+                    </button>
+                </div>
+
+                <!-- Collapsible Info Panels -->
+                <div id="lightGuide" class="info-panel">
+                    <h4 style="margin: 0 0 1rem 0; color: var(--text-dim);">燈光顏色指南</h4>
+                    <div class="guide-grid">
+                        <div class="guide-item" style="border-color: var(--warning);">
+                            <div style="color: var(--warning); font-weight: bold;">🟡 黃燈</div>
+                            <small>常態監控中</small>
+                        </div>
+                        <div class="guide-item" style="border-color: var(--success);">
+                            <div style="color: var(--success); font-weight: bold;">🟢 綠燈</div>
+                            <small>達成目標價</small>
+                        </div>
+                        <div class="guide-item" style="border-color: #a855f7;">
+                            <div style="color: #a855f7; font-weight: bold;">🟣 紫燈</div>
+                            <small>偵測到閃崩</small>
+                        </div>
+                        <div class="guide-item" style="border-color: var(--danger);">
+                            <div style="color: var(--danger); font-weight: bold;">🔴 紅燈</div>
+                            <small>異常/停損</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="manual" class="info-panel">
+                    <h4 style="margin: 0 0 1rem 0; color: var(--text-dim);">💡 產品功能與操作說明</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>1. 監控設定：</strong><br>
+                        輸入股票代號（如 <code>2330.TW</code>, <code>NVDA</code>, <code>BTC-USD</code>）。<br>
+                        系統支援：台股/美股 (每10秒更新)、虛擬貨幣 (每秒更新)。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>2. 🟢 目標獲利價 (Target)：</strong><br>
+                        設定您想出場的價格。達標時燈光變綠，提醒獲利了結。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>3. 🔴 停損警示價 (Stop Loss)：</strong><br>
+                        設定您的風險底線。跌破時燈光變紅並發出警報，提醒盡快停損。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>4. 🟣 閃崩警報 (Flash Crash)：</strong><br>
+                        當系統偵測到 1 分鐘內急跌超過 2% (台美股) 或 2.5% (虛擬貨幣) 時，會強制觸發紫色警報與語音通知。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>5. 🌙 睡眠模式：</strong><br>
+                        點擊下方「睡眠模式」按鈕，燈光將調至 1% 亮度，不影響睡眠。<br>
+                        一旦觸發上述任何警報，燈光會<strong>強制全亮</strong>並發出聲音，確保您不會錯過行情。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>6. ⏳ 警報冷卻機制：</strong><br>
+                        為避免重複轟炸，觸發警報後系統會進入 5 分鐘冷卻時間。<br>
+                        冷卻期間若價格仍達標，日誌會顯示「冷卻中」與剩餘秒數，但不會重複發出語音或改變燈號。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>7. 🔄 更新設定：</strong><br>
+                        修改完上方的監控代號、目標價或 Tapo 設定後，必須點擊「更新設定」按鈕。<br>
+                        系統會立即套用新參數，並<strong>重置警報冷卻時間</strong>與警報狀態（例如從紅燈恢復為監控黃燈）。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        <strong>8. 📱 手機 App 模式 (PWA)：</strong><br>
+                        確保手機與電腦在同一 Wi-Fi 下。<br>
+                        1. 查看電腦終端機顯示的網址 (例如 <code>http://192.168.x.x:5001</code>) 並在手機打開。<br>
+                        2. <strong>iOS Safari</strong>: 點擊下方「分享」按鈕 <i class="fas fa-share-square"></i> &rarr;
+                        選擇「加入主畫面」。<br>
+                        3. <strong>Android Chrome</strong>: 點擊選單 &rarr; 選擇「安裝應用程式」或「加入主畫面」。<br>
+                        完成後即可擁有全螢幕 App 體驗，隨時隨地監控與切換模式。
+                    </p>
+                </div>
+
+                <!-- Config Form -->
+                <div class="card-header" style="margin-top: 1rem;">
+                    <i class="fas fa-sliders"></i> 監控設定 <span id="current-monitor-price"
+                        style="margin-left:auto; font-size:0.8rem; opacity:0.6;">--</span>
+                </div>
+
+                <div class="input-group">
+                    <label>股票代號</label>
+                    <input type="text" id="symbol" value="{{ config.symbol }}" placeholder="2330.TW">
+                </div>
+
+                <div class="input-group">
+                    <label>🟢 目標獲利價</label>
+                    <input type="number" step="0.01" id="target" value="{{ config.target_price }}" placeholder="1000">
+                </div>
+
+                <div class="input-group">
+                    <label>🔴 停損警示價</label>
+                    <input type="number" step="0.01" id="stop_loss" value="{{ config.get('stop_loss_price', 0) }}"
+                        placeholder="900">
+                </div>
+
+                <div class="card-header" style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                    <i class="fas fa-plug"></i> 智慧插座設定 (Tapo)
+                </div>
+
+                <div class="input-group">
+                    <label>燈泡 IP 位址</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="tapo_ip" value="{{ config.get('tapo_ip', '192.168.100.150') }}"
+                            placeholder="192.168.100.150">
+                        <button class="btn btn-ghost" onclick="scanTapo(event)"
+                            style="width: auto; white-space: nowrap; border: 1px solid var(--border);">
+                            <i class="fas fa-search"></i> 掃描
+                        </button>
+                    </div>
+                    <div id="scan-results" style="margin-top: 0.5rem; display: none;"></div>
+                </div>
+
+                <div class="input-group">
+                    <label>Tapo 帳號 (Email)</label>
+                    <input type="email" id="tapo_email" value="{{ config.get('tapo_email', '') }}"
+                        placeholder="example@gmail.com">
+                </div>
+
+                <div class="input-group">
+                    <label>Tapo 密碼</label>
+                    <input type="password" id="tapo_password"
+                        placeholder="{{ '已設定 (若需更改請輸入)' if config.get('tapo_password_set') else '請輸入密碼' }}">
+                </div>
+
+                <button class="btn btn-primary" onclick="saveConfig()">
+                    <i class="fas fa-rotate"></i> 更新設定
+                </button>
+            </div>
+
+            <!-- Testing & Actions -->
+            <div class="glass-card">
+                <div class="card-header">
+                    <i class="fas fa-terminal"></i> 系統控制
+                </div>
+
+                <button class="btn-danger"
+                    style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5;"
+                    onclick="stopAlarm()">
+                    <i class="fas fa-bell-slash"></i> 停止目前警報
+                </button>
+
+                <div class="btn-grid">
+                    <button class="btn btn-ghost" onclick="testYellow()">
+                        <i class="fas fa-sun"></i> 測試黃燈
+                    </button>
+                    <button class="btn btn-ghost" onclick="turnOff()">
+                        <i class="fas fa-moon"></i> 睡眠模式
+                    </button>
+                    <button class="btn btn-ghost" onclick="testGreen()">
+                        <i class="fas fa-check-circle"></i> 測試綠燈
+                    </button>
+                    <button class="btn btn-ghost" onclick="testPurple()" style="color: #a855f7;">
+                        <i class="fas fa-bolt"></i> 測試紫燈
+                    </button>
+                    <button class="btn btn-ghost" onclick="demoAlert()" style="color: var(--warning);">
+                        <i class="fas fa-play"></i> 完整演示
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Column: Visualization & Logs -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+            <!-- Real-time Data Card -->
+            <div class="glass-card market-hero">
+                <div class="price-sub" id="stock-name">載入股市數據...</div>
+                <div class="price-display">
+                    <span id="stock-price">--.--</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <div class="trend-badge" id="trend-indicator">
+                        <i class="fas fa-minus"></i> <span id="trend-val">0.00%</span>
+                    </div>
+                </div>
+
+                <!-- Market Index Mini Card -->
+                <div
+                    style="margin-top: 2rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 12px; display: inline-block;">
+                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.25rem;">大盤指數 / 時間</div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; align-items: baseline;">
+                        <span style="font-weight: 600;" id="index-val">--</span>
+                        <span style="font-size: 0.85rem; opacity: 0.7;" id="update-time">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logs -->
+            <div class="glass-card" style="flex-grow: 1;">
+                <div class="card-header">
+                    <i class="fas fa-code"></i> 運行日誌 (TERMINAL)
+                </div>
+                <div id="log-container" class="log-terminal">
+                    <div class="log-entry">> System initialized...</div>
+                    <div class="log-entry">> Waiting for data stream...</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="toast-container" id="toast-area"></div>
+
+    <script>
+        // Sound Management
+        let isSoundEnabled = false;
+        let lastAlertTime = 0;
+        const synth = window.speechSynthesis;
+
+        function toggleSound() {
+            isSoundEnabled = !isSoundEnabled;
+            const btn = document.getElementById('btn-sound-toggle');
+            if (isSoundEnabled) {
+                btn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                btn.style.color = 'var(--primary)';
+                btn.style.background = 'rgba(14, 165, 233, 0.1)';
+                showToast('已啟用網頁語音警報', 'success');
+                // Check browser support
+                if (!synth) showToast('您的瀏覽器不支援 Web Speech API', 'warning');
+                else speak('語音測試正常');
+            } else {
+                btn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                btn.style.color = 'var(--text-dim)';
+                btn.style.background = 'transparent';
+                showToast('已靜音');
+            }
+        }
+
+        function speak(text) {
+            if (!isSoundEnabled || !synth) return;
+            if (synth.speaking) return; // Don't stack audio
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'zh-TW';
+            utterance.rate = 1.0;
+            synth.speak(utterance);
+        }
+
+        // UI Helpers
+        function showToast(msg, type = 'info') {
+            const container = document.getElementById('toast-area');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i> <span>${msg}</span>`;
+
+            container.appendChild(toast);
+            // Trigger reflow
+            toast.offsetHeight;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        function togglePanel(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('open');
+        }
+
+        // API Calls
+        async function apiCall(endpoint, method = 'POST', body = null) {
+            try {
+                const options = { method };
+                if (body) {
+                    options.headers = { 'Content-Type': 'application/json' };
+                    options.body = JSON.stringify(body);
+                }
+                const res = await fetch(`/api/${endpoint}`, options);
+                return await res.json();
+            } catch (err) {
+                console.error(err);
+                showToast('連線錯誤', 'danger');
+                return null;
+            }
+        }
+
+        // Actions
+        async function saveConfig() {
+            const data = {
+                symbol: document.getElementById('symbol').value,
+                target_price: document.getElementById('target').value,
+                stop_loss_price: document.getElementById('stop_loss').value,
+                tapo_email: document.getElementById('tapo_email').value,
+                tapo_password: document.getElementById('tapo_password').value,
+                tapo_ip: document.getElementById('tapo_ip').value
+            };
+
+            const res = await apiCall('config', 'POST', data);
+            if (res) {
+                showToast('監控設定已更新', 'success');
+                updateData(); // Refresh immediately
+            }
+        }
+
+        function testYellow() { apiCall('test_yellow').then(() => showToast('黃燈測試信號發送')); }
+        function testGreen() { apiCall('test_green').then(() => showToast('綠燈測試信號發送')); }
+        function testPurple() { apiCall('test_purple').then(() => showToast('紫燈閃崩模擬發送')); }
+        function turnOff() { apiCall('turn_off').then(() => showToast('進入睡眠待命模式')); }
+        function demoAlert() { apiCall('demo_alert').then(() => showToast('啟動全功能演示')); }
+        function stopAlarm() { apiCall('stop_alarm').then(res => showToast(res.message)); }
+
+        async function scanTapo(event) {
+            const btn = event.currentTarget;
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+
+            // Remove existing list if any
+            const oldList = document.getElementById('device-list');
+            if (oldList) oldList.remove();
+
+            try {
+                const res = await apiCall('scan_tapo', 'GET');
+                if (res && res.status === 'success') {
+                    const devices = res.devices;
+                    if (devices.length === 0) {
+                        showToast('未發現設備 (請確認設備已插電並在同網路)', 'warning');
+                    } else if (devices.length === 1) {
+                        document.getElementById('tapo_ip').value = devices[0].ip;
+                        showToast(`已自動填入發現的唯一設備: ${devices[0].ip}`, 'success');
+                    } else {
+                        // Multiple devices, show list selection
+                        showDeviceSelection(devices);
+                        showToast(`發現 ${devices.length} 個設備`, 'success');
+                    }
+                }
+            } finally {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }
+        }
+
+        async function scanTapo(e) {
+            e.preventDefault();
+            const btn = e.currentTarget;
+            const icon = btn.querySelector('i');
+            const originalIcon = icon.className;
+
+            // Loading state
+            icon.className = 'fas fa-spinner fa-spin';
+            btn.disabled = true;
+            showToast('正在掃描區網裝置...', 'info');
+
+            const res = await apiCall('scan_devices', 'GET');
+
+            // Restore state
+            icon.className = originalIcon;
+            btn.disabled = false;
+
+            if (res && res.devices) {
+                if (res.devices.length === 0) {
+                    showToast('未找到裝置 (請確認都在同一 Wifi)', 'warning');
+                    return;
+                }
+                showToast(`找到 ${res.devices.length} 個裝置`, 'success');
+                showDeviceSelection(res.devices);
+            } else {
+                showToast('掃描失敗', 'danger');
+            }
+        }
+
+        function showDeviceSelection(devices) {
+            const container = document.getElementById('scan-results');
+            if (!container) return;
+
+            let listHtml = '<div style="background: var(--bg-card); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); animation: slideDown 0.3s ease-out;">';
+            devices.forEach(d => {
+                listHtml += `
+                    <div onclick="selectDevice('${d.ip}')" style="padding: 0.75rem; cursor: pointer; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='rgba(51, 65, 85, 0.8)'" onmouseout="this.style.background='transparent'">
+                        <div>
+                            <div style="font-weight: bold; font-size: 0.9rem; color: var(--primary);"><i class="fas fa-lightbulb"></i> ${d.alias || d.model || 'Smart Device'}</div>
+                            <div style="font-size: 0.75rem; color: var(--text-dim); font-family: monospace;">${d.mac}</div>
+                        </div>
+                        <div style="color: white; font-family: monospace; font-size: 0.9rem;">${d.ip}</div>
+                    </div>
+                `;
+            });
+            listHtml += '</div>';
+
+            container.innerHTML = listHtml;
+            container.style.display = 'block';
+        }
+
+        function selectDevice(ip) {
+            document.getElementById('tapo_ip').value = ip;
+            document.getElementById('scan-results').style.display = 'none';
+            showToast(`已填入 IP: ${ip}`, 'success');
+        }
+
+        // Data Pooling
+        function updateStatus() {
+            apiCall('market_status', 'GET').then(data => {
+                if (data) {
+                    document.getElementById('market-status-text').textContent = data.status;
+                }
+            });
+        }
+
+        function updateData() {
+            apiCall('market_data', 'GET').then(data => {
+                if (!data) return;
+
+                // Index
+                if (data.market_index) {
+                    document.getElementById('index-val').textContent = data.market_index.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                }
+
+                // Stock
+                document.getElementById('stock-name').textContent = `${data.stock_name} (${data.symbol})`;
+                document.getElementById('current-monitor-price').textContent = `現價: ${data.stock_price || '--'}`;
+
+                const timeStr = data.update_time || '--:--';
+                document.getElementById('update-time').textContent = timeStr.split(' ')[1] || timeStr;
+
+                if (data.stock_price) {
+                    document.getElementById('stock-price').textContent = data.stock_price.toFixed(2);
+                }
+
+                // Trend (using market_change if available, or just a placeholder logic if not)
+                // Note: The backend 'market_change' is currently mostly for Index, but let's visualize it.
+                if (data.market_change !== undefined) {
+                    const change = data.market_change;
+                    const trendEl = document.getElementById('trend-indicator');
+                    const trendVal = document.getElementById('trend-val');
+
+                    // In Taiwan, Red is UP (+), Green is DOWN (-)
+                    const isPositive = change >= 0;
+                    trendEl.className = `trend-badge ${isPositive ? 'trend-up' : 'trend-down'}`;
+                    trendVal.textContent = (isPositive ? '+' : '') + change.toFixed(2);
+                }
+
+                // Check for Alert
+                if (data.alert_active === true) {
+                    const now = Date.now();
+                    // Debounce sound to every 5 seconds locally to avoid chaos
+                    if (now - lastAlertTime > 5000) {
+                        speak(`警報！${data.stock_name} 價格 ${data.stock_price}`);
+                        lastAlertTime = now;
+                    }
+                }
+            });
+        }
+
+        function updateLogs() {
+            apiCall('logs', 'GET').then(data => {
+                if (data && data.logs) {
+                    const container = document.getElementById('log-container');
+                    container.innerHTML = data.logs.map(l => `<div class="log-entry">> ${l}</div>`).join('');
+                    container.scrollTop = container.scrollHeight;
+                }
+            });
+        }
+
+        // Init
+        setInterval(updateStatus, 60000); // 1 min
+        setInterval(updateData, 1000);   // 1 sec for real-time feel
+        setInterval(updateLogs, 2000);   // 2 sec
+
+        updateStatus();
+        updateData();
+        updateLogs();
+
+    </script>
+</body>
+
+</html>

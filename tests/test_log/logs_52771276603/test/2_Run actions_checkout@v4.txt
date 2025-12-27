@@ -1,0 +1,72 @@
+﻿2025-12-21T15:33:04.5123934Z ##[group]Run actions/checkout@v4
+2025-12-21T15:33:04.5124744Z with:
+2025-12-21T15:33:04.5125167Z   repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:33:04.5125840Z   token: ***
+2025-12-21T15:33:04.5126215Z   ssh-strict: true
+2025-12-21T15:33:04.5126587Z   ssh-user: git
+2025-12-21T15:33:04.5126984Z   persist-credentials: true
+2025-12-21T15:33:04.5127459Z   clean: true
+2025-12-21T15:33:04.5127851Z   sparse-checkout-cone-mode: true
+2025-12-21T15:33:04.5128322Z   fetch-depth: 1
+2025-12-21T15:33:04.5128695Z   fetch-tags: false
+2025-12-21T15:33:04.5129088Z   show-progress: true
+2025-12-21T15:33:04.5129487Z   lfs: false
+2025-12-21T15:33:04.5129859Z   submodules: false
+2025-12-21T15:33:04.5130252Z   set-safe-directory: true
+2025-12-21T15:33:04.5131056Z ##[endgroup]
+2025-12-21T15:33:04.6187819Z Syncing repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:33:04.6189474Z ##[group]Getting Git version info
+2025-12-21T15:33:04.6190260Z Working directory is '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:33:04.6191669Z [command]/usr/bin/git version
+2025-12-21T15:33:04.6259443Z git version 2.52.0
+2025-12-21T15:33:04.6284911Z ##[endgroup]
+2025-12-21T15:33:04.6301641Z Temporarily overriding HOME='/home/runner/work/_temp/202c0952-d902-48c4-bce7-3a33495f0c98' before making global git config changes
+2025-12-21T15:33:04.6303992Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T15:33:04.6314477Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:33:04.6351850Z Deleting the contents of '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:33:04.6355486Z ##[group]Initializing the repository
+2025-12-21T15:33:04.6360264Z [command]/usr/bin/git init /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:33:04.6455053Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-21T15:33:04.6456476Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-21T15:33:04.6457653Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-21T15:33:04.6458988Z hint: call:
+2025-12-21T15:33:04.6459480Z hint:
+2025-12-21T15:33:04.6460298Z hint: 	git config --global init.defaultBranch <name>
+2025-12-21T15:33:04.6461594Z hint:
+2025-12-21T15:33:04.6462590Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-21T15:33:04.6464204Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-21T15:33:04.6465503Z hint:
+2025-12-21T15:33:04.6466179Z hint: 	git branch -m <name>
+2025-12-21T15:33:04.6466915Z hint:
+2025-12-21T15:33:04.6467897Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-21T15:33:04.6469820Z Initialized empty Git repository in /home/runner/work/Smart_Stock_Light/Smart_Stock_Light/.git/
+2025-12-21T15:33:04.6473043Z [command]/usr/bin/git remote add origin https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:33:04.6504426Z ##[endgroup]
+2025-12-21T15:33:04.6505605Z ##[group]Disabling automatic garbage collection
+2025-12-21T15:33:04.6509147Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-21T15:33:04.6537456Z ##[endgroup]
+2025-12-21T15:33:04.6538644Z ##[group]Setting up auth
+2025-12-21T15:33:04.6544847Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T15:33:04.6575325Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T15:33:04.6889556Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T15:33:04.6917045Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T15:33:04.7132045Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T15:33:04.7161014Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T15:33:04.7385655Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-21T15:33:04.7418459Z ##[endgroup]
+2025-12-21T15:33:04.7419360Z ##[group]Fetching the repository
+2025-12-21T15:33:04.7426407Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +eac79297521012b4817660ac3b08c1d9a9e729f1:refs/remotes/origin/main
+2025-12-21T15:33:05.1952359Z From https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:33:05.1954003Z  * [new ref]         eac79297521012b4817660ac3b08c1d9a9e729f1 -> origin/main
+2025-12-21T15:33:05.1987171Z ##[endgroup]
+2025-12-21T15:33:05.1988410Z ##[group]Determining the checkout info
+2025-12-21T15:33:05.1991035Z ##[endgroup]
+2025-12-21T15:33:05.1995300Z [command]/usr/bin/git sparse-checkout disable
+2025-12-21T15:33:05.2037228Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-21T15:33:05.2065677Z ##[group]Checking out the ref
+2025-12-21T15:33:05.2067996Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-21T15:33:05.2163490Z Switched to a new branch 'main'
+2025-12-21T15:33:05.2165478Z branch 'main' set up to track 'origin/main'.
+2025-12-21T15:33:05.2172024Z ##[endgroup]
+2025-12-21T15:33:05.2206154Z [command]/usr/bin/git log -1 --format=%H
+2025-12-21T15:33:05.2228818Z eac79297521012b4817660ac3b08c1d9a9e729f1

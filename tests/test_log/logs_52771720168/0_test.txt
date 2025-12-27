@@ -1,0 +1,257 @@
+﻿2025-12-21T15:48:48.3069000Z Current runner version: '2.330.0'
+2025-12-21T15:48:48.3102348Z ##[group]Runner Image Provisioner
+2025-12-21T15:48:48.3103543Z Hosted Compute Agent
+2025-12-21T15:48:48.3104497Z Version: 20251211.462
+2025-12-21T15:48:48.3105394Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-21T15:48:48.3106503Z Build Date: 2025-12-11T16:28:49Z
+2025-12-21T15:48:48.3107573Z Worker ID: {69ba71e2-ec86-4d19-aa00-51fec7f72ac0}
+2025-12-21T15:48:48.3108693Z ##[endgroup]
+2025-12-21T15:48:48.3109579Z ##[group]Operating System
+2025-12-21T15:48:48.3110758Z Ubuntu
+2025-12-21T15:48:48.3111509Z 24.04.3
+2025-12-21T15:48:48.3112153Z LTS
+2025-12-21T15:48:48.3112904Z ##[endgroup]
+2025-12-21T15:48:48.3113708Z ##[group]Runner Image
+2025-12-21T15:48:48.3114565Z Image: ubuntu-24.04
+2025-12-21T15:48:48.3115364Z Version: 20251215.174.1
+2025-12-21T15:48:48.3117094Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-21T15:48:48.3119629Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-21T15:48:48.3121570Z ##[endgroup]
+2025-12-21T15:48:48.3123402Z ##[group]GITHUB_TOKEN Permissions
+2025-12-21T15:48:48.3126108Z Contents: read
+2025-12-21T15:48:48.3126935Z Metadata: read
+2025-12-21T15:48:48.3127808Z Packages: read
+2025-12-21T15:48:48.3128550Z ##[endgroup]
+2025-12-21T15:48:48.3131948Z Secret source: Actions
+2025-12-21T15:48:48.3133493Z Prepare workflow directory
+2025-12-21T15:48:48.3580814Z Prepare all required actions
+2025-12-21T15:48:48.3636036Z Getting action download info
+2025-12-21T15:48:48.6575325Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-21T15:48:48.7647078Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-12-21T15:48:48.9752700Z Complete job name: test
+2025-12-21T15:48:49.0413031Z ##[group]Run actions/checkout@v4
+2025-12-21T15:48:49.0413848Z with:
+2025-12-21T15:48:49.0414258Z   repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:48:49.0414953Z   token: ***
+2025-12-21T15:48:49.0415330Z   ssh-strict: true
+2025-12-21T15:48:49.0415714Z   ssh-user: git
+2025-12-21T15:48:49.0416104Z   persist-credentials: true
+2025-12-21T15:48:49.0416545Z   clean: true
+2025-12-21T15:48:49.0416932Z   sparse-checkout-cone-mode: true
+2025-12-21T15:48:49.0417400Z   fetch-depth: 1
+2025-12-21T15:48:49.0417779Z   fetch-tags: false
+2025-12-21T15:48:49.0418177Z   show-progress: true
+2025-12-21T15:48:49.0418585Z   lfs: false
+2025-12-21T15:48:49.0418950Z   submodules: false
+2025-12-21T15:48:49.0419347Z   set-safe-directory: true
+2025-12-21T15:48:49.0420148Z ##[endgroup]
+2025-12-21T15:48:49.1475387Z Syncing repository: kolyfish/Smart_Stock_Light
+2025-12-21T15:48:49.1477081Z ##[group]Getting Git version info
+2025-12-21T15:48:49.1477925Z Working directory is '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:48:49.1478955Z [command]/usr/bin/git version
+2025-12-21T15:48:49.1632278Z git version 2.52.0
+2025-12-21T15:48:49.1658063Z ##[endgroup]
+2025-12-21T15:48:49.1671770Z Temporarily overriding HOME='/home/runner/work/_temp/17e86712-b8de-444b-94de-6f328d1b2c10' before making global git config changes
+2025-12-21T15:48:49.1673133Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T15:48:49.1684130Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:48:49.1720896Z Deleting the contents of '/home/runner/work/Smart_Stock_Light/Smart_Stock_Light'
+2025-12-21T15:48:49.1724332Z ##[group]Initializing the repository
+2025-12-21T15:48:49.1728148Z [command]/usr/bin/git init /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:48:49.1836718Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-21T15:48:49.1837828Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-21T15:48:49.1838713Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-21T15:48:49.1839647Z hint: call:
+2025-12-21T15:48:49.1840149Z hint:
+2025-12-21T15:48:49.1840935Z hint: 	git config --global init.defaultBranch <name>
+2025-12-21T15:48:49.1841841Z hint:
+2025-12-21T15:48:49.1842430Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-21T15:48:49.1843302Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-21T15:48:49.1843994Z hint:
+2025-12-21T15:48:49.1844387Z hint: 	git branch -m <name>
+2025-12-21T15:48:49.1844816Z hint:
+2025-12-21T15:48:49.1845392Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-21T15:48:49.1846776Z Initialized empty Git repository in /home/runner/work/Smart_Stock_Light/Smart_Stock_Light/.git/
+2025-12-21T15:48:49.1853170Z [command]/usr/bin/git remote add origin https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:48:49.1886083Z ##[endgroup]
+2025-12-21T15:48:49.1887274Z ##[group]Disabling automatic garbage collection
+2025-12-21T15:48:49.1891027Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-21T15:48:49.1919362Z ##[endgroup]
+2025-12-21T15:48:49.1920807Z ##[group]Setting up auth
+2025-12-21T15:48:49.1927035Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T15:48:49.1957918Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T15:48:49.2282288Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T15:48:49.2311966Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T15:48:49.2527102Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T15:48:49.2556847Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T15:48:49.2796747Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-21T15:48:49.2832214Z ##[endgroup]
+2025-12-21T15:48:49.2833470Z ##[group]Fetching the repository
+2025-12-21T15:48:49.2841889Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9da7069a613157c641b1b5dd8a8bbf3966cec743:refs/remotes/origin/main
+2025-12-21T15:48:49.4771124Z From https://github.com/kolyfish/Smart_Stock_Light
+2025-12-21T15:48:49.4771989Z  * [new ref]         9da7069a613157c641b1b5dd8a8bbf3966cec743 -> origin/main
+2025-12-21T15:48:49.4803442Z ##[endgroup]
+2025-12-21T15:48:49.4804126Z ##[group]Determining the checkout info
+2025-12-21T15:48:49.4806571Z ##[endgroup]
+2025-12-21T15:48:49.4812356Z [command]/usr/bin/git sparse-checkout disable
+2025-12-21T15:48:49.4851951Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-21T15:48:49.4876958Z ##[group]Checking out the ref
+2025-12-21T15:48:49.4880573Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-21T15:48:49.4988958Z Switched to a new branch 'main'
+2025-12-21T15:48:49.4991951Z branch 'main' set up to track 'origin/main'.
+2025-12-21T15:48:49.4998428Z ##[endgroup]
+2025-12-21T15:48:49.5032086Z [command]/usr/bin/git log -1 --format=%H
+2025-12-21T15:48:49.5053805Z 9da7069a613157c641b1b5dd8a8bbf3966cec743
+2025-12-21T15:48:49.5292269Z ##[group]Run actions/setup-python@v5
+2025-12-21T15:48:49.5292878Z with:
+2025-12-21T15:48:49.5293236Z   python-version: 3.10
+2025-12-21T15:48:49.5293662Z   check-latest: false
+2025-12-21T15:48:49.5294202Z   token: ***
+2025-12-21T15:48:49.5294580Z   update-environment: true
+2025-12-21T15:48:49.5295029Z   allow-prereleases: false
+2025-12-21T15:48:49.5295458Z   freethreaded: false
+2025-12-21T15:48:49.5295852Z ##[endgroup]
+2025-12-21T15:48:49.6948574Z ##[group]Installed versions
+2025-12-21T15:48:49.7131586Z Successfully set up CPython (3.10.19)
+2025-12-21T15:48:49.7132472Z ##[endgroup]
+2025-12-21T15:48:49.7213202Z ##[group]Run python -m venv venv
+2025-12-21T15:48:49.7213879Z [36;1mpython -m venv venv[0m
+2025-12-21T15:48:49.7214415Z [36;1msource venv/bin/activate[0m
+2025-12-21T15:48:49.7215117Z [36;1mpython -m pip install --upgrade pip setuptools wheel[0m
+2025-12-21T15:48:49.7216049Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T15:48:49.7216915Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T15:48:49.7217746Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T15:48:49.7218546Z [36;1mplaywright install chromium[0m
+2025-12-21T15:48:49.7270217Z shell: /usr/bin/bash -e {0}
+2025-12-21T15:48:49.7270799Z env:
+2025-12-21T15:48:49.7271312Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:48:49.7272193Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T15:48:49.7273059Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:48:49.7273894Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:48:49.7274681Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:48:49.7275475Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T15:48:49.7276117Z ##[endgroup]
+2025-12-21T15:48:54.4747127Z Requirement already satisfied: pip in ./venv/lib/python3.10/site-packages (23.0.1)
+2025-12-21T15:48:54.6141617Z Collecting pip
+2025-12-21T15:48:54.6573062Z   Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+2025-12-21T15:48:54.7661519Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.7 MB/s eta 0:00:00
+2025-12-21T15:48:54.7730636Z Requirement already satisfied: setuptools in ./venv/lib/python3.10/site-packages (79.0.1)
+2025-12-21T15:48:55.0523588Z Collecting setuptools
+2025-12-21T15:48:55.0602602Z   Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-12-21T15:48:55.1063279Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 27.3 MB/s eta 0:00:00
+2025-12-21T15:48:55.1555490Z Collecting wheel
+2025-12-21T15:48:55.1629305Z   Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+2025-12-21T15:48:55.1672822Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 28.6 MB/s eta 0:00:00
+2025-12-21T15:48:55.3309712Z Installing collected packages: wheel, setuptools, pip
+2025-12-21T15:48:55.3752449Z   Attempting uninstall: setuptools
+2025-12-21T15:48:55.3759818Z     Found existing installation: setuptools 79.0.1
+2025-12-21T15:48:55.5496589Z     Uninstalling setuptools-79.0.1:
+2025-12-21T15:48:55.5657298Z       Successfully uninstalled setuptools-79.0.1
+2025-12-21T15:48:56.2431556Z   Attempting uninstall: pip
+2025-12-21T15:48:56.2437701Z     Found existing installation: pip 23.0.1
+2025-12-21T15:48:56.4652821Z     Uninstalling pip-23.0.1:
+2025-12-21T15:48:56.4719494Z       Successfully uninstalled pip-23.0.1
+2025-12-21T15:48:57.2448111Z Successfully installed pip-25.3 setuptools-80.9.0 wheel-0.45.1
+2025-12-21T15:48:57.9080382Z Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+2025-12-21T15:48:57.9727160Z   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:48:58.0168874Z Collecting yfinance>=0.2.66 (from -r requirements.txt (line 2))
+2025-12-21T15:48:58.0243085Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl.metadata (6.0 kB)
+2025-12-21T15:48:58.0451673Z Collecting qrcode==7.4.2 (from -r requirements.txt (line 3))
+2025-12-21T15:48:58.0538928Z   Downloading qrcode-7.4.2-py3-none-any.whl.metadata (17 kB)
+2025-12-21T15:48:58.2993647Z Collecting Pillow>=10.4.0 (from -r requirements.txt (line 4))
+2025-12-21T15:48:58.3070552Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2025-12-21T15:48:58.3490747Z Collecting plugp100>=4.0.0 (from -r requirements.txt (line 5))
+2025-12-21T15:48:58.3596655Z   Downloading plugp100-5.1.5-py3-none-any.whl.metadata (6.2 kB)
+2025-12-21T15:48:58.3773962Z Collecting pyttsx3==2.90 (from -r requirements.txt (line 6))
+2025-12-21T15:48:58.3853778Z   Downloading pyttsx3-2.90-py3-none-any.whl.metadata (3.6 kB)
+2025-12-21T15:48:58.4118628Z Collecting python-dotenv (from -r requirements.txt (line 7))
+2025-12-21T15:48:58.4193062Z   Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+2025-12-21T15:48:58.4483613Z Collecting pyobjc>=10.0 (from -r requirements.txt (line 8))
+2025-12-21T15:48:58.4562352Z   Downloading pyobjc-12.1-py3-none-any.whl.metadata (26 kB)
+2025-12-21T15:48:58.5027575Z ERROR: Exception:
+2025-12-21T15:48:58.5028102Z Traceback (most recent call last):
+2025-12-21T15:48:58.5036611Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3367, in _dep_map
+2025-12-21T15:48:58.5037376Z     return self.__dep_map
+2025-12-21T15:48:58.5038223Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3147, in __getattr__
+2025-12-21T15:48:58.5038921Z     raise AttributeError(attr)
+2025-12-21T15:48:58.5039198Z AttributeError: _DistInfoDistribution__dep_map
+2025-12-21T15:48:58.5039400Z 
+2025-12-21T15:48:58.5039580Z During handling of the above exception, another exception occurred:
+2025-12-21T15:48:58.5039836Z 
+2025-12-21T15:48:58.5040129Z Traceback (most recent call last):
+2025-12-21T15:48:58.5040872Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+2025-12-21T15:48:58.5041525Z     status = _inner_run()
+2025-12-21T15:48:58.5042163Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+2025-12-21T15:48:58.5042803Z     return self.run(options, args)
+2025-12-21T15:48:58.5043433Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 85, in wrapper
+2025-12-21T15:48:58.5044052Z     return func(self, options, args)
+2025-12-21T15:48:58.5044683Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py", line 388, in run
+2025-12-21T15:48:58.5045299Z     requirement_set = resolver.resolve(
+2025-12-21T15:48:58.5046014Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 99, in resolve
+2025-12-21T15:48:58.5046677Z     result = self._result = resolver.resolve(
+2025-12-21T15:48:58.5047356Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 601, in resolve
+2025-12-21T15:48:58.5048084Z     state = resolution.resolve(requirements, max_rounds=max_rounds)
+2025-12-21T15:48:58.5048830Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 434, in resolve
+2025-12-21T15:48:58.5049548Z     self._add_to_criteria(self.state.criteria, r, parent=None)
+2025-12-21T15:48:58.5050518Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py", line 150, in _add_to_criteria
+2025-12-21T15:48:58.5051218Z     if not criterion.candidates:
+2025-12-21T15:48:58.5051835Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/resolvelib/structs.py", line 194, in __bool__
+2025-12-21T15:48:58.5052431Z     return bool(self._sequence)
+2025-12-21T15:48:58.5053120Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 165, in __bool__
+2025-12-21T15:48:58.5053796Z     self._bool = any(self)
+2025-12-21T15:48:58.5054696Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 149, in <genexpr>
+2025-12-21T15:48:58.5055618Z     return (c for c in iterator if id(c) not in self._incompatible_ids)
+2025-12-21T15:48:58.5056408Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 39, in _iter_built
+2025-12-21T15:48:58.5057083Z     candidate = func()
+2025-12-21T15:48:58.5057786Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 180, in _make_candidate_from_link
+2025-12-21T15:48:58.5058566Z     base: BaseCandidate | None = self._make_base_candidate_from_link(
+2025-12-21T15:48:58.5059389Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 226, in _make_base_candidate_from_link
+2025-12-21T15:48:58.5060338Z     self._link_candidate_cache[link] = LinkCandidate(
+2025-12-21T15:48:58.5061057Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 318, in __init__
+2025-12-21T15:48:58.5061702Z     super().__init__(
+2025-12-21T15:48:58.5062329Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 161, in __init__
+2025-12-21T15:48:58.5062986Z     self.dist = self._prepare()
+2025-12-21T15:48:58.5063639Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 260, in _prepare
+2025-12-21T15:48:58.5064313Z     self._check_metadata_consistency(dist)
+2025-12-21T15:48:58.5065076Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 232, in _check_metadata_consistency
+2025-12-21T15:48:58.5065881Z     list(dist.iter_dependencies(list(dist.iter_provided_extras())))
+2025-12-21T15:48:58.5066647Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 247, in iter_provided_extras
+2025-12-21T15:48:58.5067323Z     return self._extra_mapping.keys()
+2025-12-21T15:48:58.5067977Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py", line 91, in _extra_mapping
+2025-12-21T15:48:58.5068686Z     canonicalize_name(extra): extra for extra in self._dist.extras
+2025-12-21T15:48:58.5069390Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3323, in extras
+2025-12-21T15:48:58.5070179Z     return [dep for dep in self._dep_map if dep]
+2025-12-21T15:48:58.5070845Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3369, in _dep_map
+2025-12-21T15:48:58.5071485Z     self.__dep_map = self._compute_dependencies()
+2025-12-21T15:48:58.5072181Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3386, in _compute_dependencies
+2025-12-21T15:48:58.5072926Z     common = types.MappingProxyType(dict.fromkeys(reqs_for_extra(None)))
+2025-12-21T15:48:58.5073688Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3383, in reqs_for_extra
+2025-12-21T15:48:58.5074397Z     if not req.marker or req.marker.evaluate({'extra': extra}):
+2025-12-21T15:48:58.5075078Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 347, in evaluate
+2025-12-21T15:48:58.5075829Z     return _evaluate_markers(
+2025-12-21T15:48:58.5076574Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 239, in _evaluate_markers
+2025-12-21T15:48:58.5077251Z     groups[-1].append(_eval_op(lhs_value, op, rhs_value))
+2025-12-21T15:48:58.5077908Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 187, in _eval_op
+2025-12-21T15:48:58.5078514Z     return spec.contains(lhs, prereleases=True)
+2025-12-21T15:48:58.5079191Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 552, in contains
+2025-12-21T15:48:58.5079833Z     normalized_item = _coerce_version(item)
+2025-12-21T15:48:58.5080722Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/specifiers.py", line 28, in _coerce_version
+2025-12-21T15:48:58.5081371Z     version = Version(version)
+2025-12-21T15:48:58.5081975Z   File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/packaging/version.py", line 202, in __init__
+2025-12-21T15:48:58.5082653Z     raise InvalidVersion(f"Invalid version: {version!r}")
+2025-12-21T15:48:58.5083086Z pip._vendor.packaging.version.InvalidVersion: Invalid version: '6.11.0-1018-azure'
+2025-12-21T15:48:58.5482069Z ##[error]Process completed with exit code 2.
+2025-12-21T15:48:58.5654349Z Post job cleanup.
+2025-12-21T15:48:58.6585748Z [command]/usr/bin/git version
+2025-12-21T15:48:58.6621354Z git version 2.52.0
+2025-12-21T15:48:58.6664909Z Temporarily overriding HOME='/home/runner/work/_temp/f3084525-491d-48f2-90aa-954df4bb4f4b' before making global git config changes
+2025-12-21T15:48:58.6666294Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T15:48:58.6671555Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Smart_Stock_Light/Smart_Stock_Light
+2025-12-21T15:48:58.6713843Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T15:48:58.6745675Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T15:48:58.6974474Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T15:48:58.6995432Z http.https://github.com/.extraheader
+2025-12-21T15:48:58.7008127Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-21T15:48:58.7041678Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T15:48:58.7280386Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T15:48:58.7313539Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T15:48:58.7682144Z Cleaning up orphan processes

@@ -1,0 +1,290 @@
+﻿2025-12-21T16:00:27.4657897Z ##[group]Run python -m venv venv
+2025-12-21T16:00:27.4659153Z [36;1mpython -m venv venv[0m
+2025-12-21T16:00:27.4660200Z [36;1msource venv/bin/activate[0m
+2025-12-21T16:00:27.4661333Z [36;1m# 跳過 pip 升級，避免觸發 azure 套件解析錯誤[0m
+2025-12-21T16:00:27.4662925Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T16:00:27.4664842Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T16:00:27.4666521Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T16:00:27.4668131Z [36;1mplaywright install chromium[0m
+2025-12-21T16:00:27.4772257Z shell: /usr/bin/bash -e {0}
+2025-12-21T16:00:27.4773373Z env:
+2025-12-21T16:00:27.4774408Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:00:27.4776591Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T16:00:27.4778396Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:00:27.4779936Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:00:27.4781540Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T16:00:27.4783085Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T16:00:27.4784355Z ##[endgroup]
+2025-12-21T16:00:34.5992789Z Ignoring pyobjc: markers 'sys_platform == "darwin"' don't match your environment
+2025-12-21T16:00:34.7229969Z Collecting Flask==3.0.0
+2025-12-21T16:00:34.7873220Z   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+2025-12-21T16:00:34.8103521Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 4.5 MB/s eta 0:00:00
+2025-12-21T16:00:34.8756318Z Collecting yfinance>=0.2.66
+2025-12-21T16:00:34.8896753Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl (123 kB)
+2025-12-21T16:00:34.9008670Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 kB 13.2 MB/s eta 0:00:00
+2025-12-21T16:00:34.9330481Z Collecting qrcode==7.4.2
+2025-12-21T16:00:34.9468254Z   Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+2025-12-21T16:00:34.9506056Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 20.3 MB/s eta 0:00:00
+2025-12-21T16:00:35.3869038Z Collecting Pillow>=10.4.0
+2025-12-21T16:00:35.4018889Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+2025-12-21T16:00:35.4751984Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 98.6 MB/s eta 0:00:00
+2025-12-21T16:00:35.5750905Z Collecting plugp100>=4.0.0
+2025-12-21T16:00:35.5898310Z   Downloading plugp100-5.1.5-py3-none-any.whl (103 kB)
+2025-12-21T16:00:35.5965619Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 kB 30.8 MB/s eta 0:00:00
+2025-12-21T16:00:35.6278329Z Collecting pyttsx3==2.90
+2025-12-21T16:00:35.6431319Z   Downloading pyttsx3-2.90-py3-none-any.whl (39 kB)
+2025-12-21T16:00:35.6835369Z Collecting python-dotenv
+2025-12-21T16:00:35.6972826Z   Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+2025-12-21T16:00:35.7939326Z Collecting pytest
+2025-12-21T16:00:35.8090308Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2025-12-21T16:00:35.8152451Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 94.8 MB/s eta 0:00:00
+2025-12-21T16:00:35.8652754Z Collecting pytest-mock
+2025-12-21T16:00:35.8791904Z   Downloading pytest_mock-3.15.1-py3-none-any.whl (10 kB)
+2025-12-21T16:00:35.9790770Z Collecting playwright
+2025-12-21T16:00:35.9933431Z   Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl (46.0 MB)
+2025-12-21T16:00:36.3219010Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 MB 66.8 MB/s eta 0:00:00
+2025-12-21T16:00:36.4052667Z Collecting pytest-playwright
+2025-12-21T16:00:36.4235474Z   Downloading pytest_playwright-0.7.2-py3-none-any.whl (16 kB)
+2025-12-21T16:00:36.4837092Z Collecting requests
+2025-12-21T16:00:36.4977063Z   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-12-21T16:00:36.5019777Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 25.3 MB/s eta 0:00:00
+2025-12-21T16:00:36.5402338Z Collecting itsdangerous>=2.1.2
+2025-12-21T16:00:36.5539308Z   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-12-21T16:00:36.6111879Z Collecting Werkzeug>=3.0.0
+2025-12-21T16:00:36.6251449Z   Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+2025-12-21T16:00:36.6306000Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 69.5 MB/s eta 0:00:00
+2025-12-21T16:00:36.6628974Z Collecting blinker>=1.6.2
+2025-12-21T16:00:36.6768958Z   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-12-21T16:00:36.7223956Z Collecting click>=8.1.3
+2025-12-21T16:00:36.7362967Z   Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2025-12-21T16:00:36.7408340Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 44.3 MB/s eta 0:00:00
+2025-12-21T16:00:36.7798378Z Collecting Jinja2>=3.1.2
+2025-12-21T16:00:36.7939127Z   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-12-21T16:00:36.7987891Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 50.3 MB/s eta 0:00:00
+2025-12-21T16:00:36.8728092Z Collecting typing-extensions
+2025-12-21T16:00:36.8874827Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-12-21T16:00:36.8916897Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 18.9 MB/s eta 0:00:00
+2025-12-21T16:00:36.9199443Z Collecting pypng
+2025-12-21T16:00:36.9348798Z   Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+2025-12-21T16:00:36.9397067Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 21.5 MB/s eta 0:00:00
+2025-12-21T16:00:37.0021035Z Collecting platformdirs>=2.0.0
+2025-12-21T16:00:37.0163571Z   Downloading platformdirs-4.5.1-py3-none-any.whl (18 kB)
+2025-12-21T16:00:37.1409868Z Collecting frozendict>=2.3.4
+2025-12-21T16:00:37.1562781Z   Downloading frozendict-2.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (120 kB)
+2025-12-21T16:00:37.1607498Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.2/120.2 kB 51.7 MB/s eta 0:00:00
+2025-12-21T16:00:37.1890674Z Collecting multitasking>=0.0.7
+2025-12-21T16:00:37.2030688Z   Downloading multitasking-0.0.12.tar.gz (19 kB)
+2025-12-21T16:00:37.2091787Z   Preparing metadata (setup.py): started
+2025-12-21T16:00:37.6002152Z   Preparing metadata (setup.py): finished with status 'done'
+2025-12-21T16:00:38.0848639Z Collecting numpy>=1.16.5
+2025-12-21T16:00:38.1000565Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2025-12-21T16:00:38.2071362Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 134.9 MB/s eta 0:00:00
+2025-12-21T16:00:38.3021885Z Collecting pytz>=2022.5
+2025-12-21T16:00:38.3163511Z   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-12-21T16:00:38.3235359Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 103.3 MB/s eta 0:00:00
+2025-12-21T16:00:38.3687380Z Collecting beautifulsoup4>=4.11.1
+2025-12-21T16:00:38.3824721Z   Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+2025-12-21T16:00:38.3870090Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 42.5 MB/s eta 0:00:00
+2025-12-21T16:00:38.8074711Z Collecting protobuf>=3.19.0
+2025-12-21T16:00:38.8213896Z   Downloading protobuf-6.33.2-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2025-12-21T16:00:38.8273891Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.3/323.3 kB 84.4 MB/s eta 0:00:00
+2025-12-21T16:00:39.0503787Z Collecting websockets>=13.0
+2025-12-21T16:00:39.0650924Z   Downloading websockets-15.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (181 kB)
+2025-12-21T16:00:39.0702425Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.6/181.6 kB 63.6 MB/s eta 0:00:00
+2025-12-21T16:00:39.1137087Z Collecting peewee>=3.16.2
+2025-12-21T16:00:39.1278500Z   Downloading peewee-3.18.3.tar.gz (3.0 MB)
+2025-12-21T16:00:39.1506984Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 148.1 MB/s eta 0:00:00
+2025-12-21T16:00:39.3121271Z   Installing build dependencies: started
+2025-12-21T16:00:41.3325939Z   Installing build dependencies: finished with status 'done'
+2025-12-21T16:00:41.3332288Z   Getting requirements to build wheel: started
+2025-12-21T16:00:41.6452830Z   Getting requirements to build wheel: finished with status 'done'
+2025-12-21T16:00:41.6462818Z   Preparing metadata (pyproject.toml): started
+2025-12-21T16:00:41.9037212Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-12-21T16:00:42.0358831Z Collecting curl_cffi>=0.7
+2025-12-21T16:00:42.0503460Z   Downloading curl_cffi-0.14.0-cp39-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (8.7 MB)
+2025-12-21T16:00:42.1126721Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 144.5 MB/s eta 0:00:00
+2025-12-21T16:00:42.4180712Z Collecting pandas>=1.3.0
+2025-12-21T16:00:42.4323362Z   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2025-12-21T16:00:42.5139430Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 151.5 MB/s eta 0:00:00
+2025-12-21T16:00:42.6044331Z Collecting certifi>=2021.5.30
+2025-12-21T16:00:42.6183972Z   Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+2025-12-21T16:00:42.6231982Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 60.0 MB/s eta 0:00:00
+2025-12-21T16:00:42.6558745Z Collecting semantic-version==2.10.0
+2025-12-21T16:00:42.6696679Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-12-21T16:00:42.7427447Z Collecting jsons>=1.6.3
+2025-12-21T16:00:42.7600321Z   Downloading jsons-1.6.3-py3-none-any.whl (60 kB)
+2025-12-21T16:00:42.7639732Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 kB 28.5 MB/s eta 0:00:00
+2025-12-21T16:00:42.8304828Z Collecting urllib3<3,>=2.5
+2025-12-21T16:00:42.8445077Z   Downloading urllib3-2.6.2-py3-none-any.whl (131 kB)
+2025-12-21T16:00:42.8489370Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.2/131.2 kB 57.1 MB/s eta 0:00:00
+2025-12-21T16:00:44.1587217Z Collecting aiohttp>=3.8.1
+2025-12-21T16:00:44.1731080Z   Downloading aiohttp-3.13.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-12-21T16:00:44.1868940Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 145.5 MB/s eta 0:00:00
+2025-12-21T16:00:44.2222774Z Collecting scapy>=2.5.0
+2025-12-21T16:00:44.2393277Z   Downloading scapy-2.6.1-py3-none-any.whl (2.4 MB)
+2025-12-21T16:00:44.2599356Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 133.2 MB/s eta 0:00:00
+2025-12-21T16:00:44.7793253Z Collecting cryptography>=38.0.3
+2025-12-21T16:00:44.7935305Z   Downloading cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-12-21T16:00:44.8257961Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 149.4 MB/s eta 0:00:00
+2025-12-21T16:00:44.9123474Z Collecting pygments>=2.7.2
+2025-12-21T16:00:44.9264301Z   Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-12-21T16:00:44.9372784Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 140.3 MB/s eta 0:00:00
+2025-12-21T16:00:44.9746851Z Collecting exceptiongroup>=1
+2025-12-21T16:00:44.9885254Z   Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+2025-12-21T16:00:45.0168742Z Collecting iniconfig>=1.0.1
+2025-12-21T16:00:45.0305302Z   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+2025-12-21T16:00:45.0695876Z Collecting pluggy<2,>=1.5
+2025-12-21T16:00:45.0840844Z   Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+2025-12-21T16:00:45.1301703Z Collecting packaging>=22
+2025-12-21T16:00:45.1441318Z   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2025-12-21T16:00:45.1480702Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 31.0 MB/s eta 0:00:00
+2025-12-21T16:00:45.1948715Z Collecting tomli>=1
+2025-12-21T16:00:45.2090557Z   Downloading tomli-2.3.0-py3-none-any.whl (14 kB)
+2025-12-21T16:00:45.5467874Z Collecting greenlet<4.0.0,>=3.1.1
+2025-12-21T16:00:45.5609285Z   Downloading greenlet-3.3.0-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (586 kB)
+2025-12-21T16:00:45.5681193Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 586.9/586.9 kB 120.0 MB/s eta 0:00:00
+2025-12-21T16:00:45.6075721Z Collecting pyee<14,>=13
+2025-12-21T16:00:45.6216934Z   Downloading pyee-13.0.0-py3-none-any.whl (15 kB)
+2025-12-21T16:00:45.6829634Z Collecting python-slugify<9.0.0,>=6.0.0
+2025-12-21T16:00:45.6970165Z   Downloading python_slugify-8.0.4-py2.py3-none-any.whl (10 kB)
+2025-12-21T16:00:45.7290752Z Collecting pytest-base-url<3.0.0,>=1.0.0
+2025-12-21T16:00:45.7450159Z   Downloading pytest_base_url-2.1.0-py3-none-any.whl (5.3 kB)
+2025-12-21T16:00:45.7916067Z Collecting idna<4,>=2.5
+2025-12-21T16:00:45.8054895Z   Downloading idna-3.11-py3-none-any.whl (71 kB)
+2025-12-21T16:00:45.8095186Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 32.3 MB/s eta 0:00:00
+2025-12-21T16:00:46.0309740Z Collecting charset_normalizer<4,>=2
+2025-12-21T16:00:46.0450233Z   Downloading charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+2025-12-21T16:00:46.0498815Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.6/153.6 kB 57.5 MB/s eta 0:00:00
+2025-12-21T16:00:46.0976655Z Collecting async-timeout<6.0,>=4.0
+2025-12-21T16:00:46.1115762Z   Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+2025-12-21T16:00:46.1553775Z Collecting aiohappyeyeballs>=2.5.0
+2025-12-21T16:00:46.1692865Z   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+2025-12-21T16:00:46.3127940Z Collecting propcache>=0.2.0
+2025-12-21T16:00:46.3271135Z   Downloading propcache-0.4.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+2025-12-21T16:00:46.3323120Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.9/196.9 kB 66.2 MB/s eta 0:00:00
+2025-12-21T16:00:46.9998661Z Collecting multidict<7.0,>=4.5
+2025-12-21T16:00:47.0142300Z   Downloading multidict-6.7.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (241 kB)
+2025-12-21T16:00:47.0195839Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.7/241.7 kB 78.1 MB/s eta 0:00:00
+2025-12-21T16:00:47.6848877Z Collecting yarl<2.0,>=1.17.0
+2025-12-21T16:00:47.6991380Z   Downloading yarl-1.22.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (346 kB)
+2025-12-21T16:00:47.7050172Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.0/347.0 kB 95.8 MB/s eta 0:00:00
+2025-12-21T16:00:47.7457523Z Collecting attrs>=17.3.0
+2025-12-21T16:00:47.7596383Z   Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+2025-12-21T16:00:47.7633813Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.6/67.6 kB 32.8 MB/s eta 0:00:00
+2025-12-21T16:00:47.7922353Z Collecting aiosignal>=1.4.0
+2025-12-21T16:00:47.8059327Z   Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2025-12-21T16:00:47.9862589Z Collecting frozenlist>=1.1.1
+2025-12-21T16:00:48.0015520Z   Downloading frozenlist-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+2025-12-21T16:00:48.0067789Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.5/219.5 kB 72.0 MB/s eta 0:00:00
+2025-12-21T16:00:48.0606823Z Collecting soupsieve>=1.6.1
+2025-12-21T16:00:48.0745991Z   Downloading soupsieve-2.8.1-py3-none-any.whl (36 kB)
+2025-12-21T16:00:48.3758954Z Collecting cffi>=2.0.0
+2025-12-21T16:00:48.3904274Z   Downloading cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+2025-12-21T16:00:48.3957643Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.5/216.5 kB 70.8 MB/s eta 0:00:00
+2025-12-21T16:00:48.6928466Z Collecting MarkupSafe>=2.0
+2025-12-21T16:00:48.7069724Z   Downloading markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+2025-12-21T16:00:48.7900651Z Collecting typish>=1.9.2
+2025-12-21T16:00:48.8050043Z   Downloading typish-1.9.3-py3-none-any.whl (45 kB)
+2025-12-21T16:00:48.8089358Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.1/45.1 kB 20.4 MB/s eta 0:00:00
+2025-12-21T16:00:48.9381074Z Collecting python-dateutil>=2.8.2
+2025-12-21T16:00:48.9564316Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-12-21T16:00:48.9620421Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 67.5 MB/s eta 0:00:00
+2025-12-21T16:00:49.0072412Z Collecting tzdata>=2022.7
+2025-12-21T16:00:49.0214401Z   Downloading tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+2025-12-21T16:00:49.0274655Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.5/348.5 kB 92.5 MB/s eta 0:00:00
+2025-12-21T16:00:49.1572493Z Collecting text-unidecode>=1.3
+2025-12-21T16:00:49.1712017Z   Downloading text_unidecode-1.3-py2.py3-none-any.whl (78 kB)
+2025-12-21T16:00:49.1754311Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.2/78.2 kB 33.9 MB/s eta 0:00:00
+2025-12-21T16:00:49.2887192Z Collecting pycparser
+2025-12-21T16:00:49.3026573Z   Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+2025-12-21T16:00:49.3069631Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.1/118.1 kB 53.4 MB/s eta 0:00:00
+2025-12-21T16:00:49.3733609Z Collecting six>=1.5
+2025-12-21T16:00:49.3873454Z   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-12-21T16:00:49.4593096Z Building wheels for collected packages: peewee
+2025-12-21T16:00:49.4602506Z   Building wheel for peewee (pyproject.toml): started
+2025-12-21T16:01:01.2699994Z   Building wheel for peewee (pyproject.toml): finished with status 'done'
+2025-12-21T16:01:01.2714137Z   Created wheel for peewee: filename=peewee-3.18.3-cp310-cp310-linux_x86_64.whl size=988830 sha256=1e68ee822c27f01f717eafa28f88ec4557389f6053593251b4c6c4104e0bdb2b
+2025-12-21T16:01:01.2716419Z   Stored in directory: /home/runner/.cache/pip/wheels/3d/96/39/80c50cbf6bd446cdca9dac7d78a1a0d3a1f313859500529f8d
+2025-12-21T16:01:01.2734900Z Successfully built peewee
+2025-12-21T16:01:01.6762104Z Installing collected packages: typish, text-unidecode, pytz, pyttsx3, pypng, peewee, multitasking, websockets, urllib3, tzdata, typing-extensions, tomli, soupsieve, six, semantic-version, scapy, python-slugify, python-dotenv, pygments, pycparser, protobuf, propcache, pluggy, platformdirs, Pillow, packaging, numpy, MarkupSafe, jsons, itsdangerous, iniconfig, idna, greenlet, frozenlist, frozendict, click, charset_normalizer, certifi, blinker, attrs, async-timeout, aiohappyeyeballs, Werkzeug, requests, qrcode, python-dateutil, pyee, multidict, Jinja2, exceptiongroup, cffi, beautifulsoup4, aiosignal, yarl, pytest, playwright, pandas, Flask, curl_cffi, cryptography, yfinance, pytest-mock, pytest-base-url, aiohttp, pytest-playwright, plugp100
+2025-12-21T16:01:02.0119232Z   DEPRECATION: multitasking is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+2025-12-21T16:01:02.0121151Z   Running setup.py install for multitasking: started
+2025-12-21T16:01:02.2111455Z   Running setup.py install for multitasking: finished with status 'done'
+2025-12-21T16:01:13.5780512Z Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Pillow-12.0.0 Werkzeug-3.1.4 aiohappyeyeballs-2.6.1 aiohttp-3.13.2 aiosignal-1.4.0 async-timeout-5.0.1 attrs-25.4.0 beautifulsoup4-4.14.3 blinker-1.9.0 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 cryptography-46.0.3 curl_cffi-0.14.0 exceptiongroup-1.3.1 frozendict-2.4.7 frozenlist-1.8.0 greenlet-3.3.0 idna-3.11 iniconfig-2.3.0 itsdangerous-2.2.0 jsons-1.6.3 multidict-6.7.0 multitasking-0.0.12 numpy-2.2.6 packaging-25.0 pandas-2.3.3 peewee-3.18.3 platformdirs-4.5.1 playwright-1.57.0 pluggy-1.6.0 plugp100-5.1.5 propcache-0.4.1 protobuf-6.33.2 pycparser-2.23 pyee-13.0.0 pygments-2.19.2 pypng-0.20220715.0 pytest-9.0.2 pytest-base-url-2.1.0 pytest-mock-3.15.1 pytest-playwright-0.7.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.1 python-slugify-8.0.4 pyttsx3-2.90 pytz-2025.2 qrcode-7.4.2 requests-2.32.5 scapy-2.6.1 semantic-version-2.10.0 six-1.17.0 soupsieve-2.8.1 text-unidecode-1.3 tomli-2.3.0 typing-extensions-4.15.0 typish-1.9.3 tzdata-2025.3 urllib3-2.6.2 websockets-15.0.1 yarl-1.22.0 yfinance-0.2.66
+2025-12-21T16:01:13.8901987Z 
+2025-12-21T16:01:13.8902741Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T16:01:13.8903467Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T16:01:14.9419420Z Requirement already satisfied: pytest in ./venv/lib/python3.10/site-packages (9.0.2)
+2025-12-21T16:01:14.9422941Z Requirement already satisfied: pytest-mock in ./venv/lib/python3.10/site-packages (3.15.1)
+2025-12-21T16:01:15.9580336Z Collecting ruff
+2025-12-21T16:01:16.0679216Z   Downloading ruff-0.14.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.2 MB)
+2025-12-21T16:01:16.3110272Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.2/14.2 MB 115.3 MB/s eta 0:00:00
+2025-12-21T16:01:16.3257192Z Requirement already satisfied: playwright in ./venv/lib/python3.10/site-packages (1.57.0)
+2025-12-21T16:01:16.3261597Z Requirement already satisfied: pytest-playwright in ./venv/lib/python3.10/site-packages (0.7.2)
+2025-12-21T16:01:16.3392921Z Requirement already satisfied: tomli>=1 in ./venv/lib/python3.10/site-packages (from pytest) (2.3.0)
+2025-12-21T16:01:16.3399959Z Requirement already satisfied: pygments>=2.7.2 in ./venv/lib/python3.10/site-packages (from pytest) (2.19.2)
+2025-12-21T16:01:16.3406848Z Requirement already satisfied: iniconfig>=1.0.1 in ./venv/lib/python3.10/site-packages (from pytest) (2.3.0)
+2025-12-21T16:01:16.3413502Z Requirement already satisfied: packaging>=22 in ./venv/lib/python3.10/site-packages (from pytest) (25.0)
+2025-12-21T16:01:16.3426491Z Requirement already satisfied: exceptiongroup>=1 in ./venv/lib/python3.10/site-packages (from pytest) (1.3.1)
+2025-12-21T16:01:16.3433268Z Requirement already satisfied: pluggy<2,>=1.5 in ./venv/lib/python3.10/site-packages (from pytest) (1.6.0)
+2025-12-21T16:01:16.3512650Z Requirement already satisfied: pyee<14,>=13 in ./venv/lib/python3.10/site-packages (from playwright) (13.0.0)
+2025-12-21T16:01:16.3519408Z Requirement already satisfied: greenlet<4.0.0,>=3.1.1 in ./venv/lib/python3.10/site-packages (from playwright) (3.3.0)
+2025-12-21T16:01:16.3564369Z Requirement already satisfied: pytest-base-url<3.0.0,>=1.0.0 in ./venv/lib/python3.10/site-packages (from pytest-playwright) (2.1.0)
+2025-12-21T16:01:16.3572554Z Requirement already satisfied: python-slugify<9.0.0,>=6.0.0 in ./venv/lib/python3.10/site-packages (from pytest-playwright) (8.0.4)
+2025-12-21T16:01:16.3615587Z Requirement already satisfied: typing-extensions>=4.6.0 in ./venv/lib/python3.10/site-packages (from exceptiongroup>=1->pytest) (4.15.0)
+2025-12-21T16:01:16.4131071Z Requirement already satisfied: requests>=2.9 in ./venv/lib/python3.10/site-packages (from pytest-base-url<3.0.0,>=1.0.0->pytest-playwright) (2.32.5)
+2025-12-21T16:01:16.4162977Z Requirement already satisfied: text-unidecode>=1.3 in ./venv/lib/python3.10/site-packages (from python-slugify<9.0.0,>=6.0.0->pytest-playwright) (1.3)
+2025-12-21T16:01:16.4237777Z Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.10/site-packages (from requests>=2.9->pytest-base-url<3.0.0,>=1.0.0->pytest-playwright) (2025.11.12)
+2025-12-21T16:01:16.4245076Z Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.10/site-packages (from requests>=2.9->pytest-base-url<3.0.0,>=1.0.0->pytest-playwright) (3.11)
+2025-12-21T16:01:16.4254273Z Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.10/site-packages (from requests>=2.9->pytest-base-url<3.0.0,>=1.0.0->pytest-playwright) (3.4.4)
+2025-12-21T16:01:16.4261330Z Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.10/site-packages (from requests>=2.9->pytest-base-url<3.0.0,>=1.0.0->pytest-playwright) (2.6.2)
+2025-12-21T16:01:16.7194990Z Installing collected packages: ruff
+2025-12-21T16:01:16.9093153Z Successfully installed ruff-0.14.10
+2025-12-21T16:01:16.9678536Z 
+2025-12-21T16:01:16.9679069Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T16:01:16.9679470Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T16:01:17.3841077Z Downloading Chromium 143.0.7499.4 (playwright build v1200) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1200/chromium-linux.zip
+2025-12-21T16:01:17.4817552Z (node:2327) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-21T16:01:17.4818692Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-21T16:01:17.6095369Z |                                                                                |   0% of 164.7 MiB
+2025-12-21T16:01:17.8644919Z |■■■■■■■■                                                                        |  10% of 164.7 MiB
+2025-12-21T16:01:17.9620083Z |■■■■■■■■■■■■■■■■                                                                |  20% of 164.7 MiB
+2025-12-21T16:01:18.0441103Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 164.7 MiB
+2025-12-21T16:01:18.1263126Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 164.7 MiB
+2025-12-21T16:01:18.2203387Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 164.7 MiB
+2025-12-21T16:01:18.3043404Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 164.7 MiB
+2025-12-21T16:01:18.3856454Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 164.7 MiB
+2025-12-21T16:01:18.4732148Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 164.7 MiB
+2025-12-21T16:01:18.5555762Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 164.7 MiB
+2025-12-21T16:01:18.6426669Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 164.7 MiB
+2025-12-21T16:01:21.0535632Z Chromium 143.0.7499.4 (playwright build v1200) downloaded to /home/runner/.cache/ms-playwright/chromium-1200
+2025-12-21T16:01:21.0539648Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2025-12-21T16:01:21.1516469Z (node:2338) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-21T16:01:21.1518648Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-21T16:01:21.2197381Z |                                                                                |   0% of 2.3 MiB
+2025-12-21T16:01:21.2400866Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2025-12-21T16:01:21.2490395Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2025-12-21T16:01:21.2562577Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2025-12-21T16:01:21.2591590Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2025-12-21T16:01:21.2635609Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2025-12-21T16:01:21.2652518Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2025-12-21T16:01:21.2674628Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2025-12-21T16:01:21.2694054Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2025-12-21T16:01:21.2705265Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2025-12-21T16:01:21.2721794Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2025-12-21T16:01:21.3280492Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2025-12-21T16:01:21.3284010Z Downloading Chromium Headless Shell 143.0.7499.4 (playwright build v1200) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1200/chromium-headless-shell-linux.zip
+2025-12-21T16:01:21.4249318Z (node:2349) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-21T16:01:21.4251592Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-21T16:01:21.5556409Z |                                                                                |   0% of 109.7 MiB
+2025-12-21T16:01:21.8035312Z |■■■■■■■■                                                                        |  10% of 109.7 MiB
+2025-12-21T16:01:21.8749184Z |■■■■■■■■■■■■■■■■                                                                |  20% of 109.7 MiB
+2025-12-21T16:01:21.9729817Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 109.7 MiB
+2025-12-21T16:01:22.0444163Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 109.7 MiB
+2025-12-21T16:01:22.1225584Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 109.7 MiB
+2025-12-21T16:01:22.1892280Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 109.7 MiB
+2025-12-21T16:01:22.2577613Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 109.7 MiB
+2025-12-21T16:01:22.3259815Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 109.7 MiB
+2025-12-21T16:01:22.3943156Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 109.7 MiB
+2025-12-21T16:01:22.4627585Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 109.7 MiB
+2025-12-21T16:01:24.2742050Z Chromium Headless Shell 143.0.7499.4 (playwright build v1200) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1200

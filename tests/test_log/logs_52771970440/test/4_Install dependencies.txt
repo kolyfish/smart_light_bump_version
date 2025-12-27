@@ -1,0 +1,183 @@
+﻿2025-12-21T15:58:12.7315639Z ##[group]Run python -m venv venv
+2025-12-21T15:58:12.7316196Z [36;1mpython -m venv venv[0m
+2025-12-21T15:58:12.7316607Z [36;1msource venv/bin/activate[0m
+2025-12-21T15:58:12.7317052Z [36;1m# 跳過 pip 升級，避免觸發 azure 套件解析錯誤[0m
+2025-12-21T15:58:12.7317656Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+2025-12-21T15:58:12.7318309Z [36;1m# Ensure pytest and ruff are installed[0m
+2025-12-21T15:58:12.7318943Z [36;1mpip install pytest pytest-mock ruff playwright pytest-playwright[0m
+2025-12-21T15:58:12.7319742Z [36;1mplaywright install chromium[0m
+2025-12-21T15:58:12.7352667Z shell: /usr/bin/bash -e {0}
+2025-12-21T15:58:12.7353132Z env:
+2025-12-21T15:58:12.7353600Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7354290Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-21T15:58:12.7354991Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7355595Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7356248Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-21T15:58:12.7356852Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib
+2025-12-21T15:58:12.7357350Z ##[endgroup]
+2025-12-21T15:58:16.4196520Z Collecting Flask==3.0.0
+2025-12-21T15:58:16.4558577Z   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+2025-12-21T15:58:16.4790892Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 4.5 MB/s eta 0:00:00
+2025-12-21T15:58:16.5274454Z Collecting yfinance>=0.2.66
+2025-12-21T15:58:16.5316024Z   Downloading yfinance-0.2.66-py2.py3-none-any.whl (123 kB)
+2025-12-21T15:58:16.6891319Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 kB 731.1 kB/s eta 0:00:00
+2025-12-21T15:58:16.7550766Z Collecting qrcode==7.4.2
+2025-12-21T15:58:16.7588544Z   Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+2025-12-21T15:58:17.1822978Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 85.5 kB/s eta 0:00:00
+2025-12-21T15:58:17.5848978Z Collecting Pillow>=10.4.0
+2025-12-21T15:58:17.5890431Z   Downloading pillow-12.0.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+2025-12-21T15:58:18.0327627Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 15.9 MB/s eta 0:00:00
+2025-12-21T15:58:18.1065439Z Collecting plugp100>=4.0.0
+2025-12-21T15:58:18.1113137Z   Downloading plugp100-5.1.5-py3-none-any.whl (103 kB)
+2025-12-21T15:58:18.1155068Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 kB 48.9 MB/s eta 0:00:00
+2025-12-21T15:58:18.1366295Z Collecting pyttsx3==2.90
+2025-12-21T15:58:18.1446903Z   Downloading pyttsx3-2.90-py3-none-any.whl (39 kB)
+2025-12-21T15:58:18.1709128Z Collecting python-dotenv
+2025-12-21T15:58:18.1749779Z   Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+2025-12-21T15:58:18.2300517Z Collecting pyobjc>=10.0
+2025-12-21T15:58:18.2352594Z   Downloading pyobjc-12.1-py3-none-any.whl (4.2 kB)
+2025-12-21T15:58:18.3110827Z Collecting pytest
+2025-12-21T15:58:18.3150959Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2025-12-21T15:58:18.3205967Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 117.6 MB/s eta 0:00:00
+2025-12-21T15:58:18.3562908Z Collecting pytest-mock
+2025-12-21T15:58:18.3600687Z   Downloading pytest_mock-3.15.1-py3-none-any.whl (10 kB)
+2025-12-21T15:58:18.4373610Z Collecting playwright
+2025-12-21T15:58:18.4448960Z   Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl (46.0 MB)
+2025-12-21T15:58:18.6994947Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 MB 94.2 MB/s eta 0:00:00
+2025-12-21T15:58:18.7724641Z Collecting pytest-playwright
+2025-12-21T15:58:18.7788606Z   Downloading pytest_playwright-0.7.2-py3-none-any.whl (16 kB)
+2025-12-21T15:58:18.8316359Z Collecting requests
+2025-12-21T15:58:18.8354051Z   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-12-21T15:58:18.8392299Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 30.5 MB/s eta 0:00:00
+2025-12-21T15:58:18.8615820Z Collecting itsdangerous>=2.1.2
+2025-12-21T15:58:18.8670663Z   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-12-21T15:58:18.8845379Z Collecting blinker>=1.6.2
+2025-12-21T15:58:18.8882619Z   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-12-21T15:58:18.9185975Z Collecting click>=8.1.3
+2025-12-21T15:58:18.9223428Z   Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2025-12-21T15:58:18.9262770Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 53.0 MB/s eta 0:00:00
+2025-12-21T15:58:18.9725809Z Collecting Werkzeug>=3.0.0
+2025-12-21T15:58:18.9765854Z   Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+2025-12-21T15:58:18.9817907Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 71.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.0061479Z Collecting Jinja2>=3.1.2
+2025-12-21T15:58:19.0099517Z   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-12-21T15:58:19.0142502Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 57.4 MB/s eta 0:00:00
+2025-12-21T15:58:19.0741319Z Collecting typing-extensions
+2025-12-21T15:58:19.0778364Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-12-21T15:58:19.0814434Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 20.8 MB/s eta 0:00:00
+2025-12-21T15:58:19.1030651Z Collecting pypng
+2025-12-21T15:58:19.1071162Z   Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+2025-12-21T15:58:19.1109002Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 25.7 MB/s eta 0:00:00
+2025-12-21T15:58:19.1610807Z Collecting platformdirs>=2.0.0
+2025-12-21T15:58:19.1648885Z   Downloading platformdirs-4.5.1-py3-none-any.whl (18 kB)
+2025-12-21T15:58:19.1932432Z Collecting beautifulsoup4>=4.11.1
+2025-12-21T15:58:19.1971344Z   Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+2025-12-21T15:58:19.2020374Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 50.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.2597596Z Collecting pytz>=2022.5
+2025-12-21T15:58:19.2644997Z   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-12-21T15:58:19.2718644Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 105.3 MB/s eta 0:00:00
+2025-12-21T15:58:19.3735006Z Collecting frozendict>=2.3.4
+2025-12-21T15:58:19.3780507Z   Downloading frozendict-2.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (120 kB)
+2025-12-21T15:58:19.3824366Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.2/120.2 kB 51.5 MB/s eta 0:00:00
+2025-12-21T15:58:19.4877502Z Collecting curl_cffi>=0.7
+2025-12-21T15:58:19.4938698Z   Downloading curl_cffi-0.14.0-cp39-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (8.7 MB)
+2025-12-21T15:58:19.5393406Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 202.1 MB/s eta 0:00:00
+2025-12-21T15:58:19.5628308Z Collecting multitasking>=0.0.7
+2025-12-21T15:58:19.5665190Z   Downloading multitasking-0.0.12.tar.gz (19 kB)
+2025-12-21T15:58:19.5720587Z   Preparing metadata (setup.py): started
+2025-12-21T15:58:19.7362656Z   Preparing metadata (setup.py): finished with status 'done'
+2025-12-21T15:58:19.9274302Z Collecting websockets>=13.0
+2025-12-21T15:58:19.9313626Z   Downloading websockets-15.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (181 kB)
+2025-12-21T15:58:19.9358016Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.6/181.6 kB 76.7 MB/s eta 0:00:00
+2025-12-21T15:58:20.3520026Z Collecting numpy>=1.16.5
+2025-12-21T15:58:20.3560232Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2025-12-21T15:58:20.4392383Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 178.4 MB/s eta 0:00:00
+2025-12-21T15:58:20.7289965Z Collecting pandas>=1.3.0
+2025-12-21T15:58:20.7332213Z   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2025-12-21T15:58:20.7964538Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 199.9 MB/s eta 0:00:00
+2025-12-21T15:58:20.8465717Z Collecting peewee>=3.16.2
+2025-12-21T15:58:20.8511676Z   Downloading peewee-3.18.3.tar.gz (3.0 MB)
+2025-12-21T15:58:20.8839894Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 98.7 MB/s eta 0:00:00
+2025-12-21T15:58:21.0250168Z   Installing build dependencies: started
+2025-12-21T15:58:22.6406170Z   Installing build dependencies: finished with status 'done'
+2025-12-21T15:58:22.6415598Z   Getting requirements to build wheel: started
+2025-12-21T15:58:22.9084545Z   Getting requirements to build wheel: finished with status 'done'
+2025-12-21T15:58:22.9095775Z   Preparing metadata (pyproject.toml): started
+2025-12-21T15:58:23.0972564Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-12-21T15:58:23.4406185Z Collecting protobuf>=3.19.0
+2025-12-21T15:58:23.4445726Z   Downloading protobuf-6.33.2-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2025-12-21T15:58:23.4495237Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.3/323.3 kB 112.5 MB/s eta 0:00:00
+2025-12-21T15:58:23.4892222Z Collecting semantic-version==2.10.0
+2025-12-21T15:58:23.4931407Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-12-21T15:58:23.5122297Z Collecting scapy>=2.5.0
+2025-12-21T15:58:23.5185273Z   Downloading scapy-2.6.1-py3-none-any.whl (2.4 MB)
+2025-12-21T15:58:23.5312501Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 223.8 MB/s eta 0:00:00
+2025-12-21T15:58:23.5864104Z Collecting urllib3<3,>=2.5
+2025-12-21T15:58:23.5898782Z   Downloading urllib3-2.6.2-py3-none-any.whl (131 kB)
+2025-12-21T15:58:23.5939984Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.2/131.2 kB 62.7 MB/s eta 0:00:00
+2025-12-21T15:58:24.0224997Z Collecting cryptography>=38.0.3
+2025-12-21T15:58:24.0270399Z   Downloading cryptography-46.0.3-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-12-21T15:58:24.0475897Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 242.2 MB/s eta 0:00:00
+2025-12-21T15:58:24.0765031Z Collecting jsons>=1.6.3
+2025-12-21T15:58:24.0805045Z   Downloading jsons-1.6.3-py3-none-any.whl (60 kB)
+2025-12-21T15:58:24.0841173Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 kB 31.3 MB/s eta 0:00:00
+2025-12-21T15:58:25.2500246Z Collecting aiohttp>=3.8.1
+2025-12-21T15:58:25.2547099Z   Downloading aiohttp-3.13.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-12-21T15:58:25.2648963Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 204.9 MB/s eta 0:00:00
+2025-12-21T15:58:25.2966048Z Collecting certifi>=2021.5.30
+2025-12-21T15:58:25.3012563Z   Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+2025-12-21T15:58:25.3052808Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 78.0 MB/s eta 0:00:00
+2025-12-21T15:58:25.5761324Z Collecting pyobjc-framework-InstallerPlugins==12.1
+2025-12-21T15:58:25.5813412Z   Downloading pyobjc_framework_installerplugins-12.1-py2.py3-none-any.whl (4.8 kB)
+2025-12-21T15:58:25.6277618Z Collecting pyobjc-framework-SyncServices==12.1
+2025-12-21T15:58:25.6327484Z   Downloading pyobjc_framework_syncservices-12.1.tar.gz (31 kB)
+2025-12-21T15:58:25.6435596Z   Installing build dependencies: started
+2025-12-21T15:58:27.0884179Z   Installing build dependencies: finished with status 'done'
+2025-12-21T15:58:27.0891265Z   Getting requirements to build wheel: started
+2025-12-21T15:58:27.3151421Z   Getting requirements to build wheel: finished with status 'error'
+2025-12-21T15:58:27.3206059Z   error: subprocess-exited-with-error
+2025-12-21T15:58:27.3206457Z   
+2025-12-21T15:58:27.3206980Z   × Getting requirements to build wheel did not run successfully.
+2025-12-21T15:58:27.3207330Z   │ exit code: 1
+2025-12-21T15:58:27.3207688Z   ╰─> [27 lines of output]
+2025-12-21T15:58:27.3208033Z       Traceback (most recent call last):
+2025-12-21T15:58:27.3213818Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+2025-12-21T15:58:27.3214644Z           main()
+2025-12-21T15:58:27.3215402Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+2025-12-21T15:58:27.3216231Z           json_out['return_val'] = hook(**hook_input['kwargs'])
+2025-12-21T15:58:27.3217127Z         File "/home/runner/work/Smart_Stock_Light/Smart_Stock_Light/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+2025-12-21T15:58:27.3217932Z           return hook(config_settings)
+2025-12-21T15:58:27.3218613Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+2025-12-21T15:58:27.3219512Z           return self._get_build_requires(config_settings, requirements=[])
+2025-12-21T15:58:27.3220310Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+2025-12-21T15:58:27.3220912Z           self.run_setup()
+2025-12-21T15:58:27.3221526Z         File "/tmp/pip-build-env-8a8yxtk6/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 317, in run_setup
+2025-12-21T15:58:27.3222439Z           exec(code, locals())
+2025-12-21T15:58:27.3222933Z         File "<string>", line 26, in <module>
+2025-12-21T15:58:27.3223663Z         File "/tmp/pip-install-6o71zmrj/pyobjc-framework-syncservices_df7ae3fee9b84c99a0f096cee124f21b/pyobjc_setup.py", line 552, in setup
+2025-12-21T15:58:27.3224180Z           os_level = get_os_level()
+2025-12-21T15:58:27.3224722Z         File "/tmp/pip-install-6o71zmrj/pyobjc-framework-syncservices_df7ae3fee9b84c99a0f096cee124f21b/pyobjc_setup.py", line 252, in get_os_level
+2025-12-21T15:58:27.3225338Z           subprocess.check_output(["/usr/bin/sw_vers", "-productVersion"])
+2025-12-21T15:58:27.3225860Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 421, in check_output
+2025-12-21T15:58:27.3226337Z           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+2025-12-21T15:58:27.3226997Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 503, in run
+2025-12-21T15:58:27.3227510Z           with Popen(*popenargs, **kwargs) as process:
+2025-12-21T15:58:27.3227955Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 971, in __init__
+2025-12-21T15:58:27.3228403Z           self._execute_child(args, executable, preexec_fn, close_fds,
+2025-12-21T15:58:27.3228877Z         File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/subprocess.py", line 1863, in _execute_child
+2025-12-21T15:58:27.3229503Z           raise child_exception_type(errno_num, err_msg, err_filename)
+2025-12-21T15:58:27.3229891Z       FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/sw_vers'
+2025-12-21T15:58:27.3230215Z       [end of output]
+2025-12-21T15:58:27.3230401Z   
+2025-12-21T15:58:27.3230675Z   note: This error originates from a subprocess, and is likely not a problem with pip.
+2025-12-21T15:58:27.3231170Z error: subprocess-exited-with-error
+2025-12-21T15:58:27.3231330Z 
+2025-12-21T15:58:27.3231601Z × Getting requirements to build wheel did not run successfully.
+2025-12-21T15:58:27.3231920Z │ exit code: 1
+2025-12-21T15:58:27.3232120Z ╰─> See above for output.
+2025-12-21T15:58:27.3232253Z 
+2025-12-21T15:58:27.3232443Z note: This error originates from a subprocess, and is likely not a problem with pip.
+2025-12-21T15:58:27.3742930Z 
+2025-12-21T15:58:27.3743502Z [notice] A new release of pip is available: 23.0.1 -> 25.3
+2025-12-21T15:58:27.3743858Z [notice] To update, run: pip install --upgrade pip
+2025-12-21T15:58:27.7097499Z ##[error]Process completed with exit code 1.

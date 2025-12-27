@@ -1,0 +1,5 @@
+2025-12-21T15:48:45.9000000Z Requested labels: ubuntu-latest
+2025-12-21T15:48:45.9000000Z Job defined at: kolyfish/Smart_Stock_Light/.github/workflows/python-ci.yml@refs/heads/main
+2025-12-21T15:48:45.9000000Z Waiting for a runner to pick up this job...
+2025-12-21T15:48:46.3940000Z Job is about to start running on the hosted runner: GitHub Actions 1000000038
+2025-12-21T15:48:46.3930000Z Job is waiting for a hosted runner to come online.
