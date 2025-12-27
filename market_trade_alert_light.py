@@ -7,7 +7,7 @@ import sys
 
 from shared_config import SharedConfig
 from tapo_controller import TapoController
-from stock_monitor import StockMonitor
+from mission_monitor import MissionMonitor
 from web_server import WebServer
 
 def get_local_ip():
@@ -32,8 +32,8 @@ class SmartStockLight:
         self.tapo = TapoController()
         
         # Start Threads
-        # 使用集成中央控制功能的 StockMonitor
-        self.monitor = StockMonitor(self.shared_config, self.tapo)
+        # 使用 MissionMonitor 取代原本的 StockMonitor
+        self.monitor = MissionMonitor(self.shared_config, self.tapo)
         self.monitor.start()
         
         self.server = WebServer(self.shared_config, self.tapo, self.monitor)

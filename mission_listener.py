@@ -6,9 +6,8 @@ class MissionListener:
     """
     監聽中央司令部的指令
     """
-    def __init__(self, server_url: str = None, interval: int = 5):
-        import os
-        self.server_url = server_url or os.getenv("MISSION_CONTROL_URL", "http://localhost:5000")
+    def __init__(self, server_url: str = "http://localhost:5000", interval: int = 5):
+        self.server_url = server_url
         self.check_interval = interval
         self.last_check = 0
         self.current_orders = {"mode": "normal"}

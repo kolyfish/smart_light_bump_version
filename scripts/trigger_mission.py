@@ -1,7 +1,8 @@
 import requests
 import sys
 
-SERVER_URL = "http://localhost:5000"
+# SERVER_URL = "http://localhost:5000"
+SERVER_URL = "https://mission-smart-light.onrender.com"
 ADMIN_KEY = "BUMP_VERSION_SUPER_SECRET_KEY"
 
 def trigger_mission():
