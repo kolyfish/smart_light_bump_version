@@ -6,11 +6,16 @@ class MissionListener:
     """
     監聽中央司令部的指令
     """
-    def __init__(self, server_url: str = "http://localhost:5000", interval: int = 5):
-        self.server_url = server_url
+    def __init__(self, server_url: str = None, interval: int = 5):
+        import os
+        # 強制從環境變數讀取，若無則預設為雲端網址
+        self.server_url = server_url or os.getenv("MISSION_CONTROL_URL", "https://mission-smart-light.onrender.com")
+        print(f"📡 任務監控連線至: {self.server_url}")
         self.check_interval = interval
         self.last_check = 0
         self.current_orders = {"mode": "normal"}
+        self.is_connected = False
+        self.connection_status = "offline" # 新增：connected, waking, offline
 
     def check_orders(self) -> Dict[str, Any]:
         """
@@ -22,14 +27,27 @@ class MissionListener:
             return self.current_orders
 
         try:
-            response = requests.get(f"{self.server_url}/status", timeout=2)
+            # 增加 timeout 到 10s，觀察是否正在起床
+            response = requests.get(f"{self.server_url}/status", timeout=10)
             if response.status_code == 200:
-                self.current_orders = response.json()
+                new_orders = response.json()
+                if new_orders.get("mode") != self.current_orders.get("mode"):
+                    print(f"🔔 指令變動偵測: {self.current_orders.get('mode')} -> {new_orders.get('mode')}")
+                self.current_orders = new_orders
                 self.last_check = now
-        except requests.RequestException:
-            # 如果連不上伺服器，預設保持原本狀態，不要崩潰
-            # print("⚠️ 無法連接中央司令部，保持靜默模式...")
-            pass
+                self.is_connected = True
+                self.connection_status = "connected"
+        except requests.Timeout:
+            # 超時通常代表伺服器正在「起床」 (Render 睡眠機制)
+            self.is_connected = False
+            self.connection_status = "waking"
+        except requests.RequestException as e:
+            # 拒絕連線等其他錯誤代表真的離線
+            self.is_connected = False
+            self.connection_status = "offline"
+            if now - getattr(self, '_last_error_log', 0) > 60:
+                print(f"⚠️ 無法連接中央司令部 ({self.server_url}): {e}")
+                self._last_error_log = now
             
         return self.current_orders
 

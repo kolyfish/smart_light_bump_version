@@ -116,10 +116,12 @@ class WebServer(threading.Thread):
     def market_status(self):
         config = self.shared_config.get_config()
         symbol = config.get('symbol')
-        status_text = self.monitor.get_market_status_text() # get_market_status_text already pulls config internally in my update
+        status_text = self.monitor.get_market_status_text()
         return jsonify({
             "status": status_text,
-            "is_open": self.monitor.is_market_open(symbol)
+            "is_open": self.monitor.is_market_open(symbol),
+            "mission_connected": getattr(self.monitor.mission_listener, 'is_connected', False),
+            "mission_status": getattr(self.monitor.mission_listener, 'connection_status', 'offline')
         })
 
     def demo_alert(self):
@@ -135,7 +137,9 @@ class WebServer(threading.Thread):
             "stock_name": self.monitor.last_stock_name,
             "update_time": self.monitor.last_update_time,
             "symbol": self.shared_config.get_config()['symbol'],
-            "alert_active": self.monitor.alarm_active or self.monitor.tapo.is_alerting_state() # Hybrid logic
+            "alert_active": self.monitor.alarm_active or self.monitor.tapo.is_alerting_state(),
+            "mission_mode": self.monitor.in_mission_mode,
+            "mission_message": getattr(self.monitor, '_last_mission_msg', None)
         })
 
     def simulate_data(self):

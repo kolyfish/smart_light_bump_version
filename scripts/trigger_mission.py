@@ -1,11 +1,16 @@
 import requests
-import sys
+import os
+from dotenv import load_dotenv
 
-# SERVER_URL = "http://localhost:5000"
-SERVER_URL = "https://mission-smart-light.onrender.com"
-ADMIN_KEY = "BUMP_VERSION_SUPER_SECRET_KEY"
+# 載入環境變數
+load_dotenv()
+
+# 設定
+SERVER_URL = os.getenv("MISSION_CONTROL_URL", "https://mission-smart-light.onrender.com")
+ADMIN_KEY = os.getenv("ADMIN_KEY", "BUMP")
 
 def trigger_mission():
+    message = input("請輸入任務簡報文字 (直接按 Enter 使用預設): ") or "執行秘密任務，全體藍燈待命"
     print(f"正在連線至 {SERVER_URL} 發布任務指令...")
     
     headers = {
@@ -15,7 +20,7 @@ def trigger_mission():
     payload = {
         "mode": "mission",
         "color": "blue",
-        "message": "EXECUTE_ORDER_66"
+        "message": message
     }
     
     try:

@@ -1,5 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
+from dotenv import load_dotenv
+import os
+
+load_dotenv() # 載入 .env 設定
 from PIL import ImageTk
 import qrcode
 import socket
@@ -7,7 +11,7 @@ import sys
 
 from shared_config import SharedConfig
 from tapo_controller import TapoController
-from mission_monitor import MissionMonitor
+from stock_monitor import StockMonitor
 from web_server import WebServer
 
 def get_local_ip():
@@ -29,11 +33,11 @@ class SmartStockLight:
 
         # Initialize Components
         self.shared_config = SharedConfig()
-        self.tapo = TapoController()
+        self.tapo = TapoController(self.shared_config)
         
         # Start Threads
-        # 使用 MissionMonitor 取代原本的 StockMonitor
-        self.monitor = MissionMonitor(self.shared_config, self.tapo)
+        # 使用集成中央控制功能的 StockMonitor
+        self.monitor = StockMonitor(self.shared_config, self.tapo)
         self.monitor.start()
         
         self.server = WebServer(self.shared_config, self.tapo, self.monitor)

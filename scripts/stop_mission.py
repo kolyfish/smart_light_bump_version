@@ -1,9 +1,15 @@
 import requests
 import sys
+import os
+from dotenv import load_dotenv
 
+# 載入環境變數
+load_dotenv()
+
+# 設定
 # SERVER_URL = "http://localhost:5000"
-SERVER_URL = "https://mission-smart-light.onrender.com"
-ADMIN_KEY = "BUMP_VERSION_SUPER_SECRET_KEY"
+SERVER_URL = os.getenv("MISSION_CONTROL_URL", "https://mission-smart-light.onrender.com")
+ADMIN_KEY = os.getenv("ADMIN_KEY", "BUMP")
 
 def stop_mission():
     print(f"正在連線至 {SERVER_URL} 解除任務指令...")

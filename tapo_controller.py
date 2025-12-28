@@ -98,7 +98,7 @@ class TapoController:
         try:
             device = await self._get_connected_device()
             
-            color_map = {120: "綠色", 60: "黃色", 0: "紅色", 280: "紫色"}
+            color_map = {120: "綠色", 60: "黃色", 0: "紅色", 280: "紫色", 240: "藍色"}
             color_name = color_map.get(hue, f"未知 Hue:{hue}")
             print(f"[{self.ip_address}] 正在切換顏色為: {color_name}")
             
@@ -154,25 +154,27 @@ class TapoController:
 
     def turn_on_green(self):
         """觸發警報：轉為綠色。"""
-        if self._lock.acquire(blocking=False):
+        # 關鍵指令：給予 1 秒等待時間確保能取得鎖，避免被黃燈頻繁指令排除
+        if self._lock.acquire(blocking=True, timeout=1.0):
             try:
                 self.is_sleeping = False # 警報強制喚醒
                 asyncio.run(self._set_color_hs(120, 100))
             finally:
                 self._lock.release()
         else:
-            print("TapoController: 裝置忙線中，跳過綠燈指令")
+            print("TapoController: 獲取鎖超時，跳過綠燈指令")
 
     def turn_on_red(self):
         """監控中：轉為紅色。"""
-        if self._lock.acquire(blocking=False):
+        # 關鍵指令：給予 1 秒等待時間確保能取得鎖
+        if self._lock.acquire(blocking=True, timeout=1.0):
             try:
                 self.is_sleeping = False # 警報強制喚醒
                 asyncio.run(self._set_color_hs(0, 100))
             finally:
                 self._lock.release()
         else:
-            print("TapoController: 裝置忙線中，跳過紅燈指令")
+            print("TapoController: 獲取鎖超時，跳過紅燈指令")
 
     def turn_on_yellow(self):
         """常態/待機：轉為黃色。"""
@@ -190,25 +192,27 @@ class TapoController:
 
     def turn_on_purple(self):
         """閃崩警報：轉為紫色。"""
-        if self._lock.acquire(blocking=False):
+        # 關鍵指令：給予 1 秒等待時間確保能取得鎖
+        if self._lock.acquire(blocking=True, timeout=1.0):
             try:
                 self.is_sleeping = False # 警報強制喚醒
                 asyncio.run(self._set_color_hs(280, 100))
             finally:
                 self._lock.release()
         else:
-            print("TapoController: 裝置忙線中，跳過紫色指令")
+            print("TapoController: 獲取鎖超時，跳過紫色指令")
 
     def turn_on_blue(self):
         """秘密任務警報：轉為藍色。"""
-        if self._lock.acquire(blocking=False):
+        # 關鍵指令：給予 2 秒等待時間確保能取得鎖，這是最高優先權指令
+        if self._lock.acquire(blocking=True, timeout=2.0):
             try:
                 self.is_sleeping = False # 警報強制喚醒
                 asyncio.run(self._set_color_hs(240, 100))
             finally:
                 self._lock.release()
         else:
-            print("TapoController: 裝置忙線中，跳過藍色指令")
+            print("TapoController: 獲取鎖超時，跳過藍燈指令")
 
     def run_test_sequence(self):
         """執行完整測試序列。"""

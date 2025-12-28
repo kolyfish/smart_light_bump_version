@@ -4,6 +4,7 @@ import yfinance as yf
 import subprocess
 from datetime import datetime
 from market_data_agent import MarketDataAgent
+from mission_listener import MissionListener
 
 class StockMonitor(threading.Thread):
     def __init__(self, shared_config, tapo_controller):
@@ -33,8 +34,9 @@ class StockMonitor(threading.Thread):
         self.alarm_thread = None   # 警報播報執行緒
         self.mock_current_price = None  # 用於自動化測試模擬數據
         self.data_agent = MarketDataAgent() # 新增：行情監控代理
+        self.mission_listener = MissionListener() # 監聽中央指令
+        self.in_mission_mode = False # 任務模式狀態追蹤
         
-        # 初始化 TTS 元件
         try:
             import pyttsx3
             self.engine = pyttsx3.init()
@@ -42,6 +44,10 @@ class StockMonitor(threading.Thread):
         except Exception as e:
             print(f"TTS 初始化失敗 (將改用系統原生語音): {e}")
             self.engine = None
+
+        # --- [BUMP 特色功能] 獨立任務監聽執行緒 ---
+        self._mission_thread = threading.Thread(target=self._mission_worker, daemon=True)
+        self._mission_thread.start()
 
     def is_crypto(self, symbol):
         """判斷是否為虛擬貨幣。"""
@@ -96,6 +102,7 @@ class StockMonitor(threading.Thread):
 
     def speak(self, text):
         """朗讀文字，優先使用 pyttsx3，失敗則調用 Mac 原生 say 指令。"""
+        self.add_log(f"🔊 準備執行語音播報: {text}")
         if self.engine:
             try:
                 self.engine.say(text)
@@ -193,16 +200,56 @@ class StockMonitor(threading.Thread):
             return True
         return False
 
+    def _mission_worker(self):
+        """獨立執行緒：專門負責監聽中央指令，解決主迴圈被行情 API 阻塞的問題"""
+        self.add_log("📡 獨立任務監聽緒已啟動。")
+        while self.running:
+            try:
+                orders = self.mission_listener.check_orders()
+                if orders.get("mode") == "mission":
+                    mission_msg = orders.get("message", "執行任務中")
+                    
+                    should_action = False
+                    if not self.in_mission_mode:
+                        self.add_log(f"🔵 接獲總部指令：{mission_msg}")
+                        should_action = True
+                        self.in_mission_mode = True
+                    elif getattr(self, '_last_mission_msg', None) != mission_msg:
+                        self.add_log(f"📡 總部傳來新簡報：{mission_msg}")
+                        should_action = True
+                    
+                    if should_action:
+                        self._last_mission_msg = mission_msg
+                        self.device_off = False 
+                        self.tapo.turn_on_blue()
+                        self.speak(mission_msg)
+                else:
+                    if self.in_mission_mode:
+                        self.add_log("任務解除，恢復正常監控。")
+                        self.speak("任務解除，恢復監控。")
+                        self.in_mission_mode = False
+                        self._last_mission_msg = None
+                        self.tapo.turn_on_yellow()
+            except Exception as e:
+                print(f"任務監聽緒異常: {e}")
+            
+            time.sleep(1) # 高頻率監控 (每秒一次)
+
     def run(self):
         print("StockMonitor 已啟動。")
-        # 初始狀態：顯示黃色，表示待機/監控中 (使用者要求的常態色)
+        # 初始狀態
         try:
             self.tapo.turn_on_yellow()
-        except Exception as e: # E722 is not applicable here
+        except Exception as e:
             print(f"初始設定黃燈失敗: {e}")
 
         while self.running:
             try:
+                # 如果正處於「任務模式」，主迴圈就暫停並跳過行情監控
+                if self.in_mission_mode:
+                    time.sleep(2)
+                    continue
+
                 config = self.shared_config.get_config()
                 symbol = config['symbol']
                 target = config['target_price']
