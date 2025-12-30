@@ -673,6 +673,18 @@
                     <i class="fas fa-bell-slash"></i> 停止目前警報
                 </button>
 
+                <div class="card-header"
+                    style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem;">
+                    <i class="fas fa-satellite-dish"></i> 藍燈任務實驗 (本地測試)
+                </div>
+                <div class="input-group">
+                    <input type="text" id="manual_mission_msg" placeholder="輸入你想廣播的文字..." value="全體注意，執行秘密任務">
+                </div>
+                <button class="btn btn-primary" onclick="triggerManualMission()"
+                    style="background: linear-gradient(135deg, #3b82f6, #06b6d4); margin-bottom: 1.5rem;">
+                    <i class="fas fa-paper-plane"></i> 手動測試藍燈任務
+                </button>
+
                 <div class="btn-grid">
                     <button class="btn btn-ghost" onclick="testYellow()">
                         <i class="fas fa-sun"></i> 測試黃燈
@@ -836,6 +848,13 @@
         function turnOff() { apiCall('turn_off').then(() => showToast('進入睡眠待命模式')); }
         function demoAlert() { apiCall('demo_alert').then(() => showToast('啟動全功能演示')); }
         function stopAlarm() { apiCall('stop_alarm').then(res => showToast(res.message)); }
+
+        async function triggerManualMission() {
+            const msg = document.getElementById('manual_mission_msg').value;
+            if (!msg) return showToast('請先輸入文字', 'warning');
+            const res = await apiCall('manual_mission', 'POST', { message: msg });
+            if (res) showToast('藍燈任務實驗啟動', 'success');
+        }
 
         async function scanTapo(event) {
             const btn = event.currentTarget;

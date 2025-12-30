@@ -30974,3 +30974,108 @@ Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x16d3b3b10>
 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x16d3b3750>
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:14] "GET /api/market_status HTTP/1.1" 200 -
+
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[00:15:04] BTC-USD: 87860.00 (目標 87277.0 | 停損 87199.98 | 監控中)
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[00:15:15] BTC-USD: 87860.00 (目標 87277.0 | 停損 87199.98 | 監控中)
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 操控失敗: Cannot connect to host 192.168.100.150:80 ssl:default [Host is down]
+[192.168.100.150] 連線或初始化失敗: Connection timeout to host http://192.168.100.150/app
+[192.168.100.150] 操控失敗: Connection timeout to host http://192.168.100.150/app
+[192.168.100.150] 連線或初始化失敗: Connection timeout to host http://192.168.100.150/app
+[192.168.100.150] 操控失敗: Connection timeout to host http://192.168.100.150/app
+[192.168.100.150] 連線或初始化失敗: Connection timeout to host http://192.168.100.150/app
+[192.168.100.150] 操控失敗: Connection timeout to host http://192.168.100.150/app127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:17:14] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/market_data HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/logs HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:03] "GET /api/market_status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:18:14] "GET /api/market_status HTTP/1.1" 200 -

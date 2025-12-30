@@ -10,7 +10,7 @@ class SharedConfig:
         self._stop_loss_price = default_stop_loss
         self._tapo_email = ""
         self._tapo_password = ""
-        self._tapo_ip = "192.168.100.150" # Default for current user
+        self._tapo_ip = "192.168.100.135" # Default for current user
         self._lock = threading.Lock()
         self._load_config() # 嘗試讀取存檔
 

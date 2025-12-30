@@ -202,7 +202,7 @@ class StockMonitor(threading.Thread):
 
     def _mission_worker(self):
         """獨立執行緒：專門負責監聽中央指令，解決主迴圈被行情 API 阻塞的問題"""
-        self.add_log("📡 獨立任務監聽緒已啟動。")
+        self.add_log(f"📡 獨立任務監聽緒已啟動。")
         while self.running:
             try:
                 orders = self.mission_listener.check_orders()
@@ -234,6 +234,16 @@ class StockMonitor(threading.Thread):
                 print(f"任務監聽緒異常: {e}")
             
             time.sleep(1) # 高頻率監控 (每秒一次)
+
+    def trigger_manual_mission(self, message):
+        """[BUMP 特色功能] 手動觸發本地任務廣播測試（不影響雲端伺服器狀態）"""
+        self.add_log(f"🧪 執行本地手動任務測試：{message}")
+        self.device_off = False 
+        self.in_mission_mode = True # 進入任務模式鎖定
+        self.tapo.turn_on_blue()
+        self._last_mission_msg = message
+        self.speak(message)
+        return True
 
     def run(self):
         print("StockMonitor 已啟動。")

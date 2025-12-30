@@ -106,6 +106,7 @@ DASHBOARD_HTML = """
         <div class="status-panel">
             <div class="status-item"><div>MODE</div><div class="status-value" id="mode-val">...</div></div>
             <div class="status-item"><div>LAST UPDATE</div><div class="status-value" id="time-val" style="font-size: 18px;">...</div></div>
+            <div class="status-item" style="grid-column: span 2;"><div>CURRENT MESSAGE</div><div class="status-value" id="msg-val" style="font-size: 16px; color: var(--primary);">...</div></div>
         </div>
         <div class="controls">
             <input type="text" id="mission-msg" placeholder="ENTER BROADCAST MESSAGE" value="全體注意，這是總部指令">
@@ -123,6 +124,13 @@ DASHBOARD_HTML = """
             document.getElementById('mode-val').innerText = data.mode.toUpperCase();
             document.getElementById('mode-val').className = 'status-value ' + data.mode;
             document.getElementById('time-val').innerText = data.last_update;
+            document.getElementById('msg-val').innerText = data.message;
+            
+            // 初次載入或訊息由其他地方更改時，更新輸入框
+            const input = document.getElementById('mission-msg');
+            if (document.activeElement !== input) {
+                input.value = data.message;
+            }
         }
 
         async function sendCommand(mode) {

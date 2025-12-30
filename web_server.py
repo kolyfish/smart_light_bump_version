@@ -45,6 +45,7 @@ class WebServer(threading.Thread):
         self.app.add_url_rule('/api/simulate_data', 'simulate_data', self.simulate_data, methods=['POST'])
         self.app.add_url_rule('/api/scan_devices', 'scan_devices', self.scan_devices, methods=['GET'])
         self.app.add_url_rule('/api/scan_tapo', 'scan_tapo', self.scan_tapo, methods=['GET'])
+        self.app.add_url_rule('/api/manual_mission', 'manual_mission', self.manual_mission, methods=['POST'])
 
     def index(self):
         config = self.shared_config.get_config()
@@ -128,6 +129,13 @@ class WebServer(threading.Thread):
         print("網頁請求: 全功能示範")
         self.monitor.trigger_demo_alert()
         return jsonify({"status": "success", "message": "演示已啟動"})
+
+    def manual_mission(self):
+        data = request.json
+        message = data.get('message', '這是手動測試任務')
+        print(f"網頁請求: 本地手動任務測試 - {message}")
+        self.monitor.trigger_manual_mission(message)
+        return jsonify({"status": "success", "message": f"測試指令已發出：{message}"})
 
     def market_data(self):
         return jsonify({
