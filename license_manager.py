@@ -1,13 +1,16 @@
-import os
-import sys
 import hashlib
 import secrets
+from dotenv import load_dotenv
+
+# 載入環境變數
+load_dotenv()
 
 LICENSE_FILE = ".license_key"
 DEV_KEY = "DEV-8888"
 
 # 必須與 generator 保持一致
-SECRET_KEY = "SmartStockLight_Secret_Key_2025!" 
+# 優先讀取 .env 中的 SECRET_KEY，如果沒有則使用預設值
+SECRET_KEY = os.getenv("SECRET_KEY", "SmartStockLight_Secret_Key_2025!")
 ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 GROUP_SIZE = 4
 NUM_GROUPS = 4

@@ -1,10 +1,15 @@
-
-import secrets
 import hashlib
 import argparse
+import os
+import secrets
+from dotenv import load_dotenv
+
+# 載入環境變數 (自動從根目錄或當前目錄找 .env)
+load_dotenv()
 
 # Configuration
-SECRET_KEY = "SmartStockLight_Secret_Key_2025!"  # 改成你自己的密鑰
+# 優先讀取環境變數，確保產生的序號與系統驗證邏輯一致
+SECRET_KEY = os.getenv("SECRET_KEY", "SmartStockLight_Secret_Key_2025!")
 LICENSE_FILE = "generated_licenses.txt"
 ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"  # 排除 I, O, 0, 1 避免混淆
 GROUP_SIZE = 4

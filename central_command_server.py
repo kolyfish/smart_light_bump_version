@@ -7,9 +7,10 @@ from dotenv import load_dotenv
 # 載入環境變數
 load_dotenv()
 
-# 這是「中央司令部」 - 部署在伺服器上 (BUMP 專專屬控制台)
+# 這是「中央司令部」 - 部署在伺服器上 (BUMP 專屬控制台)
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "DEVELOPMENT_SECRET")
+# 優先使用 .env 中的金鑰，增加安全性
+app.secret_key = os.getenv("SECRET_KEY", "BUMP_FALLBACK_SECRET")
 
 # 安全機制：強制 HTTPS 導向 (Production Only)
 @app.before_request
