@@ -84,10 +84,13 @@ class SmartStockLight:
 
 from license_manager import check_license
 
-if __name__ == "__main__":
+def main():
     if not check_license():
         sys.exit(1)
         
     root = tk.Tk()
     app = SmartStockLight(root)
     root.mainloop()
+
+if __name__ == "__main__":
+    main()

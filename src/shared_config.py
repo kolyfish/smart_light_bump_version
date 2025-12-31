@@ -4,7 +4,7 @@ import os
 
 class SharedConfig:
     def __init__(self, default_symbol="BTC-USD", default_target=88000.0, default_stop_loss=0.0):
-        self._config_file = "config.json"
+        self._config_file = "config/config.json"
         self._symbol = default_symbol
         self._target_price = default_target
         self._stop_loss_price = default_stop_loss

@@ -27,19 +27,25 @@ BUMP，你不需要開啟任何程式碼視窗，只需像平時上網一樣操�
 - **序號**: `DEV-8888`
 
 ### 2. 下載與安裝 (初次使用)
-- **macOS**: 直接雙擊執行 `install_and_run.command`。
-- **Windows**: 直接雙擊執行 `install_and_run.bat`。
+- **macOS**: 直接雙擊執行 `scripts/install_and_run.command`。
+- **Windows**: 直接雙擊執行 `scripts/install_and_run.bat`。
 
-### ⚡️ 日常啟動 (開機後使用)
-對於完全不會程式的使用者，**開機後只需重複雙擊上述同一個檔案即可**。
-- 腳本會自動偵測已安裝環境並執行，不會重複安裝。
-- **懶人祕技**：建議將該檔案「製作成捷徑」放到**桌面**，以後開機點一下桌面圖示就能啟動監控。
+---
 
-### 3. 指向司令部 (必要步驟)
-確保執行前已設定環境變數：
+## 📂 專案結構說明
+為了維持開發整潔，本專案採用以下結構：
+
+- **`main.py`**: 核心啟動入口（使用者執行這個就好）。
+- **`src/`**: 所有 Python 核心程式碼。
+- **`scripts/`**: 自動化安裝與授權碼產生工具。
+- **`config/`**: 存放設定檔、狀態檔與授權紀錄。
+- **`docs/`**: 包含維護指南與安裝手冊。
+- **`templates/`**: 網頁控制台介面。
+
+### 🐍 開發者執行方式 (CLI)
+確保位於專案根目錄：
 ```bash
-export MISSION_CONTROL_URL=https://mission-smart-light.onrender.com
-python market_trade_alert_light.py
+python main.py
 ```
 
 ---

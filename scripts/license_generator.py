@@ -10,7 +10,7 @@ load_dotenv()
 # Configuration
 # 優先讀取環境變數，確保產生的序號與系統驗證邏輯一致
 SECRET_KEY = os.getenv("SECRET_KEY", "SmartStockLight_Secret_Key_2025!")
-LICENSE_FILE = "generated_licenses.txt"
+LICENSE_FILE = "config/generated_licenses.txt"
 ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"  # 排除 I, O, 0, 1 避免混淆
 GROUP_SIZE = 4
 NUM_GROUPS = 4

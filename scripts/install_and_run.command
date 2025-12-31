@@ -40,10 +40,10 @@ echo "⬇️  正在檢查與安裝套件 (這可能會花一點時間)..."
 source venv/bin/activate
 
 # 升級 pip
-pip install --upgrade pip > logs/install_log.txt 2>&1
+pip install --upgrade pip > install_log.txt 2>&1
 
 # 安裝套件並記錄日誌
-if pip install -r requirements.txt >> logs/install_log.txt 2>&1; then
+if pip install -r requirements.txt >> install_log.txt 2>&1; then
     echo "✅ 套件安裝完成！環境配置成功。"
 else
     echo "❌ 套件安裝失敗！"
@@ -57,7 +57,7 @@ fi
 # 4. 啟動主程式
 echo "🚀 啟動系統中..."
 echo "------------------------------------------"
-python market_trade_alert_light.py
+python main.py
 
 # 結束處理
 echo "應用程式已停止。"

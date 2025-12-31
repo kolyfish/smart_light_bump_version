@@ -22,7 +22,7 @@ def before_request():
             return redirect(url, code=301)
 
 # 狀態檔案路徑 (持久化存儲)
-STATE_FILE = "server_state.json"
+STATE_FILE = "config/server_state.json"
 
 def load_state():
     if os.path.exists(STATE_FILE):

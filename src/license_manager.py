@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # 載入環境變數
 load_dotenv()
 
-LICENSE_FILE = ".license_key"
+LICENSE_FILE = "config/.license_key"
 DEV_KEY = "DEV-8888"
 
 # 必須與 generator 保持一致
