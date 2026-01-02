@@ -1,1 +1,1 @@
-web: gunicorn central_command_server:app
+web: gunicorn src.central_command_server:app
