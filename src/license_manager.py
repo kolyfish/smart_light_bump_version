@@ -1,5 +1,7 @@
 import hashlib
 import secrets
+import os
+import sys
 from dotenv import load_dotenv
 
 # 載入環境變數

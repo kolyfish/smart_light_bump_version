@@ -1,0 +1,1 @@
+# SmartStockLight src package

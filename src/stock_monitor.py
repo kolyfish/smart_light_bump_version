@@ -38,9 +38,15 @@ class StockMonitor(threading.Thread):
         self.in_mission_mode = False # 任務模式狀態追蹤
         
         try:
-            import pyttsx3
-            self.engine = pyttsx3.init()
-            self.engine.setProperty('rate', 150)
+            # 優先檢查是否強制使用原生語音
+            self.force_native_say = os.getenv("FORCE_NATIVE_SAY", "true").lower() == "true"
+            if self.force_native_say:
+                self.add_log("⚙️ 設定：強制使用 Mac 原生 'say' 指令進行播報")
+                self.engine = None
+            else:
+                import pyttsx3
+                self.engine = pyttsx3.init()
+                self.engine.setProperty('rate', 150)
         except Exception as e:
             print(f"TTS 初始化失敗 (將改用系統原生語音): {e}")
             self.engine = None
@@ -111,8 +117,9 @@ class StockMonitor(threading.Thread):
             except Exception as e:
                 print(f"pyttsx3 朗讀出錯: {e}")
         
-        # Mac 原生 fallback
+        # Mac 原生 fallback (或是強制使用)
         try:
+            # 使用 -v Victoria 或其他中文語音，若系統支援
             subprocess.run(["say", text])
         except Exception as e:
             print(f"原生語音指令執行失敗: {e}")
