@@ -196,3 +196,9 @@
  
 ---
 *這份文件是由您的 AI 夥伴 Antigravity 與您共同編撰，旨在留存這份專案中最閃光的設計思維。*
+
+---
+
+## 🔧 15. V1.6.1 Hotfix: 指揮鏈路校準 (Command Link Alignment)
+**問題**: 部署後的客戶端（Client）預設使用了開發環境的 `localhost` 網址，導致無法接收來自網際網路的真實指令。
+**修正**: 強制將 `.env` 中的 `MISSION_CONTROL_URL` 指向雲端生產環境 (`https://mission-smart-light.onrender.com`)。這再次驗證了 V1.6「連線路徑解耦」設計的重要性——只需一行配置，即可切換整套指揮系統。
